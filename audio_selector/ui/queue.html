@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Audition queue</title>
+<link rel="stylesheet" href="/queue.css">
+</head><body><main>
+<h1>Audition queue</h1>
+<p class="lede">Listen, then decide. The order is the ranking's listening order, not a quality verdict or a usage approval. Every decision here is yours; nothing is accepted automatically.</p>
+<div class="toolbar">
+  <label>Ranking package <select id="package"></select></label>
+  <button id="export" type="button">Export decisions</button>
+  <div id="status" role="status" aria-live="polite"></div>
+</div>
+<section id="summary" aria-label="Ranking provenance"></section>
+<div id="warnings" role="alert"></div>
+<h2>Queue</h2>
+<ol id="queue" class="cards"></ol>
+<details id="beyond"><summary>Ranked but not in the queue</summary><ol class="cards"></ol></details>
+<details id="removed"><summary>Excluded or suppressed before ranking</summary><ul></ul></details>
+<script src="/queue.js"></script>
+</main></body></html>

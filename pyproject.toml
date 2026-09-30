@@ -17,6 +17,10 @@ retrieval = ["numpy==1.26.4", "torch==2.3.1", "transformers==4.44.2",
 audio-manifest = "audio_selector.manifest:main"
 audio-retrieve = "audio_selector.retrieval:main"
 audio-rank = "audio_selector.ranking:main"
+audio-audition-queue = "audio_selector.audition_queue:main"
 
 [tool.setuptools.packages.find]
 include = ["audio_selector*"]
+
+[tool.setuptools.package-data]
+audio_selector = ["ui/*"]
