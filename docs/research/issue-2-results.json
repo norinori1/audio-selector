@@ -1,0 +1,862 @@
+{
+  "observed_on": "2026-09-30",
+  "runs": [
+    {
+      "candidate": "sas",
+      "upstream_sha": "8e7e525b271cce19f19ac25e5340c576107f9d04",
+      "python": "3.11.0",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "total_seconds": 212.85772259999067,
+      "run": "sas",
+      "result": {
+        "setup_seconds": 210.5579521000036,
+        "indexing_seconds": 0.9132034000067506,
+        "indexed": {
+          "indexed_new": [
+            "01.wav",
+            "02.wav",
+            "03.wav",
+            "04.wav",
+            "05.wav",
+            "06.wav",
+            "07.wav",
+            "08.wav"
+          ],
+          "updated": [],
+          "removed_missing": []
+        },
+        "count": 8,
+        "queries": [
+          {
+            "query": "A high pitched electronic beep repeated several times",
+            "seconds": 0.06475539998791646,
+            "upstream_top3": [
+              {
+                "file": "04.wav",
+                "score": 0.7537416341644272
+              },
+              {
+                "file": "03.wav",
+                "score": 0.7470952893591867
+              },
+              {
+                "file": "01.wav",
+                "score": 0.4950231646849992
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "01.wav",
+                "score": 0.5049768353150008
+              },
+              {
+                "file": "03.wav",
+                "score": 0.2529047106408134
+              },
+              {
+                "file": "04.wav",
+                "score": 0.24625836583557276
+              }
+            ]
+          },
+          {
+            "query": "A bright ascending musical chime for a game confirmation",
+            "seconds": 0.025761700002476573,
+            "upstream_top3": [
+              {
+                "file": "01.wav",
+                "score": 0.767663777807107
+              },
+              {
+                "file": "03.wav",
+                "score": 0.7083086415075318
+              },
+              {
+                "file": "02.wav",
+                "score": 0.37362719495843133
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "02.wav",
+                "score": 0.6263728050415687
+              },
+              {
+                "file": "03.wav",
+                "score": 0.2916913584924682
+              },
+              {
+                "file": "01.wav",
+                "score": 0.23233622219289293
+              }
+            ]
+          },
+          {
+            "query": "A low harsh buzzer for an error",
+            "seconds": 0.02310419999412261,
+            "upstream_top3": [
+              {
+                "file": "04.wav",
+                "score": 0.6827192708735295
+              },
+              {
+                "file": "01.wav",
+                "score": 0.5399245967978147
+              },
+              {
+                "file": "03.wav",
+                "score": 0.5321027692538879
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "03.wav",
+                "score": 0.4678972307461121
+              },
+              {
+                "file": "01.wav",
+                "score": 0.4600754032021853
+              },
+              {
+                "file": "04.wav",
+                "score": 0.31728072912647054
+              }
+            ]
+          },
+          {
+            "query": "The sound of white noise hissing",
+            "seconds": 0.025983299987274222,
+            "upstream_top3": [
+              {
+                "file": "02.wav",
+                "score": 0.8672314791735709
+              },
+              {
+                "file": "06.wav",
+                "score": 0.849551461410525
+              },
+              {
+                "file": "04.wav",
+                "score": 0.6968574729710624
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "04.wav",
+                "score": 0.3031425270289376
+              },
+              {
+                "file": "06.wav",
+                "score": 0.15044853858947502
+              },
+              {
+                "file": "02.wav",
+                "score": 0.13276852082642915
+              }
+            ]
+          },
+          {
+            "query": "A deep kick drum hitting repeatedly",
+            "seconds": 0.02421659999527037,
+            "upstream_top3": [
+              {
+                "file": "01.wav",
+                "score": 0.7499196358596889
+              },
+              {
+                "file": "07.wav",
+                "score": 0.7065193382042438
+              },
+              {
+                "file": "05.wav",
+                "score": 0.4408814104991996
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "05.wav",
+                "score": 0.5591185895008004
+              },
+              {
+                "file": "07.wav",
+                "score": 0.2934806617957562
+              },
+              {
+                "file": "01.wav",
+                "score": 0.25008036414031115
+              }
+            ]
+          },
+          {
+            "query": "A rising electronic whoosh",
+            "seconds": 0.02358559999265708,
+            "upstream_top3": [
+              {
+                "file": "05.wav",
+                "score": 0.8203144015247816
+              },
+              {
+                "file": "04.wav",
+                "score": 0.8057723453965797
+              },
+              {
+                "file": "06.wav",
+                "score": 0.5859783432495094
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "06.wav",
+                "score": 0.4140216567504907
+              },
+              {
+                "file": "04.wav",
+                "score": 0.19422765460342034
+              },
+              {
+                "file": "05.wav",
+                "score": 0.17968559847521837
+              }
+            ]
+          },
+          {
+            "query": "A low steady ominous drone",
+            "seconds": 0.022281000012299046,
+            "upstream_top3": [
+              {
+                "file": "05.wav",
+                "score": 0.8162352514860673
+              },
+              {
+                "file": "03.wav",
+                "score": 0.7808734723944958
+              },
+              {
+                "file": "07.wav",
+                "score": 0.6493094691227701
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "07.wav",
+                "score": 0.35069053087722984
+              },
+              {
+                "file": "03.wav",
+                "score": 0.21912652760550425
+              },
+              {
+                "file": "05.wav",
+                "score": 0.1837647485139327
+              }
+            ]
+          },
+          {
+            "query": "A quiet interface confirmation without a harsh buzzer",
+            "seconds": 0.02568310000060592,
+            "upstream_top3": [
+              {
+                "file": "04.wav",
+                "score": 0.6691085016646208
+              },
+              {
+                "file": "06.wav",
+                "score": 0.6545655723093191
+              },
+              {
+                "file": "01.wav",
+                "score": 0.6091711196654899
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "01.wav",
+                "score": 0.3908288803345102
+              },
+              {
+                "file": "06.wav",
+                "score": 0.34543442769068083
+              },
+              {
+                "file": "04.wav",
+                "score": 0.3308914983353793
+              }
+            ]
+          }
+        ],
+        "device": "CPU",
+        "threads": 4,
+        "model": "laion/clap-htsat-unfused",
+        "model_revision": "8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a",
+        "transport": "QdrantClient(location=':memory:'); upstream code unmodified",
+        "controls": "AUTO_TAGS=0 SIM_WEIGHT=1 KW_WEIGHT=0; opaque filenames"
+      }
+    },
+    {
+      "candidate": "sas",
+      "upstream_sha": "8e7e525b271cce19f19ac25e5340c576107f9d04",
+      "python": "3.11.0",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "total_seconds": 4.539885799997137,
+      "run": "sas-pinned",
+      "result": {
+        "setup_seconds": 2.0084858000045642,
+        "indexing_seconds": 0.8263428000063868,
+        "indexed": {
+          "indexed_new": [
+            "01.wav",
+            "02.wav",
+            "03.wav",
+            "04.wav",
+            "05.wav",
+            "06.wav",
+            "07.wav",
+            "08.wav"
+          ],
+          "updated": [],
+          "removed_missing": []
+        },
+        "count": 8,
+        "queries": [
+          {
+            "query": "A high pitched electronic beep repeated several times",
+            "seconds": 0.06810069999482948,
+            "upstream_top3": [
+              {
+                "file": "04.wav",
+                "score": 0.7537416341644272
+              },
+              {
+                "file": "03.wav",
+                "score": 0.7470952893591867
+              },
+              {
+                "file": "01.wav",
+                "score": 0.4950231646849992
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "01.wav",
+                "score": 0.5049768353150008
+              },
+              {
+                "file": "03.wav",
+                "score": 0.2529047106408134
+              },
+              {
+                "file": "04.wav",
+                "score": 0.24625836583557276
+              }
+            ]
+          },
+          {
+            "query": "A bright ascending musical chime for a game confirmation",
+            "seconds": 0.0241744000086328,
+            "upstream_top3": [
+              {
+                "file": "01.wav",
+                "score": 0.767663777807107
+              },
+              {
+                "file": "03.wav",
+                "score": 0.7083086415075318
+              },
+              {
+                "file": "02.wav",
+                "score": 0.37362719495843133
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "02.wav",
+                "score": 0.6263728050415687
+              },
+              {
+                "file": "03.wav",
+                "score": 0.2916913584924682
+              },
+              {
+                "file": "01.wav",
+                "score": 0.23233622219289293
+              }
+            ]
+          },
+          {
+            "query": "A low harsh buzzer for an error",
+            "seconds": 0.023467399994842708,
+            "upstream_top3": [
+              {
+                "file": "04.wav",
+                "score": 0.6827192708735295
+              },
+              {
+                "file": "01.wav",
+                "score": 0.5399245967978147
+              },
+              {
+                "file": "03.wav",
+                "score": 0.5321027692538879
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "03.wav",
+                "score": 0.4678972307461121
+              },
+              {
+                "file": "01.wav",
+                "score": 0.4600754032021853
+              },
+              {
+                "file": "04.wav",
+                "score": 0.31728072912647054
+              }
+            ]
+          },
+          {
+            "query": "The sound of white noise hissing",
+            "seconds": 0.021774499997263774,
+            "upstream_top3": [
+              {
+                "file": "02.wav",
+                "score": 0.8672314791735709
+              },
+              {
+                "file": "06.wav",
+                "score": 0.849551461410525
+              },
+              {
+                "file": "04.wav",
+                "score": 0.6968574729710624
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "04.wav",
+                "score": 0.3031425270289376
+              },
+              {
+                "file": "06.wav",
+                "score": 0.15044853858947502
+              },
+              {
+                "file": "02.wav",
+                "score": 0.13276852082642915
+              }
+            ]
+          },
+          {
+            "query": "A deep kick drum hitting repeatedly",
+            "seconds": 0.02122199999575969,
+            "upstream_top3": [
+              {
+                "file": "01.wav",
+                "score": 0.7499196358596889
+              },
+              {
+                "file": "07.wav",
+                "score": 0.7065193382042438
+              },
+              {
+                "file": "05.wav",
+                "score": 0.4408814104991996
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "05.wav",
+                "score": 0.5591185895008004
+              },
+              {
+                "file": "07.wav",
+                "score": 0.2934806617957562
+              },
+              {
+                "file": "01.wav",
+                "score": 0.25008036414031115
+              }
+            ]
+          },
+          {
+            "query": "A rising electronic whoosh",
+            "seconds": 0.023782999996910803,
+            "upstream_top3": [
+              {
+                "file": "05.wav",
+                "score": 0.8203144015247816
+              },
+              {
+                "file": "04.wav",
+                "score": 0.8057723453965797
+              },
+              {
+                "file": "06.wav",
+                "score": 0.5859783432495094
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "06.wav",
+                "score": 0.4140216567504907
+              },
+              {
+                "file": "04.wav",
+                "score": 0.19422765460342034
+              },
+              {
+                "file": "05.wav",
+                "score": 0.17968559847521837
+              }
+            ]
+          },
+          {
+            "query": "A low steady ominous drone",
+            "seconds": 0.022748799994587898,
+            "upstream_top3": [
+              {
+                "file": "05.wav",
+                "score": 0.8162352514860673
+              },
+              {
+                "file": "03.wav",
+                "score": 0.7808734723944958
+              },
+              {
+                "file": "07.wav",
+                "score": 0.6493094691227701
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "07.wav",
+                "score": 0.35069053087722984
+              },
+              {
+                "file": "03.wav",
+                "score": 0.21912652760550425
+              },
+              {
+                "file": "05.wav",
+                "score": 0.1837647485139327
+              }
+            ]
+          },
+          {
+            "query": "A quiet interface confirmation without a harsh buzzer",
+            "seconds": 0.02529480001248885,
+            "upstream_top3": [
+              {
+                "file": "04.wav",
+                "score": 0.6691085016646208
+              },
+              {
+                "file": "06.wav",
+                "score": 0.6545655723093191
+              },
+              {
+                "file": "01.wav",
+                "score": 0.6091711196654899
+              }
+            ],
+            "qdrant_top3": [
+              {
+                "file": "01.wav",
+                "score": 0.3908288803345102
+              },
+              {
+                "file": "06.wav",
+                "score": 0.34543442769068083
+              },
+              {
+                "file": "04.wav",
+                "score": 0.3308914983353793
+              }
+            ]
+          }
+        ],
+        "device": "CPU",
+        "threads": 4,
+        "model": "laion/clap-htsat-unfused",
+        "model_revision": "8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a",
+        "transport": "QdrantClient(location=':memory:'); upstream code unmodified",
+        "controls": "AUTO_TAGS=0 SIM_WEIGHT=1 KW_WEIGHT=0; opaque filenames"
+      }
+    },
+    {
+      "candidate": "soundgrep",
+      "upstream_sha": "bc2adf3e72b463f4899c51678aba08c8c17ea4a3",
+      "python": "3.11.0",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "total_seconds": 2.6349030999990646,
+      "run": "soundgrep-isolated",
+      "result": {
+        "indexing_seconds": 0.0003158000035909936,
+        "count": 8,
+        "backend": "spectral + random text (INVALID semantic baseline)",
+        "embedding_seconds": 1.992313099995954,
+        "queries": [
+          {
+            "query": "A high pitched electronic beep repeated several times",
+            "top3": [
+              {
+                "file": "04.wav",
+                "score": 0.06976068764925003
+              },
+              {
+                "file": "02.wav",
+                "score": 0.026448063552379608
+              },
+              {
+                "file": "06.wav",
+                "score": 0.025148633867502213
+              }
+            ]
+          },
+          {
+            "query": "A bright ascending musical chime for a game confirmation",
+            "top3": [
+              {
+                "file": "07.wav",
+                "score": 0.023769663646817207
+              },
+              {
+                "file": "03.wav",
+                "score": 0.0224003903567791
+              },
+              {
+                "file": "05.wav",
+                "score": 0.020768415182828903
+              }
+            ]
+          },
+          {
+            "query": "A low harsh buzzer for an error",
+            "top3": [
+              {
+                "file": "04.wav",
+                "score": 0.08281809091567993
+              },
+              {
+                "file": "07.wav",
+                "score": -0.011654082685709
+              },
+              {
+                "file": "03.wav",
+                "score": -0.01614663004875183
+              }
+            ]
+          },
+          {
+            "query": "The sound of white noise hissing",
+            "top3": [
+              {
+                "file": "04.wav",
+                "score": 0.04602938890457153
+              },
+              {
+                "file": "06.wav",
+                "score": -0.024186130613088608
+              },
+              {
+                "file": "08.wav",
+                "score": -0.03200158476829529
+              }
+            ]
+          },
+          {
+            "query": "A deep kick drum hitting repeatedly",
+            "top3": [
+              {
+                "file": "04.wav",
+                "score": -0.020789511501789093
+              },
+              {
+                "file": "02.wav",
+                "score": -0.02681642398238182
+              },
+              {
+                "file": "08.wav",
+                "score": -0.02808550000190735
+              }
+            ]
+          },
+          {
+            "query": "A rising electronic whoosh",
+            "top3": [
+              {
+                "file": "06.wav",
+                "score": 0.12301607429981232
+              },
+              {
+                "file": "01.wav",
+                "score": 0.12102346122264862
+              },
+              {
+                "file": "05.wav",
+                "score": 0.11865520477294922
+              }
+            ]
+          },
+          {
+            "query": "A low steady ominous drone",
+            "top3": [
+              {
+                "file": "04.wav",
+                "score": 0.08281809091567993
+              },
+              {
+                "file": "07.wav",
+                "score": -0.011654082685709
+              },
+              {
+                "file": "03.wav",
+                "score": -0.01614663004875183
+              }
+            ]
+          },
+          {
+            "query": "A quiet interface confirmation without a harsh buzzer",
+            "top3": [
+              {
+                "file": "03.wav",
+                "score": 0.03399350866675377
+              },
+              {
+                "file": "01.wav",
+                "score": 0.027811232954263687
+              },
+              {
+                "file": "02.wav",
+                "score": 0.023750483989715576
+              }
+            ]
+          }
+        ],
+        "audio_query": "02.wav",
+        "audio_top3": [
+          {
+            "file": "02.wav",
+            "score": 1.0
+          },
+          {
+            "file": "06.wav",
+            "score": 0.9905917644500732
+          },
+          {
+            "file": "01.wav",
+            "score": 0.9895420670509338
+          }
+        ],
+        "boundary": "Isolated upstream AudioEmbedder + VectorIndex in separate processes; not CLI/API or integrated indexer"
+      }
+    },
+    {
+      "candidate": "soundgrep",
+      "upstream_sha": "bc2adf3e72b463f4899c51678aba08c8c17ea4a3",
+      "python": "3.11.0",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "total_seconds": 360.8064344000013,
+      "run": "soundgrep-clap",
+      "failure": {
+        "type": "RuntimeError",
+        "summary": "Error(s) in loading state_dict for CLAP:",
+        "detail": "Missing key(s) in state_dict: \"audio_branch.layers.2.blocks.6.norm1.weight\", \"audio_branch.layers.2.blocks.6.norm1.bias\", \"audio_branch.layers.2.blocks.6.attn.relative_position_bias_table\", \"audio_branch.layers.2.blocks.6.attn.relative_position_index\", \"audio_branch.layers.2.blocks.6.attn.qkv.weight\", \"audio_branch.layers.2.blocks.6.attn.qkv.bias\", \"audio_branch.layers.2.blocks.6.attn.proj.weight\", \"audio_branch.layers.2.blocks.6.attn.proj.bias\", \"audio_branch.layers.2.blocks.6.norm2.weight\", \"audio_branch.layers.2.blocks.6.norm2.bias\", \"audio_branch.layers.2.blocks.6.mlp.fc1.weight\", \"audio_branch.layers.2.blocks.6.mlp.fc1.bias\", \"audio_branch.layers.2.blocks.6.mlp.fc2.weight\", \"audio_branch.layers.2.blocks.6.mlp.fc2.bias\", \"audio_branch.layers.2.blocks.7.attn_mask\", \"audio_branch.layers.2.blocks.7.norm1.weight\", \"audio_branch.layers.2.blocks.7.norm1.bias\", \"audio_branch.layers.2.blocks.7.attn.relative_position_bias_table\", \"audio_branch.layers.2.blocks.7.attn.relative_position_index\"",
+        "detail_truncated": true
+      }
+    },
+    {
+      "candidate": "soundgrep",
+      "upstream_sha": "bc2adf3e72b463f4899c51678aba08c8c17ea4a3",
+      "python": "3.11.0",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "total_seconds": 8.994165399999474,
+      "run": "soundgrep-clap-isolated",
+      "failure": {
+        "type": "RuntimeError",
+        "summary": "RuntimeError: Error(s) in loading state_dict for CLAP:"
+      }
+    }
+  ],
+  "soundgrep_indexer_probe": {
+    "cli_db_call": "'DatabaseManager' object has no attribute '_conn'",
+    "sample_indexer_file_result": -1,
+    "vector_count": 0,
+    "db_has_insert_sample": false,
+    "db_has_add_sample": true
+  },
+  "corpus": [
+    {
+      "file": "01.wav",
+      "description": "repeated high electronic beep / alert",
+      "duration": 3,
+      "sample_rate": 48000,
+      "channels": 1,
+      "sha256": "3871d1466a6f4503830651a3f2b3ea0791fb4cc543fc03fabfe9bf191758810c",
+      "source": "original deterministic synthesis; no third-party samples"
+    },
+    {
+      "file": "02.wav",
+      "description": "ascending three-note bell-like confirmation chime",
+      "duration": 3,
+      "sample_rate": 48000,
+      "channels": 1,
+      "sha256": "7a945edb46b9ab14b818cbcb6ac687f17fee29e90a18a2f41569b106cf3318b4",
+      "source": "original deterministic synthesis; no third-party samples"
+    },
+    {
+      "file": "03.wav",
+      "description": "low rough buzzer",
+      "duration": 3,
+      "sample_rate": 48000,
+      "channels": 1,
+      "sha256": "d26f02b7c3127a4372148ca98633caf2d47a81090830988680d54f03e5bb4656",
+      "source": "original deterministic synthesis; no third-party samples"
+    },
+    {
+      "file": "04.wav",
+      "description": "broadband noise / hiss",
+      "duration": 3,
+      "sample_rate": 48000,
+      "channels": 1,
+      "sha256": "1357333163a19b399248760288b3824fa10fe6f7352794f7fb700ca8c061d391",
+      "source": "original deterministic synthesis; no third-party samples"
+    },
+    {
+      "file": "05.wav",
+      "description": "synthetic kick-like low decaying impacts",
+      "duration": 3,
+      "sample_rate": 48000,
+      "channels": 1,
+      "sha256": "a4784d72355f36e5a9882d76001b6436137d65f530ca1f9060890d595206e29b",
+      "source": "original deterministic synthesis; no third-party samples"
+    },
+    {
+      "file": "06.wav",
+      "description": "rising electronic sweep / whoosh proxy",
+      "duration": 3,
+      "sample_rate": 48000,
+      "channels": 1,
+      "sha256": "3269158f43a6ce447254147418d23d8ca7d68058f3d3c548d1917e6efa19e7e2",
+      "source": "original deterministic synthesis; no third-party samples"
+    },
+    {
+      "file": "07.wav",
+      "description": "steady low ambient tonal drone",
+      "duration": 3,
+      "sample_rate": 48000,
+      "channels": 1,
+      "sha256": "2769b43e47e066d305e453fc38028fe624f5bcd190c154dbb9afc786313d62eb",
+      "source": "original deterministic synthesis; no third-party samples"
+    },
+    {
+      "file": "08.wav",
+      "description": "silence negative control",
+      "duration": 3,
+      "sample_rate": 48000,
+      "channels": 1,
+      "sha256": "5cffdd4793d2c7986a33d893ef9f6e29f84420b47f145c3669ecc971581941e7",
+      "source": "original deterministic synthesis; no third-party samples"
+    }
+  ]
+}
