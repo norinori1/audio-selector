@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "evidence": [
+    {
+      "id": "e1",
+      "url": "https://example.org/evidence",
+      "snapshot": {
+        "path": "evidence.txt",
+        "filename": "evidence.txt",
+        "sha256": "25ad44809361235da59a6a957487316ba3e02613fe2894d20b5a3613276861ed",
+        "size": 51,
+        "media_type": "text/plain"
+      },
+      "checked": "2026-09-30",
+      "asset_sha256s": [
+        "5dcb6f7c7ff8e5d0355aee47dfc904bca3fd049ccd019e0cf2331979aee7929e"
+      ],
+      "notes": "Test assertion, never real acquisition evidence"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "asset-1",
+      "provider": "test",
+      "source_asset_id": "1",
+      "asset_url": "https://example.org/1",
+      "author": "test",
+      "acquisition_source": "unit fixture",
+      "acquired": "2026-09-30",
+      "metadata_evidence_ids": [
+        "e1"
+      ],
+      "original": {
+        "path": "original.wav",
+        "filename": "original.wav",
+        "sha256": "5dcb6f7c7ff8e5d0355aee47dfc904bca3fd049ccd019e0cf2331979aee7929e",
+        "size": 41,
+        "media_type": "audio/wav"
+      },
+      "preview": {
+        "path": "preview.wav",
+        "filename": "preview.wav",
+        "sha256": "7c43d0cddfc3b5aff783329d52b9860ebb3f9b753c38ab08646b2e98dd79e0a3",
+        "size": 23,
+        "media_type": "audio/wav"
+      },
+      "rights": {
+        "license_name": "test grant",
+        "license_url": "https://example.org/license",
+        "evidence_ids": [
+          "e1"
+        ],
+        "commercial": "allowed",
+        "modification": "allowed",
+        "game_embedding": "allowed",
+        "redistribution": "allowed",
+        "attribution": "not-required",
+        "redistribution_restrictions": "none recorded",
+        "content_id_notes": "none recorded"
+      }
+    }
+  ]
+}
