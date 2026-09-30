@@ -1,9 +1,12 @@
 """Issue #7 evaluation integrity: frozen #6 inputs, preregistered binding, reproduction."""
 import hashlib
+import itertools
 import json
 from pathlib import Path
 import tempfile
 import unittest
+
+import numpy as np
 
 from audio_selector.benchmark_metrics import calculate
 from audio_selector.role_evaluation import evaluate_all, paired
@@ -58,3 +61,36 @@ class RoleEvaluationReproductionTests(unittest.TestCase):
             path.write_text(json.dumps(roles))
             with self.assertRaisesRegex(ValueError, "assignment changed"):
                 evaluate_all(BENCH, SIGNALS, CONFIG, path, LABELS)
+
+    def test_committed_metrics_and_rankings_reproduce_without_model(self):
+        metrics, rankings = evaluate_all(BENCH, SIGNALS, CONFIG, ROLES, LABELS)
+        self.assertEqual(json.loads(json.dumps(metrics)), json.loads((EVAL / "role-metrics-v1.json").read_text()))
+        self.assertEqual(json.loads(json.dumps(rankings)), json.loads((EVAL / "role-rankings-v1.json").read_text()))
+        frozen = json.loads((EVAL / "metrics-v1.json").read_text())["results"]["raw_semantic"]
+        for k in ["1", "3", "5"]:
+            ours = metrics["results"]["semantic_only"][k]
+            self.assertEqual((ours["mean_recall"], ours["mAP"]), (frozen[k]["mean_recall"], frozen[k]["mAP"]))
+            self.assertEqual([(r["recall"], r["ap"]) for r in ours["per_query"]],
+                             [(r["recall"], r["ap"]) for r in frozen[k]["per_query"]])
+
+    def test_frozen_rankings_respect_invariants(self):
+        policy = json.loads(CONFIG.read_text())["diversity"]
+        vectors = json.loads(SIGNALS.read_text())["vectors"]
+        rankings = json.loads((EVAL / "role-rankings-v1.json").read_text())
+        self.assertEqual(len(rankings), 12)
+        for result in rankings.values():
+            top = result["top_n"]
+            self.assertLessEqual(len(top), 5)
+            self.assertEqual(len({e["sha256"] for e in top}), len(top))
+            for key, cap in [("pack", policy["max_per_pack"]), ("provider", policy["max_per_provider"]),
+                             ("lineage_root", policy["max_per_lineage"])]:
+                values = [e[key] for e in top]
+                self.assertLessEqual(max(values.count(v) for v in values), cap)
+            for a, b in itertools.combinations(top, 2):
+                similarity = np.dot(vectors[a["candidate_id"]], vectors[b["candidate_id"]])
+                self.assertLess(similarity, policy["near_duplicate_cosine"])
+            for e in top + result["beyond_top_n"]:
+                self.assertEqual(e["eligibility"]["status"], "eligible")
+                self.assertAlmostEqual(sum(e["contributions"].values()), e["pre_diversity_score"])
+                self.assertEqual(e["reranking"]["decision"] == "deferred",
+                                 bool(e["reranking"]["reasons"]) and e["reranking"]["reasons"] != ["beyond top_n"])
