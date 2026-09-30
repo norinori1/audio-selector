@@ -1,0 +1,24 @@
+:root{--bg:#f6f4ee;--card:#fff;--ink:#232c31;--muted:#52615f;--line:#c9cdc9;--warn:#8a2b06;--warnbg:#fff1e8;--ok:#1d5b3a;--focus:#006d77}
+body{font:16px/1.55 system-ui,sans-serif;background:var(--bg);color:var(--ink);margin:0}
+main{max-width:1000px;margin:auto;padding:24px 16px}
+h1{font-size:28px;margin:0 0 4px}h2{font-size:22px}h3{font-size:19px;margin:0}
+.lede{color:var(--muted);max-width:70ch}
+.toolbar{position:sticky;top:0;z-index:1;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+#status{min-height:1.5em;flex-basis:100%}
+button,select,textarea,input{font:inherit}select{max-width:100%;min-width:0}.toolbar label{display:flex;flex-wrap:wrap;gap:6px;align-items:center;max-width:100%;min-width:0}button{padding:6px 14px;cursor:pointer}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.cards{list-style:none;padding:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;margin:14px 0}
+.card.blocked{border-color:var(--warn)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:4px 20px}
+dl{margin:8px 0;display:grid;grid-template-columns:max-content 1fr;gap:2px 12px}dt{color:var(--muted)}dd{margin:0;overflow-wrap:anywhere}
+code,.hash{font-family:ui-monospace,Consolas,monospace;font-size:13px;overflow-wrap:anywhere}
+.badge{display:inline-block;padding:1px 8px;border-radius:10px;border:1px solid var(--line);font-size:13px;margin-left:6px}
+.badge.original{background:#e7f3ec;color:var(--ok)}.badge.preview{background:#fdf4d8}
+.issue,#warnings p{background:var(--warnbg);color:var(--warn);padding:6px 10px;border-radius:6px}
+table{border-collapse:collapse;margin:6px 0}td,th{padding:2px 10px 2px 0;text-align:left;font-variant-numeric:tabular-nums}
+audio{display:block;width:100%;margin:10px 0}
+fieldset{border:1px solid var(--line);border-radius:6px;margin:10px 0;min-width:0}fieldset label.note{display:block;white-space:normal;margin:8px 0}fieldset label{margin-right:16px;white-space:nowrap}
+textarea{width:100%;min-height:56px;box-sizing:border-box}
+.saved{color:var(--muted);font-size:14px}
+details{margin:18px 0}summary{cursor:pointer;font-weight:600}

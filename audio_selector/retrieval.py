@@ -12,15 +12,9 @@ import soundfile as sf
 import torch
 from transformers import ClapModel, ClapProcessor
 
+from .contract import CONTRACT, MODEL, REVISION
 from .manifest import Manifest, Policy, eligible_candidates, load
 
-MODEL = "laion/clap-htsat-unfused"
-REVISION = "8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a"
-CONTRACT = dict(index_version="1.0", model=MODEL, revision=REVISION,
-                preprocessing="mono-mean/librosa-soxr_hq/48k/10s-nonoverlap/zero-pad/v1",
-                sample_rate=48000, segment_samples=480000, normalization="L2", dimension=512,
-                transformers="4.44.2", librosa="0.10.2.post1", soundfile="0.12.1")
-CONTRACT["text_preprocessing"] = "pinned-tokenizer/pad/truncate-77/v1"
 COLLECTION = "audio_selector_v1"
 
 
@@ -187,6 +181,20 @@ class LocalIndex:
         valid = [key for key, payload in expected.items() if actual.get(key) == payload]
         return dict(valid=valid, stale=[key for key in actual if key not in valid],
                     missing=[key for key in expected if key not in valid])
+
+    def vectors(self, manifest, root, candidate_ids, policy=Policy()):
+        """Stored segment vectors of currently valid eligible points, in segment order."""
+        state = self.inspect(manifest, root, policy)
+        if state["missing"]:
+            raise StaleIndexError("eligible candidate vectors missing/stale; rebuild required")
+        wanted, result = set(candidate_ids), {}
+        points = self.client.retrieve(COLLECTION, ids=state["valid"], with_payload=True, with_vectors=True)
+        for p in sorted(points, key=lambda p: (p.payload["candidate_id"], p.payload["segment_start"])):
+            if p.payload["candidate_id"] in wanted:
+                result.setdefault(p.payload["candidate_id"], []).append(p.vector)
+        if set(result) != wanted:
+            raise StaleIndexError("requested candidates are not valid eligible index records")
+        return result
 
     def query(self, manifest, root, text, k=5, policy=Policy(), candidate_ids=None):
         if k < 1:

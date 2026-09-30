@@ -11,8 +11,13 @@ manifest and fail-closed gate are documented in [manifest contract](docs/impleme
 and the pinned adapter in [retrieval contract](docs/implementation/retrieval-contract.md).
 The [human audition package](benchmark/README.md) now includes a
 [first human relevance pilot](benchmark/evaluation/human-pilot-v1.md) based on 156
-user-supplied judgments. Actual audition-time benefit and production suitability
-remain unresolved. Start further local review with
+user-supplied judgments. A versioned [role ranking + MMR diversity layer](docs/implementation/ranking-contract.md)
+has [preregistered in-sample results](benchmark/evaluation/role-results-v1.md): small role
+gains at K=3, and a Recall@5 regression from the v1 diversity caps. A loopback-only
+[audition queue](docs/implementation/audition-contract.md) plays the ranked Top-N as
+verified exact bytes, records your accept/shortlist/maybe/reject decisions, and writes
+reproducible selection exports (`python -m audio_selector.audition_queue serve`). Actual audition-time
+benefit and production suitability remain unresolved. Start further local review with
 `.venv/Scripts/python.exe -m audio_selector.audition` and open the printed URL.
 
 This repository must not begin by reimplementing an audio retrieval engine.

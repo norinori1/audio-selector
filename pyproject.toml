@@ -11,11 +11,16 @@ dependencies = ["pydantic==2.13.4"]
 [project.optional-dependencies]
 retrieval = ["numpy==1.26.4", "torch==2.3.1", "transformers==4.44.2",
              "librosa==0.10.2.post1", "soundfile==0.12.1", "qdrant-client==1.12.1",
-             "huggingface-hub==0.36.2"]
+             "huggingface-hub==0.36.2", "scikit-learn==1.9.1", "pyversity==0.2.0"]
 
 [project.scripts]
 audio-manifest = "audio_selector.manifest:main"
 audio-retrieve = "audio_selector.retrieval:main"
+audio-rank = "audio_selector.ranking:main"
+audio-audition-queue = "audio_selector.audition_queue:main"
 
 [tool.setuptools.packages.find]
 include = ["audio_selector*"]
+
+[tool.setuptools.package-data]
+audio_selector = ["ui/*"]
