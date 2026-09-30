@@ -1,0 +1,96 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python bytecode / packaging
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Test / lint / type-check caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+hypothesis/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ML / model caches and weights
+.cache/
+.cache/huggingface/
+huggingface/
+models/
+checkpoints/
+*.ckpt
+*.pth
+*.pt
+*.onnx
+*.safetensors
+
+# Vector databases / local indexes
+qdrant_storage/
+chroma/
+.faiss/
+*.faiss
+*.index
+
+# Downloaded / local audio corpora
+data/
+datasets/
+downloads/
+candidates/
+audio/
+corpus/
+
+# Generated analysis / audition artifacts
+artifacts/
+outputs/
+reports/generated/
+spectrograms/
+embeddings/
+rankings/
+
+# Temporary audio conversions / renders
+tmp/
+temp/
+*.tmp
+*.part
+
+# Local logs / profiling
+*.log
+logs/
+.prof/
+profile/
+
+# Keep intentionally committed small test fixtures even if stored below ignored roots
+!tests/fixtures/
+!tests/fixtures/**
