@@ -1,0 +1,89 @@
+{
+  "schema_version": "role-ranking/1.0",
+  "config_id": "benchmark-game-roles",
+  "version": "1.0.0",
+  "notes": "Preregistered for Issue #7 before any labeled evaluation run; see benchmark/evaluation/role-protocol-v1.md. Weights are fixed round values, not fitted to Issue #6 labels. Duration bounds reuse the Issue #6 preregistered query bounds. Role descriptions were written from role semantics without listening to the corpus or inspecting per-candidate labels. Consumer game projects should keep their own profiles; this file is benchmark data.",
+  "top_n": 5,
+  "overfetch": 50,
+  "default_weights": {
+    "query": 1.0,
+    "role_positive": 0.5,
+    "negative": 0.5,
+    "duration": 0.15
+  },
+  "diversity": {
+    "enabled": true,
+    "algorithm": "pyversity-mmr",
+    "diversity": 0.25,
+    "pack_key": "acquisition_source",
+    "max_per_lineage": 1,
+    "max_per_pack": 3,
+    "max_per_provider": 4,
+    "near_duplicate_cosine": 0.95
+  },
+  "roles": [
+    {
+      "id": "ui-navigation",
+      "description": "Menu cursor movement / focus-change feedback",
+      "positive": ["a soft short user interface click", "a subtle menu cursor blip"],
+      "negative": ["a musical melody", "a loud alarm"],
+      "duration": {"max_seconds": 2}
+    },
+    {
+      "id": "ui-confirm",
+      "description": "Menu confirmation / accept feedback",
+      "positive": ["a short positive user interface confirmation sound", "a clean bright menu select beep"],
+      "negative": ["a harsh error buzzer", "a loud alarm"],
+      "duration": {"max_seconds": 3}
+    },
+    {
+      "id": "ui-error",
+      "description": "Invalid action / error feedback",
+      "positive": ["a short negative user interface error sound", "a low buzzing wrong answer beep"],
+      "negative": ["a happy positive chime"],
+      "duration": {"max_seconds": 3}
+    },
+    {
+      "id": "movement-footsteps",
+      "description": "Character locomotion footsteps",
+      "positive": ["footsteps walking", "shoes stepping on a hard floor"],
+      "negative": ["music", "an electronic beep"],
+      "duration": {"max_seconds": 4}
+    },
+    {
+      "id": "door-interaction",
+      "description": "Door open / close interaction",
+      "positive": ["a door opening", "a mechanical sliding door"],
+      "negative": ["music", "an electronic user interface beep"],
+      "duration": {"max_seconds": 6}
+    },
+    {
+      "id": "portal-transition",
+      "description": "Teleport / portal / scene transition",
+      "positive": ["a science fiction whoosh transition", "a magical teleport shimmer"],
+      "negative": ["footsteps", "a short user interface click"],
+      "duration": {"max_seconds": 10}
+    },
+    {
+      "id": "stage-clear",
+      "description": "Stage clear / level-up jingle",
+      "positive": ["a short victory jingle", "a triumphant level up fanfare"],
+      "negative": ["an error buzzer", "sad music"],
+      "duration": {"max_seconds": 6}
+    },
+    {
+      "id": "bgm-loop",
+      "description": "Background music bed",
+      "positive": ["background music for a video game", "a continuous instrumental music loop"],
+      "negative": ["a short sound effect", "a single beep"],
+      "duration": {"min_seconds": 20}
+    },
+    {
+      "id": "item-pickup",
+      "description": "Item / collectible pickup",
+      "positive": ["a short bright item pickup chime", "a coin collect sound"],
+      "negative": ["an error warning buzzer", "an alarm"],
+      "duration": {"max_seconds": 4}
+    }
+  ]
+}

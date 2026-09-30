@@ -1,0 +1,18 @@
+{
+  "config": "ranking-v1.json",
+  "assignment": "Each frozen Issue #6 query is assigned the role named in its human-pilot report row. Preregistered with ranking-v1.json.",
+  "queries": {
+    "q01": "ui-navigation",
+    "q02": "ui-confirm",
+    "q03": "ui-error",
+    "q04": "movement-footsteps",
+    "q05": "door-interaction",
+    "q06": "portal-transition",
+    "q07": "stage-clear",
+    "q08": "bgm-loop",
+    "q09": "bgm-loop",
+    "q10": "item-pickup",
+    "q11": "ui-confirm",
+    "q12": "bgm-loop"
+  }
+}
