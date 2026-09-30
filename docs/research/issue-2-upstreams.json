@@ -1,0 +1,85 @@
+{
+  "observed_on": "2026-09-30",
+  "repositories": [
+    {
+      "repository": "TaaroBravo/semantic-audio-search",
+      "sha": "8e7e525b271cce19f19ac25e5340c576107f9d04",
+      "commit_date": "2025-10-04T15:04:38-03:00",
+      "api_pushed_at": "2025-10-04T18:04:38Z",
+      "archived": false,
+      "detected_license": "MIT",
+      "root_license_files": [
+        "LICENSE"
+      ],
+      "source": "https://api.github.com/repos/TaaroBravo/semantic-audio-search"
+    },
+    {
+      "repository": "fnsmdehip/soundgrep",
+      "sha": "bc2adf3e72b463f4899c51678aba08c8c17ea4a3",
+      "commit_date": "2026-03-22T13:46:42-04:00",
+      "api_pushed_at": "2026-03-22T18:35:29Z",
+      "archived": false,
+      "detected_license": null,
+      "root_license_files": [],
+      "source": "https://api.github.com/repos/fnsmdehip/soundgrep"
+    },
+    {
+      "repository": "LAION-AI/CLAP",
+      "sha": "1fd4c37df5ffbfcfbad5415c170bc66cf94c9994",
+      "commit_date": "2025-05-15T12:55:28-07:00",
+      "api_pushed_at": "2025-05-15T19:55:29Z",
+      "archived": false,
+      "detected_license": "CC0-1.0",
+      "root_license_files": [
+        "LICENSE"
+      ],
+      "source": "https://api.github.com/repos/LAION-AI/CLAP"
+    },
+    {
+      "repository": "microsoft/CLAP",
+      "sha": "e8a6467b87cd85716e20c6a008126150d9740be0",
+      "commit_date": "2024-09-18T14:40:17-07:00",
+      "api_pushed_at": "2024-09-18T21:40:17Z",
+      "archived": true,
+      "detected_license": "MIT",
+      "root_license_files": [
+        "LICENSE"
+      ],
+      "source": "https://api.github.com/repos/microsoft/CLAP"
+    },
+    {
+      "repository": "soham97/PAM",
+      "sha": "ead6e7f9d907268e30c73b29526f50523a34b4aa",
+      "commit_date": "2024-07-19T12:00:50-07:00",
+      "api_pushed_at": "2024-07-19T19:00:50Z",
+      "archived": false,
+      "detected_license": "MIT",
+      "root_license_files": [
+        "LICENSE"
+      ],
+      "source": "https://api.github.com/repos/soham97/PAM"
+    },
+    {
+      "repository": "xieh97/dcase2023-audio-retrieval",
+      "sha": "b4654e4f995650cae36447335d681d0ab5b5c0ee",
+      "commit_date": "2023-08-08T10:28:08+03:00",
+      "api_pushed_at": "2023-08-08T07:28:35Z",
+      "archived": false,
+      "detected_license": "MIT",
+      "root_license_files": [
+        "LICENSE"
+      ],
+      "source": "https://api.github.com/repos/xieh97/dcase2023-audio-retrieval"
+    },
+    {
+      "repository": "CPJKU/dcase2025_task6_baseline",
+      "sha": "c78422fcbed579877919620a30075baccf82bf2b",
+      "commit_date": "2025-06-09T13:46:31+02:00",
+      "api_pushed_at": "2025-06-09T11:46:36Z",
+      "archived": false,
+      "detected_license": null,
+      "root_license_files": [],
+      "source": "https://api.github.com/repos/CPJKU/dcase2025_task6_baseline"
+    }
+  ]
+}
