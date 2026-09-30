@@ -22,7 +22,8 @@ def retrieval_metrics(relevance, k, positives_total):
     return dict(recall=found/positives_total, ap=ap)
 
 
-def calculate(root, labels_path, ks=(1, 3, 5), effort_path=None):
+def load_judgments(root, labels_path):
+    """Complete decided labels keyed by (query ID, candidate ID) via the frozen blind map."""
     session = json.loads((root / "prepared/session.json").read_text())
     predictions = json.loads((root / "prepared/predictions.json").read_text())
     mapping = json.loads((root / "prepared/blind-map.json").read_text())
@@ -35,7 +36,12 @@ def calculate(root, labels_path, ks=(1, 3, 5), effort_path=None):
         raise ValueError(f"HUMAN AUDITION REQUIRED: need {len(expected)} complete decided judgments; "
                          f"have {len(actual)} (unsure is not negative)")
     judgments = {(j["query_id"], mapping[j["clip_id"]]["candidate_id"]): j for j in labels["judgments"]}
-    output = dict(package_id=session["package_id"], human_judgments=len(actual), results={})
+    return session, predictions, judgments
+
+
+def calculate(root, labels_path, ks=(1, 3, 5), effort_path=None):
+    session, predictions, judgments = load_judgments(root, labels_path)
+    output = dict(package_id=session["package_id"], human_judgments=len(judgments), results={})
     for method in ["raw_semantic", "duration_constraint", "first_segment"]:
         output["results"][method] = {}
         for k in ks:

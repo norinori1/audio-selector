@@ -188,6 +188,20 @@ class LocalIndex:
         return dict(valid=valid, stale=[key for key in actual if key not in valid],
                     missing=[key for key in expected if key not in valid])
 
+    def vectors(self, manifest, root, candidate_ids, policy=Policy()):
+        """Stored segment vectors of currently valid eligible points, in segment order."""
+        state = self.inspect(manifest, root, policy)
+        if state["missing"]:
+            raise StaleIndexError("eligible candidate vectors missing/stale; rebuild required")
+        wanted, result = set(candidate_ids), {}
+        points = self.client.retrieve(COLLECTION, ids=state["valid"], with_payload=True, with_vectors=True)
+        for p in sorted(points, key=lambda p: (p.payload["candidate_id"], p.payload["segment_start"])):
+            if p.payload["candidate_id"] in wanted:
+                result.setdefault(p.payload["candidate_id"], []).append(p.vector)
+        if set(result) != wanted:
+            raise StaleIndexError("requested candidates are not valid eligible index records")
+        return result
+
     def query(self, manifest, root, text, k=5, policy=Policy(), candidate_ids=None):
         if k < 1:
             raise ValueError("k must be positive")

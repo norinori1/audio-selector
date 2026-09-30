@@ -1,0 +1,405 @@
+{
+  "$defs": {
+    "DiversityPolicy": {
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "default": true,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "algorithm": {
+          "const": "pyversity-mmr",
+          "default": "pyversity-mmr",
+          "title": "Algorithm",
+          "type": "string"
+        },
+        "diversity": {
+          "default": 0.25,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Diversity",
+          "type": "number"
+        },
+        "pack_key": {
+          "default": "acquisition_source",
+          "enum": [
+            "acquisition_source",
+            "provider",
+            "author"
+          ],
+          "title": "Pack Key",
+          "type": "string"
+        },
+        "max_per_lineage": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": 1,
+          "title": "Max Per Lineage"
+        },
+        "max_per_pack": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Per Pack"
+        },
+        "max_per_provider": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Per Provider"
+        },
+        "near_duplicate_cosine": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 1,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Near Duplicate Cosine"
+        }
+      },
+      "title": "DiversityPolicy",
+      "type": "object"
+    },
+    "DspCriterion": {
+      "additionalProperties": false,
+      "properties": {
+        "feature": {
+          "enum": [
+            "peak_dbfs",
+            "rms_dbfs",
+            "channels",
+            "sample_rate"
+          ],
+          "title": "Feature",
+          "type": "string"
+        },
+        "min": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min"
+        },
+        "max": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max"
+        },
+        "weight": {
+          "minimum": 0,
+          "title": "Weight",
+          "type": "number"
+        }
+      },
+      "required": [
+        "feature",
+        "weight"
+      ],
+      "title": "DspCriterion",
+      "type": "object"
+    },
+    "DurationPreference": {
+      "additionalProperties": false,
+      "properties": {
+        "min_seconds": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Seconds"
+        },
+        "max_seconds": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Seconds"
+        },
+        "tolerance_octaves": {
+          "default": 1.0,
+          "exclusiveMinimum": 0,
+          "title": "Tolerance Octaves",
+          "type": "number"
+        },
+        "mode": {
+          "default": "soft",
+          "enum": [
+            "soft",
+            "hard"
+          ],
+          "title": "Mode",
+          "type": "string"
+        }
+      },
+      "title": "DurationPreference",
+      "type": "object"
+    },
+    "MetadataCriterion": {
+      "additionalProperties": false,
+      "properties": {
+        "field": {
+          "enum": [
+            "provider",
+            "author",
+            "kind",
+            "media_type",
+            "acquisition_source"
+          ],
+          "title": "Field",
+          "type": "string"
+        },
+        "equals": {
+          "minLength": 1,
+          "title": "Equals",
+          "type": "string"
+        },
+        "weight": {
+          "title": "Weight",
+          "type": "number"
+        }
+      },
+      "required": [
+        "field",
+        "equals",
+        "weight"
+      ],
+      "title": "MetadataCriterion",
+      "type": "object"
+    },
+    "RoleProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "positive": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Positive",
+          "type": "array"
+        },
+        "negative": {
+          "default": [],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Negative",
+          "type": "array"
+        },
+        "duration": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DurationPreference"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "dsp": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/DspCriterion"
+          },
+          "title": "Dsp",
+          "type": "array"
+        },
+        "metadata": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/MetadataCriterion"
+          },
+          "title": "Metadata",
+          "type": "array"
+        },
+        "weights": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Weights"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "positive"
+      ],
+      "title": "RoleProfile",
+      "type": "object"
+    },
+    "Weights": {
+      "additionalProperties": false,
+      "properties": {
+        "query": {
+          "default": 1.0,
+          "minimum": 0,
+          "title": "Query",
+          "type": "number"
+        },
+        "role_positive": {
+          "default": 0.5,
+          "minimum": 0,
+          "title": "Role Positive",
+          "type": "number"
+        },
+        "negative": {
+          "default": 0.5,
+          "minimum": 0,
+          "title": "Negative",
+          "type": "number"
+        },
+        "duration": {
+          "default": 0.15,
+          "minimum": 0,
+          "title": "Duration",
+          "type": "number"
+        }
+      },
+      "title": "Weights",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "role-ranking/1.0",
+      "default": "role-ranking/1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "config_id": {
+      "minLength": 1,
+      "title": "Config Id",
+      "type": "string"
+    },
+    "version": {
+      "minLength": 1,
+      "title": "Version",
+      "type": "string"
+    },
+    "notes": {
+      "minLength": 1,
+      "title": "Notes",
+      "type": "string"
+    },
+    "top_n": {
+      "default": 5,
+      "minimum": 1,
+      "title": "Top N",
+      "type": "integer"
+    },
+    "overfetch": {
+      "default": 50,
+      "minimum": 1,
+      "title": "Overfetch",
+      "type": "integer"
+    },
+    "default_weights": {
+      "$ref": "#/$defs/Weights",
+      "default": {
+        "query": 1.0,
+        "role_positive": 0.5,
+        "negative": 0.5,
+        "duration": 0.15
+      }
+    },
+    "diversity": {
+      "$ref": "#/$defs/DiversityPolicy",
+      "default": {
+        "enabled": true,
+        "algorithm": "pyversity-mmr",
+        "diversity": 0.25,
+        "pack_key": "acquisition_source",
+        "max_per_lineage": 1,
+        "max_per_pack": null,
+        "max_per_provider": null,
+        "near_duplicate_cosine": null
+      }
+    },
+    "roles": {
+      "items": {
+        "$ref": "#/$defs/RoleProfile"
+      },
+      "minItems": 1,
+      "title": "Roles",
+      "type": "array"
+    }
+  },
+  "required": [
+    "config_id",
+    "version",
+    "notes",
+    "roles"
+  ],
+  "title": "RankingConfig",
+  "type": "object"
+}

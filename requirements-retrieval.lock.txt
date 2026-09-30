@@ -41,6 +41,7 @@ protobuf==7.36.2
 pycparser==3.0
 pydantic==2.13.4
 pydantic-core==2.46.4
+pyversity==0.2.0
 pywin32==312
 pyyaml==6.0.3
 qdrant-client==1.12.1
