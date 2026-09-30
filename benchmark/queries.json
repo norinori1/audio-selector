@@ -1,0 +1,14 @@
+[
+  {"id":"q01","prompt":"A short subtle tick when moving between menu items.","max_seconds":2},
+  {"id":"q02","prompt":"A bright short electronic confirmation when accepting a menu choice.","max_seconds":3},
+  {"id":"q03","prompt":"A harsh electronic error buzzer when an action is invalid.","max_seconds":3},
+  {"id":"q04","prompt":"Footsteps as a character walks across a surface.","max_seconds":4},
+  {"id":"q05","prompt":"A mechanical powered door opening during interaction.","max_seconds":6},
+  {"id":"q06","prompt":"A rising science fiction teleport or portal transition sound.","max_seconds":10},
+  {"id":"q07","prompt":"A celebratory musical game stage clear or level up cue.","max_seconds":6},
+  {"id":"q08","prompt":"Continuous dark electronic ambient background music for exploring an industrial space.","min_seconds":20},
+  {"id":"q09","prompt":"Acoustic nylon guitar background music.","min_seconds":20},
+  {"id":"q10","prompt":"A small positive item pickup chime, distinguishable from an error warning.","max_seconds":4},
+  {"id":"q11","prompt":"A short quiet menu confirmation without a harsh buzzer or alarm.","max_seconds":3},
+  {"id":"q12","prompt":"A sustained atmospheric electronic music texture that continues beyond the opening ten seconds.","min_seconds":20}
+]

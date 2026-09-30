@@ -4,7 +4,14 @@ Game-audio asset selection tooling for narrowing large, multi-source audio candi
 
 ## Status
 
-**Research / build-vs-reuse phase.**
+**Evidence-backed retrieval prototype; real-audio human pilot prepared in a Draft stack.**
+
+ADR 0001 selects LAION CLAP/Transformers and Qdrant reuse. The authoritative
+manifest and fail-closed gate are documented in [manifest contract](docs/implementation/manifest-contract.md),
+and the pinned adapter in [retrieval contract](docs/implementation/retrieval-contract.md).
+The prepared [human audition package](benchmark/README.md) needs actual human labels;
+no production suitability or human preference result is claimed. Start the local
+review with `.venv/Scripts/python.exe -m audio_selector.audition` and open the printed URL.
 
 This repository must not begin by reimplementing an audio retrieval engine.
 

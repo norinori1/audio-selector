@@ -1,0 +1,6 @@
+# Exact-byte source assets and captured evidence must survive Windows checkout.
+benchmark/media/** -text
+# Preserve source-page whitespace as evidence rather than reformatting snapshots.
+benchmark/evidence/** -text -whitespace
+tests/fixtures/manifest/*.wav -text
+tests/fixtures/manifest/evidence.txt -text

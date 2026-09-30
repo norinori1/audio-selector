@@ -1,0 +1,782 @@
+{
+  "811f912073e22cb0befb": {
+    "candidate_id": "oga-menu-move",
+    "query_id": "q01",
+    "original_sha256": "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046"
+  },
+  "296c3b3ee41b9c2c79dd": {
+    "candidate_id": "oga-menu-select",
+    "query_id": "q01",
+    "original_sha256": "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e"
+  },
+  "6986d405c4073aba4c95": {
+    "candidate_id": "oga-footsteps",
+    "query_id": "q01",
+    "original_sha256": "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9"
+  },
+  "33ba8377fd23d4d9a7f5": {
+    "candidate_id": "oga-teleport",
+    "query_id": "q01",
+    "original_sha256": "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9"
+  },
+  "5963153d8023177ff4b6": {
+    "candidate_id": "oga-door",
+    "query_id": "q01",
+    "original_sha256": "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6"
+  },
+  "963126e36c49056ccc89": {
+    "candidate_id": "oga-item",
+    "query_id": "q01",
+    "original_sha256": "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276"
+  },
+  "85014b1f4446d6573138": {
+    "candidate_id": "oga-error",
+    "query_id": "q01",
+    "original_sha256": "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6"
+  },
+  "3e86eb358e69283f6316": {
+    "candidate_id": "oga-searching",
+    "query_id": "q01",
+    "original_sha256": "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8"
+  },
+  "319615e1d3aa54a83a9b": {
+    "candidate_id": "oga-etirwer",
+    "query_id": "q01",
+    "original_sha256": "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b"
+  },
+  "9bff949eaaec11b068ef": {
+    "candidate_id": "uisfx-select",
+    "query_id": "q01",
+    "original_sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec"
+  },
+  "2178aa52751af0c7e80a": {
+    "candidate_id": "uisfx-success",
+    "query_id": "q01",
+    "original_sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd"
+  },
+  "33659fa1e2d6fe503e74": {
+    "candidate_id": "uisfx-error",
+    "query_id": "q01",
+    "original_sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653"
+  },
+  "02298698aea301d93f0e": {
+    "candidate_id": "uisfx-level-up",
+    "query_id": "q01",
+    "original_sha256": "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+  },
+  "bda5a6afebfe13513d2c": {
+    "candidate_id": "oga-menu-move",
+    "query_id": "q02",
+    "original_sha256": "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046"
+  },
+  "c490a685beeabec571dc": {
+    "candidate_id": "oga-menu-select",
+    "query_id": "q02",
+    "original_sha256": "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e"
+  },
+  "cf1f26680f2af5071310": {
+    "candidate_id": "oga-footsteps",
+    "query_id": "q02",
+    "original_sha256": "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9"
+  },
+  "9976954fdd7b063229e7": {
+    "candidate_id": "oga-teleport",
+    "query_id": "q02",
+    "original_sha256": "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9"
+  },
+  "5d0f87fc963921267a4d": {
+    "candidate_id": "oga-door",
+    "query_id": "q02",
+    "original_sha256": "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6"
+  },
+  "2cd554ae89ce52ee962b": {
+    "candidate_id": "oga-item",
+    "query_id": "q02",
+    "original_sha256": "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276"
+  },
+  "7f2a10af5924abf19aa3": {
+    "candidate_id": "oga-error",
+    "query_id": "q02",
+    "original_sha256": "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6"
+  },
+  "980425570ad537e21778": {
+    "candidate_id": "oga-searching",
+    "query_id": "q02",
+    "original_sha256": "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8"
+  },
+  "884efd982bcb07f1bdc2": {
+    "candidate_id": "oga-etirwer",
+    "query_id": "q02",
+    "original_sha256": "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b"
+  },
+  "9c521d062d8f855220b6": {
+    "candidate_id": "uisfx-select",
+    "query_id": "q02",
+    "original_sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec"
+  },
+  "23abb79ccc2c1b8f39cc": {
+    "candidate_id": "uisfx-success",
+    "query_id": "q02",
+    "original_sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd"
+  },
+  "0c4700511655c757f1ba": {
+    "candidate_id": "uisfx-error",
+    "query_id": "q02",
+    "original_sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653"
+  },
+  "42dc94c3badb5c141c7d": {
+    "candidate_id": "uisfx-level-up",
+    "query_id": "q02",
+    "original_sha256": "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+  },
+  "0f4d1da41420cfa2812c": {
+    "candidate_id": "oga-menu-move",
+    "query_id": "q03",
+    "original_sha256": "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046"
+  },
+  "1c40ccaf06b553e56c07": {
+    "candidate_id": "oga-menu-select",
+    "query_id": "q03",
+    "original_sha256": "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e"
+  },
+  "115d4eb2846bf678fe62": {
+    "candidate_id": "oga-footsteps",
+    "query_id": "q03",
+    "original_sha256": "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9"
+  },
+  "00becba1db4147272010": {
+    "candidate_id": "oga-teleport",
+    "query_id": "q03",
+    "original_sha256": "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9"
+  },
+  "6f0417d82d0e1d71cb1b": {
+    "candidate_id": "oga-door",
+    "query_id": "q03",
+    "original_sha256": "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6"
+  },
+  "45651f65b48dce75cb20": {
+    "candidate_id": "oga-item",
+    "query_id": "q03",
+    "original_sha256": "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276"
+  },
+  "9699f6330cf21f0474b9": {
+    "candidate_id": "oga-error",
+    "query_id": "q03",
+    "original_sha256": "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6"
+  },
+  "a98ac0ef98ff282b31a8": {
+    "candidate_id": "oga-searching",
+    "query_id": "q03",
+    "original_sha256": "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8"
+  },
+  "f1c61c4fb00d8091bd04": {
+    "candidate_id": "oga-etirwer",
+    "query_id": "q03",
+    "original_sha256": "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b"
+  },
+  "59996a0f6cd2bc746f7f": {
+    "candidate_id": "uisfx-select",
+    "query_id": "q03",
+    "original_sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec"
+  },
+  "63d623449044b99a2977": {
+    "candidate_id": "uisfx-success",
+    "query_id": "q03",
+    "original_sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd"
+  },
+  "33916ef599e7d3950620": {
+    "candidate_id": "uisfx-error",
+    "query_id": "q03",
+    "original_sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653"
+  },
+  "3e854332a92ba97a7a73": {
+    "candidate_id": "uisfx-level-up",
+    "query_id": "q03",
+    "original_sha256": "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+  },
+  "21aaa1bdc671fae87031": {
+    "candidate_id": "oga-menu-move",
+    "query_id": "q04",
+    "original_sha256": "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046"
+  },
+  "183a67d7f6c1d12b7b0b": {
+    "candidate_id": "oga-menu-select",
+    "query_id": "q04",
+    "original_sha256": "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e"
+  },
+  "a648ff13e8d9a5860e04": {
+    "candidate_id": "oga-footsteps",
+    "query_id": "q04",
+    "original_sha256": "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9"
+  },
+  "631ef99469e3d4aceb4a": {
+    "candidate_id": "oga-teleport",
+    "query_id": "q04",
+    "original_sha256": "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9"
+  },
+  "da8fadee17655ba43ce9": {
+    "candidate_id": "oga-door",
+    "query_id": "q04",
+    "original_sha256": "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6"
+  },
+  "ba036664d9a02f4879e3": {
+    "candidate_id": "oga-item",
+    "query_id": "q04",
+    "original_sha256": "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276"
+  },
+  "b5b168647493d4c28868": {
+    "candidate_id": "oga-error",
+    "query_id": "q04",
+    "original_sha256": "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6"
+  },
+  "7a95db4b3b2123c6cb4f": {
+    "candidate_id": "oga-searching",
+    "query_id": "q04",
+    "original_sha256": "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8"
+  },
+  "60b1cc970c7ce422a9ae": {
+    "candidate_id": "oga-etirwer",
+    "query_id": "q04",
+    "original_sha256": "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b"
+  },
+  "1b14eaf30ef31c1123e5": {
+    "candidate_id": "uisfx-select",
+    "query_id": "q04",
+    "original_sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec"
+  },
+  "12383f0914192e4adab5": {
+    "candidate_id": "uisfx-success",
+    "query_id": "q04",
+    "original_sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd"
+  },
+  "6a8aa129d43d2297329f": {
+    "candidate_id": "uisfx-error",
+    "query_id": "q04",
+    "original_sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653"
+  },
+  "0e557c5c7eb034775c4f": {
+    "candidate_id": "uisfx-level-up",
+    "query_id": "q04",
+    "original_sha256": "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+  },
+  "2e8f3ddd0da7048b844b": {
+    "candidate_id": "oga-menu-move",
+    "query_id": "q05",
+    "original_sha256": "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046"
+  },
+  "9ad5f8dfae45d602d098": {
+    "candidate_id": "oga-menu-select",
+    "query_id": "q05",
+    "original_sha256": "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e"
+  },
+  "48ce229ca2c795728ca4": {
+    "candidate_id": "oga-footsteps",
+    "query_id": "q05",
+    "original_sha256": "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9"
+  },
+  "260fa4d57ca24ea60dd2": {
+    "candidate_id": "oga-teleport",
+    "query_id": "q05",
+    "original_sha256": "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9"
+  },
+  "08ae2580e36cc1de9c71": {
+    "candidate_id": "oga-door",
+    "query_id": "q05",
+    "original_sha256": "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6"
+  },
+  "cd205be769f9b015a288": {
+    "candidate_id": "oga-item",
+    "query_id": "q05",
+    "original_sha256": "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276"
+  },
+  "94b99c83487cccc123c7": {
+    "candidate_id": "oga-error",
+    "query_id": "q05",
+    "original_sha256": "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6"
+  },
+  "56e1c4d80fda71ec3158": {
+    "candidate_id": "oga-searching",
+    "query_id": "q05",
+    "original_sha256": "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8"
+  },
+  "1a4b61d14c621892e41a": {
+    "candidate_id": "oga-etirwer",
+    "query_id": "q05",
+    "original_sha256": "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b"
+  },
+  "e9d41623b7048bb39bb4": {
+    "candidate_id": "uisfx-select",
+    "query_id": "q05",
+    "original_sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec"
+  },
+  "30443c0a073972d64dc4": {
+    "candidate_id": "uisfx-success",
+    "query_id": "q05",
+    "original_sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd"
+  },
+  "17b5599fb6dceab5fdd8": {
+    "candidate_id": "uisfx-error",
+    "query_id": "q05",
+    "original_sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653"
+  },
+  "2bf395a0cc5b653dc38b": {
+    "candidate_id": "uisfx-level-up",
+    "query_id": "q05",
+    "original_sha256": "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+  },
+  "ee8472575e44d94efa16": {
+    "candidate_id": "oga-menu-move",
+    "query_id": "q06",
+    "original_sha256": "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046"
+  },
+  "b0241f01425ac6a74e06": {
+    "candidate_id": "oga-menu-select",
+    "query_id": "q06",
+    "original_sha256": "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e"
+  },
+  "9c49a3eb5ba9df323865": {
+    "candidate_id": "oga-footsteps",
+    "query_id": "q06",
+    "original_sha256": "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9"
+  },
+  "0609d40b611e3404591e": {
+    "candidate_id": "oga-teleport",
+    "query_id": "q06",
+    "original_sha256": "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9"
+  },
+  "e8578d7bd44641e87635": {
+    "candidate_id": "oga-door",
+    "query_id": "q06",
+    "original_sha256": "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6"
+  },
+  "86374c3a26937985a1eb": {
+    "candidate_id": "oga-item",
+    "query_id": "q06",
+    "original_sha256": "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276"
+  },
+  "ef00eb350de7a9028dea": {
+    "candidate_id": "oga-error",
+    "query_id": "q06",
+    "original_sha256": "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6"
+  },
+  "bb0618f877ae52e46fe0": {
+    "candidate_id": "oga-searching",
+    "query_id": "q06",
+    "original_sha256": "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8"
+  },
+  "1a642c43ebdced8e20be": {
+    "candidate_id": "oga-etirwer",
+    "query_id": "q06",
+    "original_sha256": "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b"
+  },
+  "6614485da08ad2337831": {
+    "candidate_id": "uisfx-select",
+    "query_id": "q06",
+    "original_sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec"
+  },
+  "6aeb62862b7f07586604": {
+    "candidate_id": "uisfx-success",
+    "query_id": "q06",
+    "original_sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd"
+  },
+  "650774dea231c897699c": {
+    "candidate_id": "uisfx-error",
+    "query_id": "q06",
+    "original_sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653"
+  },
+  "aeb3cb9213c60707e50e": {
+    "candidate_id": "uisfx-level-up",
+    "query_id": "q06",
+    "original_sha256": "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+  },
+  "6a449144593dbfd21fdd": {
+    "candidate_id": "oga-menu-move",
+    "query_id": "q07",
+    "original_sha256": "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046"
+  },
+  "9969d90538c832c9d510": {
+    "candidate_id": "oga-menu-select",
+    "query_id": "q07",
+    "original_sha256": "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e"
+  },
+  "2f3da00804d3d316d4b9": {
+    "candidate_id": "oga-footsteps",
+    "query_id": "q07",
+    "original_sha256": "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9"
+  },
+  "48fca6b4cac190052c79": {
+    "candidate_id": "oga-teleport",
+    "query_id": "q07",
+    "original_sha256": "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9"
+  },
+  "e8ee0c8b488eb1c0e0b9": {
+    "candidate_id": "oga-door",
+    "query_id": "q07",
+    "original_sha256": "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6"
+  },
+  "93f86b8da4c6d464f1f6": {
+    "candidate_id": "oga-item",
+    "query_id": "q07",
+    "original_sha256": "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276"
+  },
+  "ff07d737032be22a6c71": {
+    "candidate_id": "oga-error",
+    "query_id": "q07",
+    "original_sha256": "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6"
+  },
+  "8c354c03abb0db9acc3a": {
+    "candidate_id": "oga-searching",
+    "query_id": "q07",
+    "original_sha256": "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8"
+  },
+  "73fd99f9249831cf1fd3": {
+    "candidate_id": "oga-etirwer",
+    "query_id": "q07",
+    "original_sha256": "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b"
+  },
+  "49de0c44ff45b36b8c95": {
+    "candidate_id": "uisfx-select",
+    "query_id": "q07",
+    "original_sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec"
+  },
+  "1563c72887de1b084e71": {
+    "candidate_id": "uisfx-success",
+    "query_id": "q07",
+    "original_sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd"
+  },
+  "80273097a812dbecdd50": {
+    "candidate_id": "uisfx-error",
+    "query_id": "q07",
+    "original_sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653"
+  },
+  "12244166505dfb12cc98": {
+    "candidate_id": "uisfx-level-up",
+    "query_id": "q07",
+    "original_sha256": "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+  },
+  "425fbf7843f99894be6d": {
+    "candidate_id": "oga-menu-move",
+    "query_id": "q08",
+    "original_sha256": "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046"
+  },
+  "d88ebcc57f8b958b2600": {
+    "candidate_id": "oga-menu-select",
+    "query_id": "q08",
+    "original_sha256": "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e"
+  },
+  "0fd14aeb79b706530b3e": {
+    "candidate_id": "oga-footsteps",
+    "query_id": "q08",
+    "original_sha256": "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9"
+  },
+  "d36e57dcbf6cd753eae8": {
+    "candidate_id": "oga-teleport",
+    "query_id": "q08",
+    "original_sha256": "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9"
+  },
+  "d642215ec13443667dc0": {
+    "candidate_id": "oga-door",
+    "query_id": "q08",
+    "original_sha256": "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6"
+  },
+  "928fb312a001b0a41f95": {
+    "candidate_id": "oga-item",
+    "query_id": "q08",
+    "original_sha256": "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276"
+  },
+  "3f456599edf8c0495300": {
+    "candidate_id": "oga-error",
+    "query_id": "q08",
+    "original_sha256": "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6"
+  },
+  "722d290804bfb2934b8d": {
+    "candidate_id": "oga-searching",
+    "query_id": "q08",
+    "original_sha256": "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8"
+  },
+  "f71fde7a9df16ec077f1": {
+    "candidate_id": "oga-etirwer",
+    "query_id": "q08",
+    "original_sha256": "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b"
+  },
+  "102c3e706257f27fab49": {
+    "candidate_id": "uisfx-select",
+    "query_id": "q08",
+    "original_sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec"
+  },
+  "449643587b49736c61ef": {
+    "candidate_id": "uisfx-success",
+    "query_id": "q08",
+    "original_sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd"
+  },
+  "ea6e2b2c1cacdcbc7621": {
+    "candidate_id": "uisfx-error",
+    "query_id": "q08",
+    "original_sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653"
+  },
+  "a4ae79bd14a8203d22cc": {
+    "candidate_id": "uisfx-level-up",
+    "query_id": "q08",
+    "original_sha256": "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+  },
+  "b61275411e56b2122c3f": {
+    "candidate_id": "oga-menu-move",
+    "query_id": "q09",
+    "original_sha256": "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046"
+  },
+  "dcb35d1509c2b726bcc8": {
+    "candidate_id": "oga-menu-select",
+    "query_id": "q09",
+    "original_sha256": "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e"
+  },
+  "89aecd284e749316d851": {
+    "candidate_id": "oga-footsteps",
+    "query_id": "q09",
+    "original_sha256": "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9"
+  },
+  "f999476c620fa3aa3263": {
+    "candidate_id": "oga-teleport",
+    "query_id": "q09",
+    "original_sha256": "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9"
+  },
+  "9c78a2965f3647cff5e2": {
+    "candidate_id": "oga-door",
+    "query_id": "q09",
+    "original_sha256": "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6"
+  },
+  "f439b0b9a2da86cd9004": {
+    "candidate_id": "oga-item",
+    "query_id": "q09",
+    "original_sha256": "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276"
+  },
+  "ff98a6620d01a01c808b": {
+    "candidate_id": "oga-error",
+    "query_id": "q09",
+    "original_sha256": "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6"
+  },
+  "d251b9f833c33f26a187": {
+    "candidate_id": "oga-searching",
+    "query_id": "q09",
+    "original_sha256": "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8"
+  },
+  "46c45e47c92bfe32d59b": {
+    "candidate_id": "oga-etirwer",
+    "query_id": "q09",
+    "original_sha256": "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b"
+  },
+  "65d9814c271e680209f6": {
+    "candidate_id": "uisfx-select",
+    "query_id": "q09",
+    "original_sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec"
+  },
+  "1e58b1204723d36115e0": {
+    "candidate_id": "uisfx-success",
+    "query_id": "q09",
+    "original_sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd"
+  },
+  "19b02dd3b54346714f90": {
+    "candidate_id": "uisfx-error",
+    "query_id": "q09",
+    "original_sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653"
+  },
+  "4292792be840cce46bc8": {
+    "candidate_id": "uisfx-level-up",
+    "query_id": "q09",
+    "original_sha256": "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+  },
+  "353768a9743ff73f3ad6": {
+    "candidate_id": "oga-menu-move",
+    "query_id": "q10",
+    "original_sha256": "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046"
+  },
+  "9b497f55b88e7c5ca37f": {
+    "candidate_id": "oga-menu-select",
+    "query_id": "q10",
+    "original_sha256": "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e"
+  },
+  "320c85b2e68fe5970556": {
+    "candidate_id": "oga-footsteps",
+    "query_id": "q10",
+    "original_sha256": "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9"
+  },
+  "f5625b3f5ab572031f91": {
+    "candidate_id": "oga-teleport",
+    "query_id": "q10",
+    "original_sha256": "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9"
+  },
+  "0aa32bc19dc472685fb6": {
+    "candidate_id": "oga-door",
+    "query_id": "q10",
+    "original_sha256": "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6"
+  },
+  "5382af225483b4ff9306": {
+    "candidate_id": "oga-item",
+    "query_id": "q10",
+    "original_sha256": "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276"
+  },
+  "65bcf86756af03b3e793": {
+    "candidate_id": "oga-error",
+    "query_id": "q10",
+    "original_sha256": "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6"
+  },
+  "3ca5de84bb9989e4e4f1": {
+    "candidate_id": "oga-searching",
+    "query_id": "q10",
+    "original_sha256": "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8"
+  },
+  "d5d2d14b433b2898e21b": {
+    "candidate_id": "oga-etirwer",
+    "query_id": "q10",
+    "original_sha256": "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b"
+  },
+  "66f92a226e9dac2dc024": {
+    "candidate_id": "uisfx-select",
+    "query_id": "q10",
+    "original_sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec"
+  },
+  "7009f7396a1a0963d442": {
+    "candidate_id": "uisfx-success",
+    "query_id": "q10",
+    "original_sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd"
+  },
+  "f0f564dc58bb88c4c754": {
+    "candidate_id": "uisfx-error",
+    "query_id": "q10",
+    "original_sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653"
+  },
+  "7f00623490c16e393c66": {
+    "candidate_id": "uisfx-level-up",
+    "query_id": "q10",
+    "original_sha256": "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+  },
+  "bd22ddf33f114f43fd56": {
+    "candidate_id": "oga-menu-move",
+    "query_id": "q11",
+    "original_sha256": "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046"
+  },
+  "bceebafdd36b73c1f9c9": {
+    "candidate_id": "oga-menu-select",
+    "query_id": "q11",
+    "original_sha256": "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e"
+  },
+  "22ff80a46e01d76e3d1e": {
+    "candidate_id": "oga-footsteps",
+    "query_id": "q11",
+    "original_sha256": "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9"
+  },
+  "110f092cb35f0448c1a7": {
+    "candidate_id": "oga-teleport",
+    "query_id": "q11",
+    "original_sha256": "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9"
+  },
+  "47efbc1b84635e2b8cbb": {
+    "candidate_id": "oga-door",
+    "query_id": "q11",
+    "original_sha256": "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6"
+  },
+  "3a801dda999e514a0f0e": {
+    "candidate_id": "oga-item",
+    "query_id": "q11",
+    "original_sha256": "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276"
+  },
+  "efbef90369d4b0621e7f": {
+    "candidate_id": "oga-error",
+    "query_id": "q11",
+    "original_sha256": "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6"
+  },
+  "bec8f96b7258185ec32d": {
+    "candidate_id": "oga-searching",
+    "query_id": "q11",
+    "original_sha256": "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8"
+  },
+  "6823f7082690c43a675c": {
+    "candidate_id": "oga-etirwer",
+    "query_id": "q11",
+    "original_sha256": "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b"
+  },
+  "97b49fc0b429290cb653": {
+    "candidate_id": "uisfx-select",
+    "query_id": "q11",
+    "original_sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec"
+  },
+  "d91ebc363765dfeb092e": {
+    "candidate_id": "uisfx-success",
+    "query_id": "q11",
+    "original_sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd"
+  },
+  "3f91e56236aca7cc1990": {
+    "candidate_id": "uisfx-error",
+    "query_id": "q11",
+    "original_sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653"
+  },
+  "28614cfc26aec44e5656": {
+    "candidate_id": "uisfx-level-up",
+    "query_id": "q11",
+    "original_sha256": "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+  },
+  "bfe763a3cb08cb624c39": {
+    "candidate_id": "oga-menu-move",
+    "query_id": "q12",
+    "original_sha256": "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046"
+  },
+  "9532d999c95d24eac9c5": {
+    "candidate_id": "oga-menu-select",
+    "query_id": "q12",
+    "original_sha256": "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e"
+  },
+  "a7774ae5043ea97c7814": {
+    "candidate_id": "oga-footsteps",
+    "query_id": "q12",
+    "original_sha256": "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9"
+  },
+  "1b553e616f020313dfd4": {
+    "candidate_id": "oga-teleport",
+    "query_id": "q12",
+    "original_sha256": "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9"
+  },
+  "d644aba958cd5e0e922d": {
+    "candidate_id": "oga-door",
+    "query_id": "q12",
+    "original_sha256": "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6"
+  },
+  "5479c9279f110a272d5d": {
+    "candidate_id": "oga-item",
+    "query_id": "q12",
+    "original_sha256": "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276"
+  },
+  "4994be94e1b756d1593c": {
+    "candidate_id": "oga-error",
+    "query_id": "q12",
+    "original_sha256": "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6"
+  },
+  "ce5cbf6017b96a2ba06e": {
+    "candidate_id": "oga-searching",
+    "query_id": "q12",
+    "original_sha256": "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8"
+  },
+  "cda55d941e27035fef4a": {
+    "candidate_id": "oga-etirwer",
+    "query_id": "q12",
+    "original_sha256": "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b"
+  },
+  "bada2f2675d497071447": {
+    "candidate_id": "uisfx-select",
+    "query_id": "q12",
+    "original_sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec"
+  },
+  "d746529066012b3be027": {
+    "candidate_id": "uisfx-success",
+    "query_id": "q12",
+    "original_sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd"
+  },
+  "2e166c9cf1644cf48aa4": {
+    "candidate_id": "uisfx-error",
+    "query_id": "q12",
+    "original_sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653"
+  },
+  "692342581a585ad2fbe0": {
+    "candidate_id": "uisfx-level-up",
+    "query_id": "q12",
+    "original_sha256": "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+  }
+}

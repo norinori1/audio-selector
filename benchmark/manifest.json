@@ -1,0 +1,630 @@
+{
+  "schema_version": "1.0",
+  "candidates": [
+    {
+      "id": "oga-menu-move",
+      "provider": "OpenGameArt",
+      "source_asset_id": "https://opengameart.org/sites/default/files/snd_menu_move.wav",
+      "asset_url": "https://opengameart.org/sites/default/files/snd_menu_move.wav",
+      "author": "Spring Spring / Julie Damsgaard",
+      "acquisition_source": "https://opengameart.org/content/various-sound-effects-0",
+      "acquired": "2026-09-30",
+      "metadata_evidence_ids": [
+        "oga-spring"
+      ],
+      "original": {
+        "path": "media/oga-menu-move.wav",
+        "sha256": "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046",
+        "size": 11682,
+        "media_type": "audio/wav",
+        "filename": "snd_menu_move.wav"
+      },
+      "preview": null,
+      "kind": "original",
+      "parent_id": null,
+      "transformation": null,
+      "rights": {
+        "license_name": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_ids": [
+          "oga-spring",
+          "cc0-legalcode"
+        ],
+        "commercial": "allowed",
+        "modification": "allowed",
+        "game_embedding": "allowed",
+        "redistribution": "allowed",
+        "attribution": "not-required",
+        "attribution_text": null,
+        "redistribution_restrictions": "CC0 grant recorded; no additional asset restrictions stated. No endorsement implied.",
+        "content_id_notes": "No Content ID registration or claim statement found in reviewed grant; absence of claims is not guaranteed."
+      }
+    },
+    {
+      "id": "oga-menu-select",
+      "provider": "OpenGameArt",
+      "source_asset_id": "https://opengameart.org/sites/default/files/snd_menu_select.wav",
+      "asset_url": "https://opengameart.org/sites/default/files/snd_menu_select.wav",
+      "author": "Spring Spring / Julie Damsgaard",
+      "acquisition_source": "https://opengameart.org/content/various-sound-effects-0",
+      "acquired": "2026-09-30",
+      "metadata_evidence_ids": [
+        "oga-spring"
+      ],
+      "original": {
+        "path": "media/oga-menu-select.wav",
+        "sha256": "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e",
+        "size": 105030,
+        "media_type": "audio/wav",
+        "filename": "snd_menu_select.wav"
+      },
+      "preview": null,
+      "kind": "original",
+      "parent_id": null,
+      "transformation": null,
+      "rights": {
+        "license_name": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_ids": [
+          "oga-spring",
+          "cc0-legalcode"
+        ],
+        "commercial": "allowed",
+        "modification": "allowed",
+        "game_embedding": "allowed",
+        "redistribution": "allowed",
+        "attribution": "not-required",
+        "attribution_text": null,
+        "redistribution_restrictions": "CC0 grant recorded; no additional asset restrictions stated. No endorsement implied.",
+        "content_id_notes": "No Content ID registration or claim statement found in reviewed grant; absence of claims is not guaranteed."
+      }
+    },
+    {
+      "id": "oga-footsteps",
+      "provider": "OpenGameArt",
+      "source_asset_id": "https://opengameart.org/sites/default/files/snd_footsteps1.wav",
+      "asset_url": "https://opengameart.org/sites/default/files/snd_footsteps1.wav",
+      "author": "Spring Spring / Julie Damsgaard",
+      "acquisition_source": "https://opengameart.org/content/various-sound-effects-0",
+      "acquired": "2026-09-30",
+      "metadata_evidence_ids": [
+        "oga-spring"
+      ],
+      "original": {
+        "path": "media/oga-footsteps.wav",
+        "sha256": "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9",
+        "size": 129262,
+        "media_type": "audio/wav",
+        "filename": "snd_footsteps1.wav"
+      },
+      "preview": null,
+      "kind": "original",
+      "parent_id": null,
+      "transformation": null,
+      "rights": {
+        "license_name": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_ids": [
+          "oga-spring",
+          "cc0-legalcode"
+        ],
+        "commercial": "allowed",
+        "modification": "allowed",
+        "game_embedding": "allowed",
+        "redistribution": "allowed",
+        "attribution": "not-required",
+        "attribution_text": null,
+        "redistribution_restrictions": "CC0 grant recorded; no additional asset restrictions stated. No endorsement implied.",
+        "content_id_notes": "No Content ID registration or claim statement found in reviewed grant; absence of claims is not guaranteed."
+      }
+    },
+    {
+      "id": "oga-teleport",
+      "provider": "OpenGameArt",
+      "source_asset_id": "https://opengameart.org/sites/default/files/teleport_2.wav",
+      "asset_url": "https://opengameart.org/sites/default/files/teleport_2.wav",
+      "author": "Spring Spring / Julie Damsgaard",
+      "acquisition_source": "https://opengameart.org/content/various-sound-effects-0",
+      "acquired": "2026-09-30",
+      "metadata_evidence_ids": [
+        "oga-spring"
+      ],
+      "original": {
+        "path": "media/oga-teleport.wav",
+        "sha256": "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9",
+        "size": 1490986,
+        "media_type": "audio/wav",
+        "filename": "teleport.wav"
+      },
+      "preview": null,
+      "kind": "original",
+      "parent_id": null,
+      "transformation": null,
+      "rights": {
+        "license_name": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_ids": [
+          "oga-spring",
+          "cc0-legalcode"
+        ],
+        "commercial": "allowed",
+        "modification": "allowed",
+        "game_embedding": "allowed",
+        "redistribution": "allowed",
+        "attribution": "not-required",
+        "attribution_text": null,
+        "redistribution_restrictions": "CC0 grant recorded; no additional asset restrictions stated. No endorsement implied.",
+        "content_id_notes": "No Content ID registration or claim statement found in reviewed grant; absence of claims is not guaranteed."
+      }
+    },
+    {
+      "id": "oga-door",
+      "provider": "OpenGameArt",
+      "source_asset_id": "https://opengameart.org/sites/default/files/powered_door.wav",
+      "asset_url": "https://opengameart.org/sites/default/files/powered_door.wav",
+      "author": "Spring Spring / Julie Damsgaard",
+      "acquisition_source": "https://opengameart.org/content/various-sound-effects-0",
+      "acquired": "2026-09-30",
+      "metadata_evidence_ids": [
+        "oga-spring"
+      ],
+      "original": {
+        "path": "media/oga-door.wav",
+        "sha256": "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6",
+        "size": 789850,
+        "media_type": "audio/wav",
+        "filename": "powered_door.wav"
+      },
+      "preview": null,
+      "kind": "original",
+      "parent_id": null,
+      "transformation": null,
+      "rights": {
+        "license_name": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_ids": [
+          "oga-spring",
+          "cc0-legalcode"
+        ],
+        "commercial": "allowed",
+        "modification": "allowed",
+        "game_embedding": "allowed",
+        "redistribution": "allowed",
+        "attribution": "not-required",
+        "attribution_text": null,
+        "redistribution_restrictions": "CC0 grant recorded; no additional asset restrictions stated. No endorsement implied.",
+        "content_id_notes": "No Content ID registration or claim statement found in reviewed grant; absence of claims is not guaranteed."
+      }
+    },
+    {
+      "id": "oga-item",
+      "provider": "OpenGameArt",
+      "source_asset_id": "https://opengameart.org/sites/default/files/get_important_item.wav",
+      "asset_url": "https://opengameart.org/sites/default/files/get_important_item.wav",
+      "author": "Spring Spring / Julie Damsgaard",
+      "acquisition_source": "https://opengameart.org/content/various-sound-effects-0",
+      "acquired": "2026-09-30",
+      "metadata_evidence_ids": [
+        "oga-spring"
+      ],
+      "original": {
+        "path": "media/oga-item.wav",
+        "sha256": "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276",
+        "size": 458938,
+        "media_type": "audio/wav",
+        "filename": "get_important_item.wav"
+      },
+      "preview": null,
+      "kind": "original",
+      "parent_id": null,
+      "transformation": null,
+      "rights": {
+        "license_name": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_ids": [
+          "oga-spring",
+          "cc0-legalcode"
+        ],
+        "commercial": "allowed",
+        "modification": "allowed",
+        "game_embedding": "allowed",
+        "redistribution": "allowed",
+        "attribution": "not-required",
+        "attribution_text": null,
+        "redistribution_restrictions": "CC0 grant recorded; no additional asset restrictions stated. No endorsement implied.",
+        "content_id_notes": "No Content ID registration or claim statement found in reviewed grant; absence of claims is not guaranteed."
+      }
+    },
+    {
+      "id": "oga-error",
+      "provider": "OpenGameArt",
+      "source_asset_id": "https://opengameart.org/sites/default/files/error_0.ogg",
+      "asset_url": "https://opengameart.org/sites/default/files/error_0.ogg",
+      "author": "EZduzziteh",
+      "acquisition_source": "https://opengameart.org/content/error",
+      "acquired": "2026-09-30",
+      "metadata_evidence_ids": [
+        "oga-error"
+      ],
+      "original": {
+        "path": "media/oga-error.ogg",
+        "sha256": "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6",
+        "size": 7425,
+        "media_type": "audio/ogg",
+        "filename": "error.ogg"
+      },
+      "preview": null,
+      "kind": "original",
+      "parent_id": null,
+      "transformation": null,
+      "rights": {
+        "license_name": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_ids": [
+          "oga-error",
+          "cc0-legalcode"
+        ],
+        "commercial": "allowed",
+        "modification": "allowed",
+        "game_embedding": "allowed",
+        "redistribution": "allowed",
+        "attribution": "not-required",
+        "attribution_text": null,
+        "redistribution_restrictions": "CC0 grant recorded; no additional asset restrictions stated. No endorsement implied.",
+        "content_id_notes": "No Content ID registration or claim statement found in reviewed grant; absence of claims is not guaranteed."
+      }
+    },
+    {
+      "id": "oga-searching",
+      "provider": "OpenGameArt",
+      "source_asset_id": "https://opengameart.org/sites/default/files/Searching.ogg",
+      "asset_url": "https://opengameart.org/sites/default/files/Searching.ogg",
+      "author": "yd",
+      "acquisition_source": "https://opengameart.org/content/searching",
+      "acquired": "2026-09-30",
+      "metadata_evidence_ids": [
+        "oga-searching"
+      ],
+      "original": {
+        "path": "media/oga-searching.ogg",
+        "sha256": "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8",
+        "size": 2113188,
+        "media_type": "audio/ogg",
+        "filename": "Searching.ogg"
+      },
+      "preview": null,
+      "kind": "original",
+      "parent_id": null,
+      "transformation": null,
+      "rights": {
+        "license_name": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_ids": [
+          "oga-searching",
+          "cc0-legalcode"
+        ],
+        "commercial": "allowed",
+        "modification": "allowed",
+        "game_embedding": "allowed",
+        "redistribution": "allowed",
+        "attribution": "not-required",
+        "attribution_text": null,
+        "redistribution_restrictions": "CC0 grant recorded; no additional asset restrictions stated. No endorsement implied.",
+        "content_id_notes": "No Content ID registration or claim statement found in reviewed grant; absence of claims is not guaranteed."
+      }
+    },
+    {
+      "id": "oga-etirwer",
+      "provider": "OpenGameArt",
+      "source_asset_id": "https://opengameart.org/sites/default/files/Etirwer%20%28Looped%29_0.ogg",
+      "asset_url": "https://opengameart.org/sites/default/files/Etirwer%20%28Looped%29_0.ogg",
+      "author": "Kistol",
+      "acquisition_source": "https://opengameart.org/content/etirwer",
+      "acquired": "2026-09-30",
+      "metadata_evidence_ids": [
+        "oga-etirwer"
+      ],
+      "original": {
+        "path": "media/oga-etirwer.ogg",
+        "sha256": "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b",
+        "size": 1963336,
+        "media_type": "audio/ogg",
+        "filename": "Etirwer (Looped).ogg"
+      },
+      "preview": null,
+      "kind": "original",
+      "parent_id": null,
+      "transformation": null,
+      "rights": {
+        "license_name": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_ids": [
+          "oga-etirwer",
+          "cc0-legalcode"
+        ],
+        "commercial": "allowed",
+        "modification": "allowed",
+        "game_embedding": "allowed",
+        "redistribution": "allowed",
+        "attribution": "not-required",
+        "attribution_text": null,
+        "redistribution_restrictions": "CC0 grant recorded; no additional asset restrictions stated. No endorsement implied.",
+        "content_id_notes": "No Content ID registration or claim statement found in reviewed grant; absence of claims is not guaranteed."
+      }
+    },
+    {
+      "id": "uisfx-select",
+      "provider": "UI SFX",
+      "source_asset_id": "9950fe66f993a6660dab9c2651dcbcd899ffd83b:packages/uisfx/sounds/arcade/select.ogg",
+      "asset_url": "https://raw.githubusercontent.com/romainsimon/uisfx/9950fe66f993a6660dab9c2651dcbcd899ffd83b/packages/uisfx/sounds/arcade/select.ogg",
+      "author": "Yuki Capital",
+      "acquisition_source": "https://raw.githubusercontent.com/romainsimon/uisfx/9950fe66f993a6660dab9c2651dcbcd899ffd83b/LICENSE-AUDIO",
+      "acquired": "2026-09-30",
+      "metadata_evidence_ids": [
+        "uisfx"
+      ],
+      "original": {
+        "path": "media/uisfx-select.ogg",
+        "sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec",
+        "size": 1782,
+        "media_type": "audio/ogg",
+        "filename": "select.ogg"
+      },
+      "preview": null,
+      "kind": "original",
+      "parent_id": null,
+      "transformation": null,
+      "rights": {
+        "license_name": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_ids": [
+          "uisfx",
+          "cc0-legalcode"
+        ],
+        "commercial": "allowed",
+        "modification": "allowed",
+        "game_embedding": "allowed",
+        "redistribution": "allowed",
+        "attribution": "not-required",
+        "attribution_text": null,
+        "redistribution_restrictions": "CC0 grant recorded; no additional asset restrictions stated. No endorsement implied.",
+        "content_id_notes": "No Content ID registration or claim statement found in reviewed grant; absence of claims is not guaranteed."
+      }
+    },
+    {
+      "id": "uisfx-success",
+      "provider": "UI SFX",
+      "source_asset_id": "9950fe66f993a6660dab9c2651dcbcd899ffd83b:packages/uisfx/sounds/arcade/success.ogg",
+      "asset_url": "https://raw.githubusercontent.com/romainsimon/uisfx/9950fe66f993a6660dab9c2651dcbcd899ffd83b/packages/uisfx/sounds/arcade/success.ogg",
+      "author": "Yuki Capital",
+      "acquisition_source": "https://raw.githubusercontent.com/romainsimon/uisfx/9950fe66f993a6660dab9c2651dcbcd899ffd83b/LICENSE-AUDIO",
+      "acquired": "2026-09-30",
+      "metadata_evidence_ids": [
+        "uisfx"
+      ],
+      "original": {
+        "path": "media/uisfx-success.ogg",
+        "sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd",
+        "size": 4465,
+        "media_type": "audio/ogg",
+        "filename": "success.ogg"
+      },
+      "preview": null,
+      "kind": "original",
+      "parent_id": null,
+      "transformation": null,
+      "rights": {
+        "license_name": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_ids": [
+          "uisfx",
+          "cc0-legalcode"
+        ],
+        "commercial": "allowed",
+        "modification": "allowed",
+        "game_embedding": "allowed",
+        "redistribution": "allowed",
+        "attribution": "not-required",
+        "attribution_text": null,
+        "redistribution_restrictions": "CC0 grant recorded; no additional asset restrictions stated. No endorsement implied.",
+        "content_id_notes": "No Content ID registration or claim statement found in reviewed grant; absence of claims is not guaranteed."
+      }
+    },
+    {
+      "id": "uisfx-error",
+      "provider": "UI SFX",
+      "source_asset_id": "9950fe66f993a6660dab9c2651dcbcd899ffd83b:packages/uisfx/sounds/arcade/error.ogg",
+      "asset_url": "https://raw.githubusercontent.com/romainsimon/uisfx/9950fe66f993a6660dab9c2651dcbcd899ffd83b/packages/uisfx/sounds/arcade/error.ogg",
+      "author": "Yuki Capital",
+      "acquisition_source": "https://raw.githubusercontent.com/romainsimon/uisfx/9950fe66f993a6660dab9c2651dcbcd899ffd83b/LICENSE-AUDIO",
+      "acquired": "2026-09-30",
+      "metadata_evidence_ids": [
+        "uisfx"
+      ],
+      "original": {
+        "path": "media/uisfx-error.ogg",
+        "sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653",
+        "size": 3283,
+        "media_type": "audio/ogg",
+        "filename": "error.ogg"
+      },
+      "preview": null,
+      "kind": "original",
+      "parent_id": null,
+      "transformation": null,
+      "rights": {
+        "license_name": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_ids": [
+          "uisfx",
+          "cc0-legalcode"
+        ],
+        "commercial": "allowed",
+        "modification": "allowed",
+        "game_embedding": "allowed",
+        "redistribution": "allowed",
+        "attribution": "not-required",
+        "attribution_text": null,
+        "redistribution_restrictions": "CC0 grant recorded; no additional asset restrictions stated. No endorsement implied.",
+        "content_id_notes": "No Content ID registration or claim statement found in reviewed grant; absence of claims is not guaranteed."
+      }
+    },
+    {
+      "id": "uisfx-level-up",
+      "provider": "UI SFX",
+      "source_asset_id": "9950fe66f993a6660dab9c2651dcbcd899ffd83b:packages/uisfx/sounds/arcade/level-up.ogg",
+      "asset_url": "https://raw.githubusercontent.com/romainsimon/uisfx/9950fe66f993a6660dab9c2651dcbcd899ffd83b/packages/uisfx/sounds/arcade/level-up.ogg",
+      "author": "Yuki Capital",
+      "acquisition_source": "https://raw.githubusercontent.com/romainsimon/uisfx/9950fe66f993a6660dab9c2651dcbcd899ffd83b/LICENSE-AUDIO",
+      "acquired": "2026-09-30",
+      "metadata_evidence_ids": [
+        "uisfx"
+      ],
+      "original": {
+        "path": "media/uisfx-level-up.ogg",
+        "sha256": "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa",
+        "size": 5908,
+        "media_type": "audio/ogg",
+        "filename": "level-up.ogg"
+      },
+      "preview": null,
+      "kind": "original",
+      "parent_id": null,
+      "transformation": null,
+      "rights": {
+        "license_name": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_ids": [
+          "uisfx",
+          "cc0-legalcode"
+        ],
+        "commercial": "allowed",
+        "modification": "allowed",
+        "game_embedding": "allowed",
+        "redistribution": "allowed",
+        "attribution": "not-required",
+        "attribution_text": null,
+        "redistribution_restrictions": "CC0 grant recorded; no additional asset restrictions stated. No endorsement implied.",
+        "content_id_notes": "No Content ID registration or claim statement found in reviewed grant; absence of claims is not guaranteed."
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "oga-spring",
+      "url": "https://opengameart.org/content/various-sound-effects-0",
+      "snapshot": {
+        "path": "evidence/oga-spring.html",
+        "sha256": "6143a9c208d6ff63837571719770291e93e9dbb8ce95084b584a4a8b02a652c3",
+        "size": 58516,
+        "media_type": "text/html",
+        "filename": "oga-spring.html"
+      },
+      "checked": "2026-09-30",
+      "asset_sha256s": [
+        "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046",
+        "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e",
+        "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9",
+        "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9",
+        "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6",
+        "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276"
+      ],
+      "notes": "Individually reviewed source asset listing/grant on 2026-09-30. Page lists these exact attachment URLs under CC0; author and filenames retained. Grant interpretation explicitly entered for this small research corpus; not provider-wide eligibility."
+    },
+    {
+      "id": "oga-error",
+      "url": "https://opengameart.org/content/error",
+      "snapshot": {
+        "path": "evidence/oga-error.html",
+        "sha256": "74181004947c5df2e1151f4a7c42faa38766b683d057c552e2845bd80ef97d9f",
+        "size": 20664,
+        "media_type": "text/html",
+        "filename": "oga-error.html"
+      },
+      "checked": "2026-09-30",
+      "asset_sha256s": [
+        "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6"
+      ],
+      "notes": "Individually reviewed source asset listing/grant on 2026-09-30. Page lists these exact attachment URLs under CC0; author and filenames retained. Grant interpretation explicitly entered for this small research corpus; not provider-wide eligibility."
+    },
+    {
+      "id": "oga-searching",
+      "url": "https://opengameart.org/content/searching",
+      "snapshot": {
+        "path": "evidence/oga-searching.html",
+        "sha256": "09d63813ae38e633c7972d25ac7587b007a47f1e40b62c0728f8ea553b9fc78d",
+        "size": 31661,
+        "media_type": "text/html",
+        "filename": "oga-searching.html"
+      },
+      "checked": "2026-09-30",
+      "asset_sha256s": [
+        "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8"
+      ],
+      "notes": "Individually reviewed source asset listing/grant on 2026-09-30. Page lists these exact attachment URLs under CC0; author and filenames retained. Grant interpretation explicitly entered for this small research corpus; not provider-wide eligibility."
+    },
+    {
+      "id": "oga-etirwer",
+      "url": "https://opengameart.org/content/etirwer",
+      "snapshot": {
+        "path": "evidence/oga-etirwer.html",
+        "sha256": "8ac1b1a8982c6ac385e46e73e122293f36f04ea982a23d36e893211bc38de2d6",
+        "size": 39921,
+        "media_type": "text/html",
+        "filename": "oga-etirwer.html"
+      },
+      "checked": "2026-09-30",
+      "asset_sha256s": [
+        "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b"
+      ],
+      "notes": "Individually reviewed source asset listing/grant on 2026-09-30. Page lists these exact attachment URLs under CC0; author and filenames retained. Grant interpretation explicitly entered for this small research corpus; not provider-wide eligibility."
+    },
+    {
+      "id": "uisfx",
+      "url": "https://raw.githubusercontent.com/romainsimon/uisfx/9950fe66f993a6660dab9c2651dcbcd899ffd83b/LICENSE-AUDIO",
+      "snapshot": {
+        "path": "evidence/uisfx.txt",
+        "sha256": "b608f986ab3b405a626f33345ccd216fba9f6d6cb0ec8b9672a0cc3d4bbda0c9",
+        "size": 686,
+        "media_type": "text/plain",
+        "filename": "uisfx.txt"
+      },
+      "checked": "2026-09-30",
+      "asset_sha256s": [
+        "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec",
+        "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd",
+        "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653",
+        "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+      ],
+      "notes": "Individually reviewed source asset listing/grant on 2026-09-30. Pinned repository 9950fe66f993a6660dab9c2651dcbcd899ffd83b: LICENSE-AUDIO explicitly covers packages/uisfx/sounds, excludes .generated."
+    },
+    {
+      "id": "cc0-legalcode",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+      "snapshot": {
+        "path": "evidence/cc0-legalcode.txt",
+        "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+        "size": 7048,
+        "media_type": "text/plain",
+        "filename": "cc0-legalcode.txt"
+      },
+      "checked": "2026-09-30",
+      "asset_sha256s": [
+        "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046",
+        "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e",
+        "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9",
+        "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9",
+        "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6",
+        "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276",
+        "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6",
+        "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8",
+        "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b",
+        "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec",
+        "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd",
+        "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653",
+        "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+      ],
+      "notes": "CC0 legal terms combined with each asset-specific source grant, not standalone proof of an asset grant."
+    }
+  ]
+}
