@@ -90,14 +90,37 @@ export are manifest-relative; no absolute local path is written.
 
 ## Import / verification report `audition-import-report/1.0`
 
-`verify-export` compares an export with the current state and reports per selection:
-`ranking_identity`, `identity`, `bytes`, `provenance` (manifest record and evidence records equal
-those at decision), `eligibility` (eligible then and now, same policy version), `model_contract`,
-`ranking_config` (when `--config` given), `decision` (last event equals exported decision), plus
-global issues (content hash, invalid package, policy change). Every failing check is listed in
-`mismatches`. `import` refuses modified exports, restores packages and decision histories
-exactly, reports identical records as unchanged, and never overwrites a different existing
-history (reported as a conflict).
+Global issues: `content_sha256` mismatch, invalid ranking package (package ID must equal the
+canonical hash of its verbatim ranking), duplicate selection identities, eligibility policy
+changed. Every failing per-selection check is listed in `mismatches`.
+
+**Internal consistency** (independent of `content_sha256`, so an edit followed by a recomputed
+hash is still detected). Each selection is compared with its sources, never with another copy
+inside the selection:
+
+| Check | Selection fields | Compared against |
+|---|---|---|
+| `ranking_identity` | `candidate_id`, `representation`, `sha256`, `rank` | frozen entry in `packages[].ranking` (`top_n` + `beyond_top_n`) |
+| `ranking_score` | `score` = `pre_diversity_score`, `pre_diversity_rank`, `contributions`, `detail`, `signals`, `reranking` | the same keys of the frozen entry |
+| `ranking_context` | `query`, `role_id`, `ranking_config` (id, version, fingerprint), `retrieval_contract`, `index_state`, `eligibility_policy_version` | the frozen package's ranking |
+| `decision` | `decision`, `note`, `decided_at` | last valid `DecisionEvent` in `decision_history` (all events schema-validated) |
+| `decision_snapshot` | `provenance_at_decision`, `eligibility_at_decision` | `provenance` / `verification.eligibility` stored on that last event |
+
+**Current state:** `identity`, `bytes`, `provenance` (current manifest record and evidence equal
+those at decision), `eligibility` (eligible then and now, same policy version), `model_contract`
+(frozen package contract equals the pinned `CONTRACT`), `ranking_config` (frozen package
+fingerprint equals `--config`, when given). Model/config checks read the frozen package.
+
+**Import** is atomic: schema + content hash, every package, duplicate identities, every
+selection's internal-consistency checks, every `DecisionEvent`, and the prospective merged
+`State` are validated in memory before a single write. Any failure raises and leaves
+`state.json` byte-identical. Current-state mismatches (e.g. a missing file) do not block import;
+the export remains a historical record. Identical records count as unchanged (no rewrite);
+a different existing history is reported as a conflict and never overwritten.
+
+`content_sha256` detects accidental edits and corruption only; it is not a signature. A writer
+who rewrites a decision **and** its history consistently produces a self-consistent export;
+authenticity would need signing, which is out of scope.
 
 ## Local/privacy boundary
 

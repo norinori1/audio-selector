@@ -242,6 +242,135 @@ class ExportImportTests(Fixture):
         self.assertEqual(done.returncode, 3)
 
 
+def rehash(export):
+    """What an attacker/corrupting tool does after editing fields: make the content hash valid again."""
+    export["content_sha256"] = canonical_sha256({k: v for k, v in export.items() if k != "content_sha256"})
+    return export
+
+
+class TamperWithRecomputedHashTests(Fixture):
+    """Duplicated selection fields must match the frozen package / last human event even when
+    content_sha256 has been recomputed, so the hash alone cannot vouch for them."""
+
+    def setUp(self):
+        super().setUp()
+        from audio_selector.manifest import Policy
+        self.policy = Policy()
+        store = Store(self.state)
+        store.add_package(RANKINGS["q02"])
+        self.decide(store, "q02", "uisfx-select", "maybe", "first listen")
+        self.decide(store, "q02", "uisfx-select", "accept", "menu confirm")
+        self.decide(store, "q02", "uisfx-error", "reject", "too harsh")
+        self.export = build_export(store.state, self.manifest(), self.root, self.policy)
+
+    def tampered(self, change, candidate_id="uisfx-select"):
+        export = json.loads(json.dumps(self.export))
+        change(next(s for s in export["selections"] if s["candidate_id"] == candidate_id))
+        return rehash(export)
+
+    def assert_detected(self, export, check, candidate_id="uisfx-select"):
+        report = verify_export(export, self.manifest(), self.root, self.policy)
+        self.assertEqual(report["global_issues"], [])  # hash is valid: detection is semantic
+        self.assertFalse(report["verified"])
+        by_id = {s["candidate_id"]: s["mismatches"] for s in report["selections"]}
+        self.assertIn(check, by_id[candidate_id])
+        with self.assertRaisesRegex(ValueError, check):
+            import_export(Store(Path(self.tmp.name) / "import-target" / "state.json"), export)
+        self.assertFalse((Path(self.tmp.name) / "import-target" / "state.json").exists())
+
+    def test_untampered_export_verifies_and_rehash_is_identity(self):
+        self.assertEqual(rehash(json.loads(json.dumps(self.export))), self.export)
+        report = verify_export(self.export, self.manifest(), self.root, self.policy)
+        self.assertTrue(report["verified"], report)
+        self.assertEqual({c for s in report["selections"] for c in s["checks"]} >= {
+            "ranking_identity", "ranking_score", "ranking_context", "decision", "decision_snapshot"}, True)
+
+    def test_case_a_rank(self):
+        self.assert_detected(self.tampered(lambda s: s.update(rank=s["rank"] + 1)), "ranking_identity")
+
+    def test_case_b_score(self):
+        self.assert_detected(self.tampered(lambda s: s["score"].update(
+            pre_diversity_score=s["score"]["pre_diversity_score"] + 0.1)), "ranking_score")
+        self.assert_detected(self.tampered(lambda s: s["score"]["contributions"].update(role_positive=9.0)),
+                             "ranking_score")
+        self.assert_detected(self.tampered(lambda s: s["score"]["reranking"].update(reasons=["edited"])),
+                             "ranking_score")
+
+    def test_case_c_ranking_context(self):
+        for change in [lambda s: s["ranking_context"]["ranking_config"].update(fingerprint="0" * 64),
+                       lambda s: s["ranking_context"].update(index_state="0" * 64),
+                       lambda s: s["ranking_context"]["retrieval_contract"].update(revision="other")]:
+            export = self.tampered(change)
+            self.assertEqual(export["packages"], self.export["packages"])  # frozen package untouched
+            self.assert_detected(export, "ranking_context")
+
+    def test_case_d_decision_history_inconsistency(self):
+        self.assert_detected(self.tampered(lambda s: s.update(decision="shortlist")), "decision")
+        self.assert_detected(self.tampered(lambda s: s.update(note="edited")), "decision")
+        self.assert_detected(self.tampered(lambda s: s.update(decided_at="2020-01-01T00:00:00+00:00")), "decision")
+        self.assert_detected(self.tampered(lambda s: s["decision_history"][-1].update(decision="bogus")), "decision")
+
+    def test_case_e_snapshot_inconsistency(self):
+        self.assert_detected(self.tampered(lambda s: s["provenance_at_decision"]["candidate"].update(author="x")),
+                             "decision_snapshot")
+        self.assert_detected(self.tampered(lambda s: s["eligibility_at_decision"].update(status="review-required")),
+                             "decision_snapshot")
+        self.assert_detected(self.tampered(lambda s: s["decision_history"][-1]["provenance"].update(
+            manifest_sha256="0" * 64)), "decision_snapshot")
+
+
+class AtomicImportTests(Fixture):
+    """A hash-valid but internally invalid export must leave state.json byte-identical."""
+
+    def setUp(self):
+        super().setUp()
+        from audio_selector.manifest import Policy
+        source = Store(Path(self.tmp.name) / "source" / "state.json")
+        for path in self.rankings:
+            source.add_package(json.loads(path.read_text()))
+        self.state_backup = self.state
+        self.state = source.path
+        self.decide(source, "q02", "uisfx-select", "accept")
+        self.decide(source, "q08", "oga-searching", "maybe")
+        self.export = build_export(source.state, self.manifest(), self.root, Policy())
+        self.state = self.state_backup
+        # Pre-existing target state: q02 only, with an unrelated decision.
+        target = Store(self.state)
+        target.add_package(RANKINGS["q02"])
+        self.decide(target, "q02", "oga-menu-select", "reject", "pre-existing")
+        self.before = self.state.read_bytes()
+
+    def assert_atomic_failure(self, export):
+        with self.assertRaises(ValueError):
+            import_export(Store(self.state), export)
+        self.assertEqual(self.state.read_bytes(), self.before)
+        self.assertEqual(len(Store(self.state).state.packages), 1)
+
+    def test_invalid_history_schema_after_valid_package(self):
+        export = json.loads(json.dumps(self.export))
+        export["selections"][-1]["decision_history"][0]["decided_at"] = "not a time"
+        self.assert_atomic_failure(rehash(export))
+
+    def test_selection_referring_to_missing_package(self):
+        export = json.loads(json.dumps(self.export))
+        export["packages"] = [p for p in export["packages"] if p["package_id"] == self.pkg["q08"]]
+        self.assert_atomic_failure(rehash(export))
+
+    def test_duplicate_selection_rejected_by_prospective_state(self):
+        export = json.loads(json.dumps(self.export))
+        export["selections"].append(json.loads(json.dumps(export["selections"][0])))
+        self.assert_atomic_failure(rehash(export))
+
+    def test_valid_import_still_merges_and_keeps_existing(self):
+        summary = import_export(Store(self.state), self.export)
+        self.assertEqual((summary["packages_added"], summary["records_added"], summary["conflicts"]), (1, 2, []))
+        store = Store(self.state)
+        self.assertEqual(store.record(self.pkg["q02"], "oga-menu-select", "original").events[-1].note, "pre-existing")
+        after = self.state.read_bytes()
+        self.assertEqual(import_export(Store(self.state), self.export)["unchanged"], 2)
+        self.assertEqual(self.state.read_bytes(), after)  # no-op import does not rewrite state
+
+
 class ServerTests(Fixture):
     def start(self, **kwargs):
         server = make_server(self.root / "manifest.json", self.state, rankings=self.rankings, port=0, **kwargs)

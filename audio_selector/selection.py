@@ -223,6 +223,20 @@ class Store:
             return record
 
 
+def ranking_context(ranking):
+    """Selection copy of the frozen ranking's request/config/model/index identity."""
+    return dict(query=ranking["query"], role_id=ranking["role_id"],
+                ranking_config={k: ranking["ranking_config"][k] for k in ["config_id", "version", "fingerprint"]},
+                retrieval_contract=ranking["retrieval_contract"], index_state=ranking["index_state"],
+                eligibility_policy_version=ranking["eligibility_policy_version"])
+
+
+def score_record(entry):
+    """Selection copy of the frozen ranking entry's score breakdown."""
+    return {k: entry[k] for k in ["pre_diversity_score", "pre_diversity_rank", "contributions",
+                                  "detail", "signals", "reranking"]}
+
+
 def build_export(state: State, manifest: Manifest, root: Path, policy: Policy, *, now=None):
     """Self-contained historical record: frozen rankings, exact identities, decisions, checks."""
     now = now or now_utc()
@@ -241,12 +255,7 @@ def build_export(state: State, manifest: Manifest, root: Path, policy: Policy, *
             decision_history=[e.model_dump(mode="json") for e in r.events],
             provenance_at_decision=last.provenance,
             eligibility_at_decision=last.verification.get("eligibility"),
-            ranking_context=dict(query=ranking["query"], role_id=ranking["role_id"],
-                ranking_config={k: ranking["ranking_config"][k] for k in ["config_id", "version", "fingerprint"]},
-                retrieval_contract=ranking["retrieval_contract"], index_state=ranking["index_state"],
-                eligibility_policy_version=ranking["eligibility_policy_version"]),
-            score={k: entry[k] for k in ["pre_diversity_score", "pre_diversity_rank", "contributions",
-                                         "detail", "signals", "reranking"]},
+            ranking_context=ranking_context(ranking), score=score_record(entry),
             verification_at_export=verify(manifest, root, policy, r.candidate_id, r.representation,
                                           r.sha256, now=now)))
     flagged = [dict(candidate_id=s["candidate_id"], decision=s["decision"],
@@ -279,9 +288,50 @@ def _check(ok, detail):
     return dict(ok=bool(ok), detail=detail)
 
 
+def _same_instant(value, instant):
+    try:
+        return datetime.fromisoformat(value) == instant
+    except (TypeError, ValueError):
+        return False
+
+
+def duplicate_selections(export):
+    keys = [(s.get("package_id"), s.get("candidate_id"), s.get("representation")) for s in export["selections"]]
+    return sorted({k[1] for k in keys if keys.count(k) > 1})
+
+
+def consistency_checks(selection, packages):
+    """Duplicated selection fields against their sources: the frozen ranking package and the
+    last human event. Independent of content_sha256, so recomputed-hash tampering is caught."""
+    s = selection
+    package = packages.get(s.get("package_id"))
+    entry = ranked_entry(package.ranking, s.get("candidate_id")) if package else None
+    try:
+        history = [DecisionEvent.model_validate(e) for e in s.get("decision_history") or []]
+    except ValueError:
+        history = []
+    last = history[-1] if history else None
+    checks = dict(
+        ranking_identity=_check(entry is not None and (entry["sha256"], entry["representation"], entry["rank"])
+            == (s.get("sha256"), s.get("representation"), s.get("rank")),
+            "candidate, representation, SHA-256 and rank equal the frozen ranking entry"),
+        ranking_score=_check(entry is not None and s.get("score") == score_record(entry),
+            "score breakdown equals the frozen ranking entry"),
+        ranking_context=_check(package is not None and s.get("ranking_context") == ranking_context(package.ranking),
+            "request, role, config, model contract, index state and policy version equal the frozen package"),
+        decision=_check(last is not None and s.get("decision") in SELECTING | {"reject"}
+            and (last.decision, last.note) == (s.get("decision"), s.get("note"))
+            and _same_instant(s.get("decided_at"), last.decided_at),
+            "decision, note and decided_at equal the last valid recorded human event"),
+        decision_snapshot=_check(last is not None and s.get("provenance_at_decision") == last.provenance
+            and s.get("eligibility_at_decision") == last.verification.get("eligibility"),
+            "provenance and eligibility snapshots equal those stored on the last human event"))
+    return checks, package, history
+
+
 def verify_export(export: dict, manifest: Manifest, root: Path, policy: Policy, *, config_fingerprint=None,
                   now=None):
-    """Explicit comparison of an export against current bytes/evidence/policy/model/config."""
+    """Explicit comparison of an export against its frozen packages and current bytes/evidence/policy/model/config."""
     issues = []
     if export.get("schema_version") != EXPORT_SCHEMA:
         raise ValueError(f"not an {EXPORT_SCHEMA} document")
@@ -297,35 +347,31 @@ def verify_export(export: dict, manifest: Manifest, root: Path, policy: Policy, 
             issues.append(f"invalid ranking package: {exc}")
     if export["eligibility_policy"] != policy_record(policy):
         issues.append("eligibility policy differs from the current policy")
+    if duplicate_selections(export):
+        issues.append(f"duplicate selection identities: {', '.join(duplicate_selections(export))}")
     results = []
     for s in export["selections"]:
-        checks = {}
-        package = packages.get(s["package_id"])
-        entry = ranked_entry(package.ranking, s["candidate_id"]) if package else None
-        checks["ranking_identity"] = _check(entry is not None and (entry["sha256"], entry["representation"])
-            == (s["sha256"], s["representation"]), "selection identity appears in its frozen ranking package")
+        checks, package, _ = consistency_checks(s, packages)
         current = verify(manifest, root, policy, s["candidate_id"], s["representation"], s["sha256"], now=now)
         checks["identity"] = _check(current["identity"] == "ok", f"manifest identity: {current['identity']}")
         checks["bytes"] = _check(current["file"] == "ok", f"local bytes: {current['file']}")
-        now_prov, then = provenance(manifest, s["candidate_id"]), s["provenance_at_decision"] or {}
+        now_prov, then = provenance(manifest, s["candidate_id"]), s.get("provenance_at_decision") or {}
         checks["provenance"] = _check(now_prov is not None and now_prov["candidate"] == then.get("candidate")
             and now_prov["evidence"] == then.get("evidence"),
             "manifest record and referenced evidence records equal those at decision")
-        was, is_ = s["eligibility_at_decision"] or {}, current["eligibility"] or {}
+        was, is_ = s.get("eligibility_at_decision") or {}, current["eligibility"] or {}
         checks["eligibility"] = _check(is_.get("status") == was.get("status") == "eligible"
             and is_.get("policy_version") == was.get("policy_version"),
             f"eligibility at decision {was.get('status')} / now {is_.get('status')}")
-        ctx = s["ranking_context"]
-        checks["model_contract"] = _check(ctx["retrieval_contract"] == CONTRACT,
-            "ranking used the currently pinned model/preprocessing contract")
-        checks["ranking_config"] = _check(config_fingerprint is None
-            or ctx["ranking_config"]["fingerprint"] == config_fingerprint,
-            "ranking config fingerprint equals the current config" if config_fingerprint
+        # Model/config comparisons read the frozen package, never the selection's copy.
+        frozen = package.ranking if package else None
+        checks["model_contract"] = _check(frozen is not None and frozen["retrieval_contract"] == CONTRACT,
+            "frozen ranking used the currently pinned model/preprocessing contract")
+        checks["ranking_config"] = _check(frozen is not None and (config_fingerprint is None
+            or frozen["ranking_config"]["fingerprint"] == config_fingerprint),
+            "frozen ranking config fingerprint equals the current config" if config_fingerprint
             else "no current config supplied; recorded config retained")
-        history = s["decision_history"]
-        checks["decision"] = _check(history and history[-1]["decision"] == s["decision"]
-            and history[-1]["note"] == s["note"], "decision equals the last recorded human event")
-        results.append(dict(candidate_id=s["candidate_id"], package_id=s["package_id"], decision=s["decision"],
+        results.append(dict(candidate_id=s["candidate_id"], package_id=s["package_id"], decision=s.get("decision"),
             checks=checks, mismatches=[name for name, c in checks.items() if not c["ok"]],
             current_issues=current["issues"]))
     return dict(schema_version=REPORT_SCHEMA, export_content_sha256=export.get("content_sha256"),
@@ -334,31 +380,48 @@ def verify_export(export: dict, manifest: Manifest, root: Path, policy: Policy, 
 
 
 def import_export(store: Store, export: dict):
-    """Restore packages and decision histories. Existing different histories are conflicts, never overwritten."""
+    """Restore packages and decision histories atomically.
+
+    The whole export is validated in memory and the prospective state is built and validated
+    before a single write. Existing different histories are conflicts, never overwritten.
+    """
     body = {k: v for k, v in export.items() if k != "content_sha256"}
     if export.get("schema_version") != EXPORT_SCHEMA or canonical_sha256(body) != export.get("content_sha256"):
         raise ValueError("refusing to import an invalid or modified export")
+    packages = [Package.model_validate(raw) for raw in export["packages"]]
+    by_id = {p.package_id: p for p in packages}
+    if len(by_id) != len(packages):
+        raise ValueError("refusing to import: duplicate ranking package")
+    if duplicate_selections(export):
+        raise ValueError(f"refusing to import: duplicate selection identities {duplicate_selections(export)}")
+    incoming = []
+    for s in export["selections"]:
+        checks, _, history = consistency_checks(s, by_id)
+        failed = [name for name, c in checks.items() if not c["ok"]]
+        if failed:
+            raise ValueError(f"refusing to import: {s.get('candidate_id')} is inconsistent with its frozen "
+                             f"package or decision history ({', '.join(failed)})")
+        incoming.append(CandidateRecord(package_id=s["package_id"], candidate_id=s["candidate_id"],
+                                        representation=s["representation"], sha256=s["sha256"], events=history))
     summary = dict(packages_added=0, records_added=0, unchanged=0, conflicts=[])
-    for raw in export["packages"]:
-        p = Package.model_validate(raw)
-        if store.package(p.package_id) is None:
-            store.add_package(p.ranking, added_at=p.added_at)
-            summary["packages_added"] += 1
     with store.lock:
+        known = {p.package_id for p in store.state.packages}
+        new_packages = [p for p in packages if p.package_id not in known]
         records = list(store.state.records)
-        for s in export["selections"]:
-            events = [DecisionEvent.model_validate(e) for e in s["decision_history"]]
-            incoming = CandidateRecord(package_id=s["package_id"], candidate_id=s["candidate_id"],
-                representation=s["representation"], sha256=s["sha256"], events=events)
-            existing = next((r for r in records if r.key()[:3] == incoming.key()[:3]), None)
+        for record in incoming:
+            existing = next((r for r in records if r.key()[:3] == record.key()[:3]), None)
             if existing is None:
-                records.append(incoming)
+                records.append(record)
                 summary["records_added"] += 1
-            elif existing == incoming:
+            elif existing == record:
                 summary["unchanged"] += 1
             else:
-                summary["conflicts"].append(dict(candidate_id=s["candidate_id"], package_id=s["package_id"],
+                summary["conflicts"].append(dict(candidate_id=record.candidate_id, package_id=record.package_id,
                     reason="state already holds a different decision history; left unchanged"))
-        store.state = State(packages=store.state.packages, records=records)
-        store.save()
+        summary["packages_added"] = len(new_packages)
+        # Constructing State validates identities/duplicates before anything is persisted.
+        prospective = State(packages=[*store.state.packages, *new_packages], records=records)
+        if new_packages or summary["records_added"]:
+            store.state = prospective
+            store.save()
     return summary

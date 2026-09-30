@@ -9,10 +9,37 @@ produced live by the Issue #7 CLI (`bgm-loop` and `ui-confirm` requests).
 ## Automated tests
 
 `$env:AUDIO_SELECTOR_REAL_MODEL='1'; .venv/Scripts/python.exe -m unittest discover -s tests`
--> **51 tests OK, 0 skipped** (17 #4-#6, 23 #7, 11 #8); research suite 5 OK. Wheel build
-includes `audio_selector/ui/*` and the `audio-audition-queue` entry point.
+-> **61 tests OK, 0 skipped** (17 #4-#6, 23 #7, 21 #8); research suite 5 OK. Wheel build
+includes `audio_selector/ui/*` and the `audio-audition-queue` entry point. Issue #7 code and
+benchmark artifacts are unchanged from `8a1e25d`.
 
-The 11 #8 tests (`tests/test_audition_queue.py`) run against a copied corpus in a path with a
+### Export/import hardening (review follow-up)
+
+`TamperWithRecomputedHashTests` edits a field of a valid export, **recomputes a valid
+`content_sha256`**, asserts `global_issues == []` (so detection cannot come from the hash) and
+requires `verified: false` with the named check plus a refused import that creates no state:
+
+| Case | Tamper (selection only; frozen package untouched) | Detected by |
+|---|---|---|
+| A | `rank` + 1 | `ranking_identity` |
+| B | `pre_diversity_score`; one contribution; reranking reasons | `ranking_score` |
+| C | config fingerprint; index state; model revision | `ranking_context` |
+| D | top-level decision / note / decided_at vs last event; invalid last event | `decision` |
+| E | provenance / eligibility snapshot vs last event (either side) | `decision_snapshot` |
+
+`AtomicImportTests` pre-populates a target state, builds hash-valid exports that are internally
+invalid (valid packages followed by an unparseable `decided_at`; a selection whose package was
+removed; a duplicated selection identity) and asserts the import raises and `state.json` is
+**byte-identical** afterwards; a valid import still merges, keeps existing records, and a
+repeated import does not rewrite the file.
+
+Root causes were confirmed by running the same 10 tests against the previous `selection.py`
+(`6ed1e02`): 9 failed. The old `verify_export` compared only candidate/representation/hash and
+read model/config from the selection's own copy. The old `import_export` persisted each package
+via `add_package()` before validating selections, which left an extra package in `state.json`
+(partial import), and silently de-duplicated duplicated selections.
+
+The 21 #8 tests (`tests/test_audition_queue.py`) run against a copied corpus in a path with a
 space and `ü` and cover: packages bound to their ranking hash (tampered state rejected); no
 pre-filled decisions; decisions and history survive store reopen and server restart;
 identity must match the package; missing, substituted (another candidate's bytes) and
@@ -51,6 +78,17 @@ probes 404; CSP header present.
   validated with a separate **headless** instance of the installed Chrome instead
   (`--autoplay-policy=no-user-gesture-required --mute-audio`). No audible listening test was
   performed by the assistant.
+- **Excerpt code review (follow-up).** `render()` pauses players only on startup/package switch;
+  the `play` handler pauses only other players; no race found there. One deterministic defect
+  was reproduced (2/2): after an excerpt button, a seek from the native scrubber kept the stale
+  excerpt stop, so the next `timeupdate` paused at the new position (traced to the excerpt
+  handler). Fixed minimally: a seek not started by an excerpt button ends the excerpt window.
+  After the fix (headless, 3 runs): scrub after Middle kept playing (80 -> 82.4 s); Start
+  advanced; Middle excerpt stopped as designed at about 57.3 s (the only script `pause()`);
+  End advanced 94.58 -> 97.5 s. This defect does **not** explain the observation below, where
+  no script `pause()` occurred.
+- **Headed check not possible:** the Claude-in-Chrome tab again reported `hidden` on
+  2026-10-01, so Start/Middle/End were not operated in a headed window.
 - **Unresolved:** in 8 of 18 headless runs that used the Start/Middle/End excerpt buttons,
   Chrome fired an unexpected `pause` event 0.1-3 s after an excerpt seek (in every traced run,
   no `pause()` call came from page script, so the pause was browser-initiated). It did not occur in
@@ -59,4 +97,7 @@ probes 404; CSP header present.
   player holds a media pipeline) did not by itself eliminate it in the harness. The cause
   (headless media pipeline vs. excerpt seek handling) is not established; a headed manual
   check by the reviewer is required. Pressing play resumes playback; no data is affected.
+  Re-running the same harness 6 times after the follow-up showed 0 browser-initiated pauses;
+  because the original pauses involved no script call, this is not attributed to the fix and
+  the observation remains open until a headed check.
 - The server log recorded no errors throughout.

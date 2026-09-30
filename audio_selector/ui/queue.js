@@ -137,11 +137,13 @@ function player(p, e) {
   box.append(a);
   const d = e.signals.dsp.duration_seconds;
   if (d > 20) {
-    let stopAt = null;
+    let stopAt = null, excerptSeek = false;
     a.addEventListener('timeupdate', () => { if (stopAt !== null && a.currentTime >= stopAt) { a.pause(); stopAt = null; } });
+    // A seek not started by an excerpt button (e.g. the native scrubber) ends the excerpt window.
+    a.addEventListener('seeking', () => { if (!excerptSeek) stopAt = null; excerptSeek = false; });
     [[0, 'Start'], [Math.max(0, d / 2 - 5), 'Middle'], [Math.max(0, d - 10), 'End']].forEach(([at, word]) => {
       const b = el('button', `${word} · 10 s`); b.type = 'button';
-      b.onclick = () => { a.currentTime = at; stopAt = Math.min(at + 10, d); a.play().catch(err => { status.textContent = err.message; }); };
+      b.onclick = () => { excerptSeek = true; a.currentTime = at; stopAt = Math.min(at + 10, d); a.play().catch(err => { status.textContent = err.message; }); };
       box.append(b);
     });
   }
