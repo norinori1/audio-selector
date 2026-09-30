@@ -761,7 +761,8 @@
       "failure": {
         "type": "RuntimeError",
         "summary": "Error(s) in loading state_dict for CLAP:",
-        "detail": "HTSAT-base architecture requested; default downloaded checkpoint is HTSAT-tiny; missing keys and size mismatches"
+        "detail": "Missing key(s) in state_dict: \"audio_branch.layers.2.blocks.6.norm1.weight\", \"audio_branch.layers.2.blocks.6.norm1.bias\", \"audio_branch.layers.2.blocks.6.attn.relative_position_bias_table\", \"audio_branch.layers.2.blocks.6.attn.relative_position_index\", \"audio_branch.layers.2.blocks.6.attn.qkv.weight\", \"audio_branch.layers.2.blocks.6.attn.qkv.bias\", \"audio_branch.layers.2.blocks.6.attn.proj.weight\", \"audio_branch.layers.2.blocks.6.attn.proj.bias\", \"audio_branch.layers.2.blocks.6.norm2.weight\", \"audio_branch.layers.2.blocks.6.norm2.bias\", \"audio_branch.layers.2.blocks.6.mlp.fc1.weight\", \"audio_branch.layers.2.blocks.6.mlp.fc1.bias\", \"audio_branch.layers.2.blocks.6.mlp.fc2.weight\", \"audio_branch.layers.2.blocks.6.mlp.fc2.bias\", \"audio_branch.layers.2.blocks.7.attn_mask\", \"audio_branch.layers.2.blocks.7.norm1.weight\", \"audio_branch.layers.2.blocks.7.norm1.bias\", \"audio_branch.layers.2.blocks.7.attn.relative_position_bias_table\", \"audio_branch.layers.2.blocks.7.attn.relative_position_index\"",
+        "detail_truncated": true
       }
     },
     {
@@ -773,8 +774,7 @@
       "run": "soundgrep-clap-isolated",
       "failure": {
         "type": "RuntimeError",
-        "summary": "RuntimeError: Error(s) in loading state_dict for CLAP:",
-        "detail": "HTSAT-base architecture requested; default downloaded checkpoint is HTSAT-tiny; missing keys and size mismatches"
+        "summary": "RuntimeError: Error(s) in loading state_dict for CLAP:"
       }
     }
   ],

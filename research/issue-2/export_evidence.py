@@ -3,6 +3,18 @@ import json
 from pathlib import Path
 
 
+def export_failure(failure):
+    """Keep observed diagnostics separate from causal interpretation in the report."""
+    lines = failure["message"].splitlines()
+    record = dict(type=failure["type"], summary=lines[0] if lines else "")
+    detail = "\n".join(lines[1:]).strip()
+    if detail:
+        record["detail"] = detail[:1000]
+        if len(detail) > 1000:
+            record["detail_truncated"] = True
+    return record
+
+
 def main():
     root = Path("artifacts/issue-2")
     records = []
@@ -13,9 +25,7 @@ def main():
         if "result" in report:
             record["result"] = report["result"]
         else:
-            failure = report["failure"]
-            record["failure"] = dict(type=failure["type"], summary=failure["message"].splitlines()[0],
-                                     detail="HTSAT-base architecture requested; default downloaded checkpoint is HTSAT-tiny; missing keys and size mismatches")
+            record["failure"] = export_failure(report["failure"])
         records.append(record)
     evidence = dict(observed_on="2026-09-30", runs=records,
                     soundgrep_indexer_probe=json.loads((root / "soundgrep-probe/probe.json").read_text(encoding="utf-8")),
