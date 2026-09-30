@@ -1,0 +1,145 @@
+[
+  {
+    "candidate_id": "oga-menu-move",
+    "intended_use": "commercial-game",
+    "policy_version": "commercial-game/1.0",
+    "status": "eligible",
+    "reasons": [
+      "recorded evidence satisfies explicit policy"
+    ],
+    "decided_at": "2026-09-30T13:35:49.167262Z",
+    "selected_sha256": "c870423668691293fb6d039207aa75e698d7b965dad21fc4e42d3bb29137b046"
+  },
+  {
+    "candidate_id": "oga-menu-select",
+    "intended_use": "commercial-game",
+    "policy_version": "commercial-game/1.0",
+    "status": "eligible",
+    "reasons": [
+      "recorded evidence satisfies explicit policy"
+    ],
+    "decided_at": "2026-09-30T13:35:49.167262Z",
+    "selected_sha256": "d674e45939f5032720bc8338ff38dc8fc7a0af8913cd02218f8707ad3af6d89e"
+  },
+  {
+    "candidate_id": "oga-footsteps",
+    "intended_use": "commercial-game",
+    "policy_version": "commercial-game/1.0",
+    "status": "eligible",
+    "reasons": [
+      "recorded evidence satisfies explicit policy"
+    ],
+    "decided_at": "2026-09-30T13:35:49.167262Z",
+    "selected_sha256": "ee852b61c874b50f455ae4169809e4a97c6b38087fb21f496f2858c53b1936e9"
+  },
+  {
+    "candidate_id": "oga-teleport",
+    "intended_use": "commercial-game",
+    "policy_version": "commercial-game/1.0",
+    "status": "eligible",
+    "reasons": [
+      "recorded evidence satisfies explicit policy"
+    ],
+    "decided_at": "2026-09-30T13:35:49.168769Z",
+    "selected_sha256": "15a9db526eb6ce4f64a44fa891fb928710f151128274fc78d6f6213e9838fbe9"
+  },
+  {
+    "candidate_id": "oga-door",
+    "intended_use": "commercial-game",
+    "policy_version": "commercial-game/1.0",
+    "status": "eligible",
+    "reasons": [
+      "recorded evidence satisfies explicit policy"
+    ],
+    "decided_at": "2026-09-30T13:35:49.169774Z",
+    "selected_sha256": "7d95b4862040856b41a8a3b672b2505322bcf7c1fe529229fe36cee9dd061be6"
+  },
+  {
+    "candidate_id": "oga-item",
+    "intended_use": "commercial-game",
+    "policy_version": "commercial-game/1.0",
+    "status": "eligible",
+    "reasons": [
+      "recorded evidence satisfies explicit policy"
+    ],
+    "decided_at": "2026-09-30T13:35:49.169774Z",
+    "selected_sha256": "b2790e0e5618d9a8bb140c3eba3b2d1723996c7b45216f3efa12a4d1fa6bb276"
+  },
+  {
+    "candidate_id": "oga-error",
+    "intended_use": "commercial-game",
+    "policy_version": "commercial-game/1.0",
+    "status": "eligible",
+    "reasons": [
+      "recorded evidence satisfies explicit policy"
+    ],
+    "decided_at": "2026-09-30T13:35:49.170775Z",
+    "selected_sha256": "64d9464c9223e100014db916f8bf28279de67d4824625fcda8e2251dc1dc79f6"
+  },
+  {
+    "candidate_id": "oga-searching",
+    "intended_use": "commercial-game",
+    "policy_version": "commercial-game/1.0",
+    "status": "eligible",
+    "reasons": [
+      "recorded evidence satisfies explicit policy"
+    ],
+    "decided_at": "2026-09-30T13:35:49.170775Z",
+    "selected_sha256": "add2ee7931fd0c53f2804220e7355b10b38dbf5ab2b4dfdd415b61d8e14e51c8"
+  },
+  {
+    "candidate_id": "oga-etirwer",
+    "intended_use": "commercial-game",
+    "policy_version": "commercial-game/1.0",
+    "status": "eligible",
+    "reasons": [
+      "recorded evidence satisfies explicit policy"
+    ],
+    "decided_at": "2026-09-30T13:35:49.172279Z",
+    "selected_sha256": "382c02bfb3d9abe1c9f432606dd95f27bcef28ac22097ccdcef12a8c608b421b"
+  },
+  {
+    "candidate_id": "uisfx-select",
+    "intended_use": "commercial-game",
+    "policy_version": "commercial-game/1.0",
+    "status": "eligible",
+    "reasons": [
+      "recorded evidence satisfies explicit policy"
+    ],
+    "decided_at": "2026-09-30T13:35:49.172279Z",
+    "selected_sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec"
+  },
+  {
+    "candidate_id": "uisfx-success",
+    "intended_use": "commercial-game",
+    "policy_version": "commercial-game/1.0",
+    "status": "eligible",
+    "reasons": [
+      "recorded evidence satisfies explicit policy"
+    ],
+    "decided_at": "2026-09-30T13:35:49.172279Z",
+    "selected_sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd"
+  },
+  {
+    "candidate_id": "uisfx-error",
+    "intended_use": "commercial-game",
+    "policy_version": "commercial-game/1.0",
+    "status": "eligible",
+    "reasons": [
+      "recorded evidence satisfies explicit policy"
+    ],
+    "decided_at": "2026-09-30T13:35:49.173821Z",
+    "selected_sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653"
+  },
+  {
+    "candidate_id": "uisfx-level-up",
+    "intended_use": "commercial-game",
+    "policy_version": "commercial-game/1.0",
+    "status": "eligible",
+    "reasons": [
+      "recorded evidence satisfies explicit policy"
+    ],
+    "decided_at": "2026-09-30T13:35:49.173821Z",
+    "selected_sha256": "571a29662ec7ab037592564185d26bbce4a264d04be951bf739ad93409daacaa"
+  }
+]

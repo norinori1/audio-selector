@@ -1,0 +1,702 @@
+{
+  "package_id": "60ddd8ab1ae0b34911fb9d2838b3b154432826ccca897f03085ab835886a4f06",
+  "protocol": "full-corpus-blind/v1",
+  "queries": [
+    {
+      "id": "q01",
+      "prompt": "A short subtle tick when moving between menu items.",
+      "clips": [
+        {
+          "clip_id": "319615e1d3aa54a83a9b",
+          "duration": 130.23399092970521
+        },
+        {
+          "clip_id": "02298698aea301d93f0e",
+          "duration": 0.796875
+        },
+        {
+          "clip_id": "5963153d8023177ff4b6",
+          "duration": 2.0564791666666666
+        },
+        {
+          "clip_id": "2178aa52751af0c7e80a",
+          "duration": 0.6248958333333333
+        },
+        {
+          "clip_id": "296c3b3ee41b9c2c79dd",
+          "duration": 0.5944897959183674
+        },
+        {
+          "clip_id": "811f912073e22cb0befb",
+          "duration": 0.0653061224489796
+        },
+        {
+          "clip_id": "6986d405c4073aba4c95",
+          "duration": 0.731859410430839
+        },
+        {
+          "clip_id": "9bff949eaaec11b068ef",
+          "duration": 0.3048125
+        },
+        {
+          "clip_id": "3e86eb358e69283f6316",
+          "duration": 104.57687074829931
+        },
+        {
+          "clip_id": "33ba8377fd23d4d9a7f5",
+          "duration": 3.8822916666666667
+        },
+        {
+          "clip_id": "963126e36c49056ccc89",
+          "duration": 1.1946666666666668
+        },
+        {
+          "clip_id": "85014b1f4446d6573138",
+          "duration": 3.1956462585034013
+        },
+        {
+          "clip_id": "33659fa1e2d6fe503e74",
+          "duration": 0.5560625
+        }
+      ]
+    },
+    {
+      "id": "q02",
+      "prompt": "A bright short electronic confirmation when accepting a menu choice.",
+      "clips": [
+        {
+          "clip_id": "5d0f87fc963921267a4d",
+          "duration": 2.0564791666666666
+        },
+        {
+          "clip_id": "23abb79ccc2c1b8f39cc",
+          "duration": 0.6248958333333333
+        },
+        {
+          "clip_id": "980425570ad537e21778",
+          "duration": 104.57687074829931
+        },
+        {
+          "clip_id": "7f2a10af5924abf19aa3",
+          "duration": 3.1956462585034013
+        },
+        {
+          "clip_id": "9c521d062d8f855220b6",
+          "duration": 0.3048125
+        },
+        {
+          "clip_id": "9976954fdd7b063229e7",
+          "duration": 3.8822916666666667
+        },
+        {
+          "clip_id": "c490a685beeabec571dc",
+          "duration": 0.5944897959183674
+        },
+        {
+          "clip_id": "bda5a6afebfe13513d2c",
+          "duration": 0.0653061224489796
+        },
+        {
+          "clip_id": "0c4700511655c757f1ba",
+          "duration": 0.5560625
+        },
+        {
+          "clip_id": "cf1f26680f2af5071310",
+          "duration": 0.731859410430839
+        },
+        {
+          "clip_id": "884efd982bcb07f1bdc2",
+          "duration": 130.23399092970521
+        },
+        {
+          "clip_id": "2cd554ae89ce52ee962b",
+          "duration": 1.1946666666666668
+        },
+        {
+          "clip_id": "42dc94c3badb5c141c7d",
+          "duration": 0.796875
+        }
+      ]
+    },
+    {
+      "id": "q03",
+      "prompt": "A harsh electronic error buzzer when an action is invalid.",
+      "clips": [
+        {
+          "clip_id": "9699f6330cf21f0474b9",
+          "duration": 3.1956462585034013
+        },
+        {
+          "clip_id": "a98ac0ef98ff282b31a8",
+          "duration": 104.57687074829931
+        },
+        {
+          "clip_id": "63d623449044b99a2977",
+          "duration": 0.6248958333333333
+        },
+        {
+          "clip_id": "33916ef599e7d3950620",
+          "duration": 0.5560625
+        },
+        {
+          "clip_id": "115d4eb2846bf678fe62",
+          "duration": 0.731859410430839
+        },
+        {
+          "clip_id": "0f4d1da41420cfa2812c",
+          "duration": 0.0653061224489796
+        },
+        {
+          "clip_id": "59996a0f6cd2bc746f7f",
+          "duration": 0.3048125
+        },
+        {
+          "clip_id": "00becba1db4147272010",
+          "duration": 3.8822916666666667
+        },
+        {
+          "clip_id": "45651f65b48dce75cb20",
+          "duration": 1.1946666666666668
+        },
+        {
+          "clip_id": "3e854332a92ba97a7a73",
+          "duration": 0.796875
+        },
+        {
+          "clip_id": "1c40ccaf06b553e56c07",
+          "duration": 0.5944897959183674
+        },
+        {
+          "clip_id": "f1c61c4fb00d8091bd04",
+          "duration": 130.23399092970521
+        },
+        {
+          "clip_id": "6f0417d82d0e1d71cb1b",
+          "duration": 2.0564791666666666
+        }
+      ]
+    },
+    {
+      "id": "q04",
+      "prompt": "Footsteps as a character walks across a surface.",
+      "clips": [
+        {
+          "clip_id": "6a8aa129d43d2297329f",
+          "duration": 0.5560625
+        },
+        {
+          "clip_id": "12383f0914192e4adab5",
+          "duration": 0.6248958333333333
+        },
+        {
+          "clip_id": "b5b168647493d4c28868",
+          "duration": 3.1956462585034013
+        },
+        {
+          "clip_id": "183a67d7f6c1d12b7b0b",
+          "duration": 0.5944897959183674
+        },
+        {
+          "clip_id": "0e557c5c7eb034775c4f",
+          "duration": 0.796875
+        },
+        {
+          "clip_id": "7a95db4b3b2123c6cb4f",
+          "duration": 104.57687074829931
+        },
+        {
+          "clip_id": "21aaa1bdc671fae87031",
+          "duration": 0.0653061224489796
+        },
+        {
+          "clip_id": "1b14eaf30ef31c1123e5",
+          "duration": 0.3048125
+        },
+        {
+          "clip_id": "631ef99469e3d4aceb4a",
+          "duration": 3.8822916666666667
+        },
+        {
+          "clip_id": "ba036664d9a02f4879e3",
+          "duration": 1.1946666666666668
+        },
+        {
+          "clip_id": "60b1cc970c7ce422a9ae",
+          "duration": 130.23399092970521
+        },
+        {
+          "clip_id": "da8fadee17655ba43ce9",
+          "duration": 2.0564791666666666
+        },
+        {
+          "clip_id": "a648ff13e8d9a5860e04",
+          "duration": 0.731859410430839
+        }
+      ]
+    },
+    {
+      "id": "q05",
+      "prompt": "A mechanical powered door opening during interaction.",
+      "clips": [
+        {
+          "clip_id": "2bf395a0cc5b653dc38b",
+          "duration": 0.796875
+        },
+        {
+          "clip_id": "9ad5f8dfae45d602d098",
+          "duration": 0.5944897959183674
+        },
+        {
+          "clip_id": "e9d41623b7048bb39bb4",
+          "duration": 0.3048125
+        },
+        {
+          "clip_id": "1a4b61d14c621892e41a",
+          "duration": 130.23399092970521
+        },
+        {
+          "clip_id": "260fa4d57ca24ea60dd2",
+          "duration": 3.8822916666666667
+        },
+        {
+          "clip_id": "2e8f3ddd0da7048b844b",
+          "duration": 0.0653061224489796
+        },
+        {
+          "clip_id": "30443c0a073972d64dc4",
+          "duration": 0.6248958333333333
+        },
+        {
+          "clip_id": "17b5599fb6dceab5fdd8",
+          "duration": 0.5560625
+        },
+        {
+          "clip_id": "08ae2580e36cc1de9c71",
+          "duration": 2.0564791666666666
+        },
+        {
+          "clip_id": "cd205be769f9b015a288",
+          "duration": 1.1946666666666668
+        },
+        {
+          "clip_id": "56e1c4d80fda71ec3158",
+          "duration": 104.57687074829931
+        },
+        {
+          "clip_id": "94b99c83487cccc123c7",
+          "duration": 3.1956462585034013
+        },
+        {
+          "clip_id": "48ce229ca2c795728ca4",
+          "duration": 0.731859410430839
+        }
+      ]
+    },
+    {
+      "id": "q06",
+      "prompt": "A rising science fiction teleport or portal transition sound.",
+      "clips": [
+        {
+          "clip_id": "aeb3cb9213c60707e50e",
+          "duration": 0.796875
+        },
+        {
+          "clip_id": "0609d40b611e3404591e",
+          "duration": 3.8822916666666667
+        },
+        {
+          "clip_id": "86374c3a26937985a1eb",
+          "duration": 1.1946666666666668
+        },
+        {
+          "clip_id": "b0241f01425ac6a74e06",
+          "duration": 0.5944897959183674
+        },
+        {
+          "clip_id": "9c49a3eb5ba9df323865",
+          "duration": 0.731859410430839
+        },
+        {
+          "clip_id": "ee8472575e44d94efa16",
+          "duration": 0.0653061224489796
+        },
+        {
+          "clip_id": "6aeb62862b7f07586604",
+          "duration": 0.6248958333333333
+        },
+        {
+          "clip_id": "1a642c43ebdced8e20be",
+          "duration": 130.23399092970521
+        },
+        {
+          "clip_id": "650774dea231c897699c",
+          "duration": 0.5560625
+        },
+        {
+          "clip_id": "bb0618f877ae52e46fe0",
+          "duration": 104.57687074829931
+        },
+        {
+          "clip_id": "6614485da08ad2337831",
+          "duration": 0.3048125
+        },
+        {
+          "clip_id": "ef00eb350de7a9028dea",
+          "duration": 3.1956462585034013
+        },
+        {
+          "clip_id": "e8578d7bd44641e87635",
+          "duration": 2.0564791666666666
+        }
+      ]
+    },
+    {
+      "id": "q07",
+      "prompt": "A celebratory musical game stage clear or level up cue.",
+      "clips": [
+        {
+          "clip_id": "1563c72887de1b084e71",
+          "duration": 0.6248958333333333
+        },
+        {
+          "clip_id": "2f3da00804d3d316d4b9",
+          "duration": 0.731859410430839
+        },
+        {
+          "clip_id": "93f86b8da4c6d464f1f6",
+          "duration": 1.1946666666666668
+        },
+        {
+          "clip_id": "ff07d737032be22a6c71",
+          "duration": 3.1956462585034013
+        },
+        {
+          "clip_id": "73fd99f9249831cf1fd3",
+          "duration": 130.23399092970521
+        },
+        {
+          "clip_id": "e8ee0c8b488eb1c0e0b9",
+          "duration": 2.0564791666666666
+        },
+        {
+          "clip_id": "9969d90538c832c9d510",
+          "duration": 0.5944897959183674
+        },
+        {
+          "clip_id": "80273097a812dbecdd50",
+          "duration": 0.5560625
+        },
+        {
+          "clip_id": "6a449144593dbfd21fdd",
+          "duration": 0.0653061224489796
+        },
+        {
+          "clip_id": "8c354c03abb0db9acc3a",
+          "duration": 104.57687074829931
+        },
+        {
+          "clip_id": "49de0c44ff45b36b8c95",
+          "duration": 0.3048125
+        },
+        {
+          "clip_id": "12244166505dfb12cc98",
+          "duration": 0.796875
+        },
+        {
+          "clip_id": "48fca6b4cac190052c79",
+          "duration": 3.8822916666666667
+        }
+      ]
+    },
+    {
+      "id": "q08",
+      "prompt": "Continuous dark electronic ambient background music for exploring an industrial space.",
+      "clips": [
+        {
+          "clip_id": "a4ae79bd14a8203d22cc",
+          "duration": 0.796875
+        },
+        {
+          "clip_id": "f71fde7a9df16ec077f1",
+          "duration": 130.23399092970521
+        },
+        {
+          "clip_id": "d642215ec13443667dc0",
+          "duration": 2.0564791666666666
+        },
+        {
+          "clip_id": "928fb312a001b0a41f95",
+          "duration": 1.1946666666666668
+        },
+        {
+          "clip_id": "d36e57dcbf6cd753eae8",
+          "duration": 3.8822916666666667
+        },
+        {
+          "clip_id": "425fbf7843f99894be6d",
+          "duration": 0.0653061224489796
+        },
+        {
+          "clip_id": "0fd14aeb79b706530b3e",
+          "duration": 0.731859410430839
+        },
+        {
+          "clip_id": "d88ebcc57f8b958b2600",
+          "duration": 0.5944897959183674
+        },
+        {
+          "clip_id": "3f456599edf8c0495300",
+          "duration": 3.1956462585034013
+        },
+        {
+          "clip_id": "ea6e2b2c1cacdcbc7621",
+          "duration": 0.5560625
+        },
+        {
+          "clip_id": "102c3e706257f27fab49",
+          "duration": 0.3048125
+        },
+        {
+          "clip_id": "722d290804bfb2934b8d",
+          "duration": 104.57687074829931
+        },
+        {
+          "clip_id": "449643587b49736c61ef",
+          "duration": 0.6248958333333333
+        }
+      ]
+    },
+    {
+      "id": "q09",
+      "prompt": "Acoustic nylon guitar background music.",
+      "clips": [
+        {
+          "clip_id": "65d9814c271e680209f6",
+          "duration": 0.3048125
+        },
+        {
+          "clip_id": "9c78a2965f3647cff5e2",
+          "duration": 2.0564791666666666
+        },
+        {
+          "clip_id": "46c45e47c92bfe32d59b",
+          "duration": 130.23399092970521
+        },
+        {
+          "clip_id": "f439b0b9a2da86cd9004",
+          "duration": 1.1946666666666668
+        },
+        {
+          "clip_id": "4292792be840cce46bc8",
+          "duration": 0.796875
+        },
+        {
+          "clip_id": "b61275411e56b2122c3f",
+          "duration": 0.0653061224489796
+        },
+        {
+          "clip_id": "dcb35d1509c2b726bcc8",
+          "duration": 0.5944897959183674
+        },
+        {
+          "clip_id": "1e58b1204723d36115e0",
+          "duration": 0.6248958333333333
+        },
+        {
+          "clip_id": "d251b9f833c33f26a187",
+          "duration": 104.57687074829931
+        },
+        {
+          "clip_id": "19b02dd3b54346714f90",
+          "duration": 0.5560625
+        },
+        {
+          "clip_id": "ff98a6620d01a01c808b",
+          "duration": 3.1956462585034013
+        },
+        {
+          "clip_id": "f999476c620fa3aa3263",
+          "duration": 3.8822916666666667
+        },
+        {
+          "clip_id": "89aecd284e749316d851",
+          "duration": 0.731859410430839
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "prompt": "A small positive item pickup chime, distinguishable from an error warning.",
+      "clips": [
+        {
+          "clip_id": "353768a9743ff73f3ad6",
+          "duration": 0.0653061224489796
+        },
+        {
+          "clip_id": "7f00623490c16e393c66",
+          "duration": 0.796875
+        },
+        {
+          "clip_id": "5382af225483b4ff9306",
+          "duration": 1.1946666666666668
+        },
+        {
+          "clip_id": "f5625b3f5ab572031f91",
+          "duration": 3.8822916666666667
+        },
+        {
+          "clip_id": "320c85b2e68fe5970556",
+          "duration": 0.731859410430839
+        },
+        {
+          "clip_id": "0aa32bc19dc472685fb6",
+          "duration": 2.0564791666666666
+        },
+        {
+          "clip_id": "d5d2d14b433b2898e21b",
+          "duration": 130.23399092970521
+        },
+        {
+          "clip_id": "f0f564dc58bb88c4c754",
+          "duration": 0.5560625
+        },
+        {
+          "clip_id": "3ca5de84bb9989e4e4f1",
+          "duration": 104.57687074829931
+        },
+        {
+          "clip_id": "65bcf86756af03b3e793",
+          "duration": 3.1956462585034013
+        },
+        {
+          "clip_id": "7009f7396a1a0963d442",
+          "duration": 0.6248958333333333
+        },
+        {
+          "clip_id": "9b497f55b88e7c5ca37f",
+          "duration": 0.5944897959183674
+        },
+        {
+          "clip_id": "66f92a226e9dac2dc024",
+          "duration": 0.3048125
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "prompt": "A short quiet menu confirmation without a harsh buzzer or alarm.",
+      "clips": [
+        {
+          "clip_id": "110f092cb35f0448c1a7",
+          "duration": 3.8822916666666667
+        },
+        {
+          "clip_id": "3f91e56236aca7cc1990",
+          "duration": 0.5560625
+        },
+        {
+          "clip_id": "28614cfc26aec44e5656",
+          "duration": 0.796875
+        },
+        {
+          "clip_id": "6823f7082690c43a675c",
+          "duration": 130.23399092970521
+        },
+        {
+          "clip_id": "d91ebc363765dfeb092e",
+          "duration": 0.6248958333333333
+        },
+        {
+          "clip_id": "bd22ddf33f114f43fd56",
+          "duration": 0.0653061224489796
+        },
+        {
+          "clip_id": "3a801dda999e514a0f0e",
+          "duration": 1.1946666666666668
+        },
+        {
+          "clip_id": "efbef90369d4b0621e7f",
+          "duration": 3.1956462585034013
+        },
+        {
+          "clip_id": "bec8f96b7258185ec32d",
+          "duration": 104.57687074829931
+        },
+        {
+          "clip_id": "47efbc1b84635e2b8cbb",
+          "duration": 2.0564791666666666
+        },
+        {
+          "clip_id": "22ff80a46e01d76e3d1e",
+          "duration": 0.731859410430839
+        },
+        {
+          "clip_id": "97b49fc0b429290cb653",
+          "duration": 0.3048125
+        },
+        {
+          "clip_id": "bceebafdd36b73c1f9c9",
+          "duration": 0.5944897959183674
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "prompt": "A sustained atmospheric electronic music texture that continues beyond the opening ten seconds.",
+      "clips": [
+        {
+          "clip_id": "bfe763a3cb08cb624c39",
+          "duration": 0.0653061224489796
+        },
+        {
+          "clip_id": "1b553e616f020313dfd4",
+          "duration": 3.8822916666666667
+        },
+        {
+          "clip_id": "692342581a585ad2fbe0",
+          "duration": 0.796875
+        },
+        {
+          "clip_id": "ce5cbf6017b96a2ba06e",
+          "duration": 104.57687074829931
+        },
+        {
+          "clip_id": "2e166c9cf1644cf48aa4",
+          "duration": 0.5560625
+        },
+        {
+          "clip_id": "9532d999c95d24eac9c5",
+          "duration": 0.5944897959183674
+        },
+        {
+          "clip_id": "a7774ae5043ea97c7814",
+          "duration": 0.731859410430839
+        },
+        {
+          "clip_id": "4994be94e1b756d1593c",
+          "duration": 3.1956462585034013
+        },
+        {
+          "clip_id": "bada2f2675d497071447",
+          "duration": 0.3048125
+        },
+        {
+          "clip_id": "cda55d941e27035fef4a",
+          "duration": 130.23399092970521
+        },
+        {
+          "clip_id": "d746529066012b3be027",
+          "duration": 0.6248958333333333
+        },
+        {
+          "clip_id": "d644aba958cd5e0e922d",
+          "duration": 2.0564791666666666
+        },
+        {
+          "clip_id": "5479c9279f110a272d5d",
+          "duration": 1.1946666666666668
+        }
+      ]
+    }
+  ]
+}

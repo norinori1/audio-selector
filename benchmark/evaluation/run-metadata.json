@@ -1,0 +1,22 @@
+{
+  "report_date": "2026-09-30",
+  "session_count": 1,
+  "package_id": "60ddd8ab1ae0b34911fb9d2838b3b154432826ccca897f03085ab835886a4f06",
+  "source_filename": "audition-labels.json",
+  "source_sha256": "54f14db1a60172341a646c3750a2677d866259dd5007f8eb2bfd7c07323e9f0c",
+  "published_labels_sha256": "3293948dc259726d41d2972599d12718263335f173fa21a1ec1d57b2a4065f49",
+  "metrics_sha256": "c3452784e22968889028e9bac9a57cb0473d52dbcecbbe501831836a78abe908",
+  "manifest_canonical_json_sha256": "f7c02932da397ef6c815ff2fffeb5585021ebd6612e250e29fe289dec4d59d1f",
+  "predictions_canonical_json_sha256": "d217393d8d09c26dcaea436e13b0c7fea61fca378cc9842b5ba5c0895e356040",
+  "canonical_json_contract": "UTF-8, json.dumps(sort_keys=True, separators=(comma, colon), ensure_ascii=True); excludes platform newline differences",
+  "input_fields_published": [
+    "query_id",
+    "clip_id",
+    "relevance",
+    "audition_seconds",
+    "play_count"
+  ],
+  "free_text_notes_omitted": 5,
+  "reproduction": "python -m audio_selector.benchmark_metrics --labels benchmark/evaluation/human-labels-v1.json --out outputs/benchmark/reproduced-metrics.json",
+  "status": "Human relevance pilot recorded; Issue 6 remains open; PR 12 remains Draft"
+}

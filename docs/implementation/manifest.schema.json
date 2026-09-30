@@ -1,0 +1,362 @@
+{
+  "$defs": {
+    "Blob": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "size": {
+          "exclusiveMinimum": 0,
+          "title": "Size",
+          "type": "integer"
+        },
+        "media_type": {
+          "minLength": 1,
+          "title": "Media Type",
+          "type": "string"
+        },
+        "filename": {
+          "minLength": 1,
+          "title": "Filename",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "size",
+        "media_type",
+        "filename"
+      ],
+      "title": "Blob",
+      "type": "object"
+    },
+    "Candidate": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "provider": {
+          "minLength": 1,
+          "title": "Provider",
+          "type": "string"
+        },
+        "source_asset_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Asset Id"
+        },
+        "asset_url": {
+          "minLength": 1,
+          "title": "Asset Url",
+          "type": "string"
+        },
+        "author": {
+          "minLength": 1,
+          "title": "Author",
+          "type": "string"
+        },
+        "acquisition_source": {
+          "minLength": 1,
+          "title": "Acquisition Source",
+          "type": "string"
+        },
+        "acquired": {
+          "format": "date",
+          "title": "Acquired",
+          "type": "string"
+        },
+        "metadata_evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Metadata Evidence Ids",
+          "type": "array"
+        },
+        "original": {
+          "$ref": "#/$defs/Blob"
+        },
+        "preview": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Blob"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "kind": {
+          "default": "original",
+          "enum": [
+            "original",
+            "derivative"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "parent_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parent Id"
+        },
+        "transformation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Transformation"
+        },
+        "rights": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Rights"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "provider",
+        "asset_url",
+        "author",
+        "acquisition_source",
+        "acquired",
+        "metadata_evidence_ids",
+        "original"
+      ],
+      "title": "Candidate",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "url": {
+          "minLength": 1,
+          "title": "Url",
+          "type": "string"
+        },
+        "snapshot": {
+          "$ref": "#/$defs/Blob"
+        },
+        "checked": {
+          "format": "date",
+          "title": "Checked",
+          "type": "string"
+        },
+        "asset_sha256s": {
+          "items": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Asset Sha256S",
+          "type": "array"
+        },
+        "notes": {
+          "minLength": 1,
+          "title": "Notes",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "url",
+        "snapshot",
+        "checked",
+        "asset_sha256s",
+        "notes"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "Rights": {
+      "additionalProperties": false,
+      "properties": {
+        "license_name": {
+          "minLength": 1,
+          "title": "License Name",
+          "type": "string"
+        },
+        "license_url": {
+          "minLength": 1,
+          "title": "License Url",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "commercial": {
+          "default": "unknown",
+          "enum": [
+            "allowed",
+            "denied",
+            "unknown"
+          ],
+          "title": "Commercial",
+          "type": "string"
+        },
+        "modification": {
+          "default": "unknown",
+          "enum": [
+            "allowed",
+            "denied",
+            "unknown"
+          ],
+          "title": "Modification",
+          "type": "string"
+        },
+        "game_embedding": {
+          "default": "unknown",
+          "enum": [
+            "allowed",
+            "denied",
+            "unknown"
+          ],
+          "title": "Game Embedding",
+          "type": "string"
+        },
+        "redistribution": {
+          "default": "unknown",
+          "enum": [
+            "allowed",
+            "denied",
+            "unknown"
+          ],
+          "title": "Redistribution",
+          "type": "string"
+        },
+        "attribution": {
+          "default": "unknown",
+          "enum": [
+            "required",
+            "not-required",
+            "unknown"
+          ],
+          "title": "Attribution",
+          "type": "string"
+        },
+        "attribution_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Attribution Text"
+        },
+        "redistribution_restrictions": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Redistribution Restrictions"
+        },
+        "content_id_notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Content Id Notes"
+        }
+      },
+      "required": [
+        "license_name",
+        "license_url",
+        "evidence_ids"
+      ],
+      "title": "Rights",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "candidates": {
+      "items": {
+        "$ref": "#/$defs/Candidate"
+      },
+      "title": "Candidates",
+      "type": "array"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/Evidence"
+      },
+      "title": "Evidence",
+      "type": "array"
+    }
+  },
+  "required": [
+    "candidates",
+    "evidence"
+  ],
+  "title": "Manifest",
+  "type": "object"
+}
