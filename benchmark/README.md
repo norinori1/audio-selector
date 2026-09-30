@@ -1,7 +1,14 @@
-# HUMAN AUDITION REQUIRED
+# Real-audio benchmark
 
-Issue #6 **Phase A only**, Draft PR #12. Human relevance and game suitability have
-not been measured. No human labels, preferences, metrics or weight tuning exist.
+Issue #6 preparation is **Phase A**, Draft PR #12. The Phase A human-audition stop
+was reached before any labels existed. The user subsequently supplied 156 real
+judgments and requested the [first human pilot report](evaluation/human-pilot-v1.md).
+Relevance metrics are now recorded; actual effort benefit, systematic fatigue and
+production suitability remain unresolved. No preference-weight tuning was performed.
+
+To reproduce that report, use `evaluation/human-labels-v1.json` with the metric
+command below. The launch instructions remain available for further human review;
+they do not imply that the recorded first session is still awaiting labels.
 
 ## Launch on Windows
 
@@ -126,6 +133,12 @@ mAP averages defined per-query AP; zero-positive queries are reported separately
 as undefined, never silently fabricated positives. Reports include per-query values
 and sample sizes, not one synthetic accuracy number.
 
+To reproduce the recorded first human session using the committed anonymous input:
+
+```powershell
+.venv/Scripts/python.exe -m audio_selector.benchmark_metrics --labels benchmark/evaluation/human-labels-v1.json --out outputs/benchmark/reproduced-metrics.json
+```
+
 Count reduction compares unique Top-K audition sets to exhaustive corpus review.
 Projected time reduction applies actual per-clip human playback logs to those sets;
 it is a **counterfactual estimate**, not a measured causal improvement or a substitute
@@ -160,6 +173,7 @@ originals requiring authorized login/API access were not acquired; Water Splash 
 Sand Footsteps had an additional attribution request that needs a concrete fulfilled
 credit plan. No unresolved asset was silently admitted to reach a corpus count.
 
-**Stop here for human audition.** Issue #6 remains open and PR #12 remains Draft.
-No human-dependent acceptance criterion, preference weighting or production approval
-has been completed.
+**Phase A stopped for human audition.** The subsequent user-supplied labels and
+report are recorded in [evaluation/human-pilot-v1.md](evaluation/human-pilot-v1.md).
+Issue #6 remains open and PR #12 remains Draft: the first relevance pilot does not
+establish actual audition-time benefit, systematic fatigue or production approval.

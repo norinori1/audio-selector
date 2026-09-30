@@ -1,0 +1,1097 @@
+{
+  "package_id": "60ddd8ab1ae0b34911fb9d2838b3b154432826ccca897f03085ab835886a4f06",
+  "judgments": [
+    {
+      "query_id": "q01",
+      "clip_id": "319615e1d3aa54a83a9b",
+      "relevance": "irrelevant",
+      "audition_seconds": 66.33840000000596,
+      "play_count": 7
+    },
+    {
+      "query_id": "q01",
+      "clip_id": "02298698aea301d93f0e",
+      "relevance": "relevant",
+      "audition_seconds": 1.7183000000119208,
+      "play_count": 2
+    },
+    {
+      "query_id": "q01",
+      "clip_id": "5963153d8023177ff4b6",
+      "relevance": "irrelevant",
+      "audition_seconds": 4.286899999991059,
+      "play_count": 2
+    },
+    {
+      "query_id": "q01",
+      "clip_id": "2178aa52751af0c7e80a",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.7013000000119209,
+      "play_count": 1
+    },
+    {
+      "query_id": "q01",
+      "clip_id": "296c3b3ee41b9c2c79dd",
+      "relevance": "relevant",
+      "audition_seconds": 0.6655999999940395,
+      "play_count": 1
+    },
+    {
+      "query_id": "q01",
+      "clip_id": "811f912073e22cb0befb",
+      "relevance": "relevant",
+      "audition_seconds": 0.13829999999701978,
+      "play_count": 1
+    },
+    {
+      "query_id": "q01",
+      "clip_id": "6986d405c4073aba4c95",
+      "relevance": "relevant",
+      "audition_seconds": 0.8173999999910593,
+      "play_count": 1
+    },
+    {
+      "query_id": "q01",
+      "clip_id": "9bff949eaaec11b068ef",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.3961000000089407,
+      "play_count": 1
+    },
+    {
+      "query_id": "q01",
+      "clip_id": "3e86eb358e69283f6316",
+      "relevance": "irrelevant",
+      "audition_seconds": 18.94070000000298,
+      "play_count": 1
+    },
+    {
+      "query_id": "q01",
+      "clip_id": "33ba8377fd23d4d9a7f5",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.7842999999970197,
+      "play_count": 2
+    },
+    {
+      "query_id": "q01",
+      "clip_id": "963126e36c49056ccc89",
+      "relevance": "relevant",
+      "audition_seconds": 6.384900000005961,
+      "play_count": 5
+    },
+    {
+      "query_id": "q01",
+      "clip_id": "85014b1f4446d6573138",
+      "relevance": "irrelevant",
+      "audition_seconds": 5.775699999988079,
+      "play_count": 3
+    },
+    {
+      "query_id": "q01",
+      "clip_id": "33659fa1e2d6fe503e74",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6245,
+      "play_count": 1
+    },
+    {
+      "query_id": "q02",
+      "clip_id": "5d0f87fc963921267a4d",
+      "relevance": "irrelevant",
+      "audition_seconds": 6.421100000008941,
+      "play_count": 3
+    },
+    {
+      "query_id": "q02",
+      "clip_id": "23abb79ccc2c1b8f39cc",
+      "relevance": "relevant",
+      "audition_seconds": 0.696,
+      "play_count": 1
+    },
+    {
+      "query_id": "q02",
+      "clip_id": "980425570ad537e21778",
+      "relevance": "irrelevant",
+      "audition_seconds": 39.397000000000006,
+      "play_count": 1
+    },
+    {
+      "query_id": "q02",
+      "clip_id": "7f2a10af5924abf19aa3",
+      "relevance": "relevant",
+      "audition_seconds": 3.2810999999940393,
+      "play_count": 1
+    },
+    {
+      "query_id": "q02",
+      "clip_id": "9c521d062d8f855220b6",
+      "relevance": "relevant",
+      "audition_seconds": 0.3847000000029802,
+      "play_count": 1
+    },
+    {
+      "query_id": "q02",
+      "clip_id": "9976954fdd7b063229e7",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.97229999999702,
+      "play_count": 1
+    },
+    {
+      "query_id": "q02",
+      "clip_id": "c490a685beeabec571dc",
+      "relevance": "relevant",
+      "audition_seconds": 0.689,
+      "play_count": 1
+    },
+    {
+      "query_id": "q02",
+      "clip_id": "bda5a6afebfe13513d2c",
+      "relevance": "relevant",
+      "audition_seconds": 0.12540000000596047,
+      "play_count": 1
+    },
+    {
+      "query_id": "q02",
+      "clip_id": "0c4700511655c757f1ba",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.2258999999910594,
+      "play_count": 2
+    },
+    {
+      "query_id": "q02",
+      "clip_id": "cf1f26680f2af5071310",
+      "relevance": "relevant",
+      "audition_seconds": 0.8438999999910594,
+      "play_count": 1
+    },
+    {
+      "query_id": "q02",
+      "clip_id": "884efd982bcb07f1bdc2",
+      "relevance": "irrelevant",
+      "audition_seconds": 4.665199999988079,
+      "play_count": 2
+    },
+    {
+      "query_id": "q02",
+      "clip_id": "2cd554ae89ce52ee962b",
+      "relevance": "relevant",
+      "audition_seconds": 1.2910999999940396,
+      "play_count": 1
+    },
+    {
+      "query_id": "q02",
+      "clip_id": "42dc94c3badb5c141c7d",
+      "relevance": "relevant",
+      "audition_seconds": 0.8362000000029802,
+      "play_count": 1
+    },
+    {
+      "query_id": "q03",
+      "clip_id": "9699f6330cf21f0474b9",
+      "relevance": "relevant",
+      "audition_seconds": 3.261800000011921,
+      "play_count": 1
+    },
+    {
+      "query_id": "q03",
+      "clip_id": "a98ac0ef98ff282b31a8",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.2772999999970196,
+      "play_count": 1
+    },
+    {
+      "query_id": "q03",
+      "clip_id": "63d623449044b99a2977",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.7082000000029802,
+      "play_count": 1
+    },
+    {
+      "query_id": "q03",
+      "clip_id": "33916ef599e7d3950620",
+      "relevance": "relevant",
+      "audition_seconds": 0.5907999999970198,
+      "play_count": 1
+    },
+    {
+      "query_id": "q03",
+      "clip_id": "115d4eb2846bf678fe62",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.822199999988079,
+      "play_count": 1
+    },
+    {
+      "query_id": "q03",
+      "clip_id": "0f4d1da41420cfa2812c",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.1366000000089407,
+      "play_count": 1
+    },
+    {
+      "query_id": "q03",
+      "clip_id": "59996a0f6cd2bc746f7f",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.37990000000596047,
+      "play_count": 1
+    },
+    {
+      "query_id": "q03",
+      "clip_id": "00becba1db4147272010",
+      "relevance": "irrelevant",
+      "audition_seconds": 3.97820000000298,
+      "play_count": 1
+    },
+    {
+      "query_id": "q03",
+      "clip_id": "45651f65b48dce75cb20",
+      "relevance": "relevant",
+      "audition_seconds": 1.2903999999910594,
+      "play_count": 1
+    },
+    {
+      "query_id": "q03",
+      "clip_id": "3e854332a92ba97a7a73",
+      "relevance": "relevant",
+      "audition_seconds": 0.8465,
+      "play_count": 1
+    },
+    {
+      "query_id": "q03",
+      "clip_id": "1c40ccaf06b553e56c07",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6965999999940395,
+      "play_count": 1
+    },
+    {
+      "query_id": "q03",
+      "clip_id": "f1c61c4fb00d8091bd04",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.4165999999940393,
+      "play_count": 1
+    },
+    {
+      "query_id": "q03",
+      "clip_id": "6f0417d82d0e1d71cb1b",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.1605,
+      "play_count": 1
+    },
+    {
+      "query_id": "q04",
+      "clip_id": "6a8aa129d43d2297329f",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.605199999988079,
+      "play_count": 1
+    },
+    {
+      "query_id": "q04",
+      "clip_id": "12383f0914192e4adab5",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.7050999999940395,
+      "play_count": 1
+    },
+    {
+      "query_id": "q04",
+      "clip_id": "b5b168647493d4c28868",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.278,
+      "play_count": 1
+    },
+    {
+      "query_id": "q04",
+      "clip_id": "183a67d7f6c1d12b7b0b",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.7329000000059605,
+      "play_count": 1
+    },
+    {
+      "query_id": "q04",
+      "clip_id": "0e557c5c7eb034775c4f",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.857,
+      "play_count": 1
+    },
+    {
+      "query_id": "q04",
+      "clip_id": "7a95db4b3b2123c6cb4f",
+      "relevance": "irrelevant",
+      "audition_seconds": 4.42709999999404,
+      "play_count": 1
+    },
+    {
+      "query_id": "q04",
+      "clip_id": "21aaa1bdc671fae87031",
+      "relevance": "relevant",
+      "audition_seconds": 0.1605,
+      "play_count": 1
+    },
+    {
+      "query_id": "q04",
+      "clip_id": "1b14eaf30ef31c1123e5",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.3926000000089407,
+      "play_count": 1
+    },
+    {
+      "query_id": "q04",
+      "clip_id": "631ef99469e3d4aceb4a",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.8997999999970197,
+      "play_count": 1
+    },
+    {
+      "query_id": "q04",
+      "clip_id": "ba036664d9a02f4879e3",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.3095999999940395,
+      "play_count": 1
+    },
+    {
+      "query_id": "q04",
+      "clip_id": "60b1cc970c7ce422a9ae",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.6334999999999997,
+      "play_count": 1
+    },
+    {
+      "query_id": "q04",
+      "clip_id": "da8fadee17655ba43ce9",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.16129999999702,
+      "play_count": 1
+    },
+    {
+      "query_id": "q04",
+      "clip_id": "a648ff13e8d9a5860e04",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.8252000000029802,
+      "play_count": 1
+    },
+    {
+      "query_id": "q05",
+      "clip_id": "2bf395a0cc5b653dc38b",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.7315999999940395,
+      "play_count": 2
+    },
+    {
+      "query_id": "q05",
+      "clip_id": "9ad5f8dfae45d602d098",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.3512999999821185,
+      "play_count": 2
+    },
+    {
+      "query_id": "q05",
+      "clip_id": "e9d41623b7048bb39bb4",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.7207000000029802,
+      "play_count": 2
+    },
+    {
+      "query_id": "q05",
+      "clip_id": "1a4b61d14c621892e41a",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.47229999999702,
+      "play_count": 1
+    },
+    {
+      "query_id": "q05",
+      "clip_id": "260fa4d57ca24ea60dd2",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.8945999999940395,
+      "play_count": 1
+    },
+    {
+      "query_id": "q05",
+      "clip_id": "2e8f3ddd0da7048b844b",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.1395,
+      "play_count": 1
+    },
+    {
+      "query_id": "q05",
+      "clip_id": "30443c0a073972d64dc4",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6895,
+      "play_count": 1
+    },
+    {
+      "query_id": "q05",
+      "clip_id": "17b5599fb6dceab5fdd8",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6137000000029802,
+      "play_count": 1
+    },
+    {
+      "query_id": "q05",
+      "clip_id": "08ae2580e36cc1de9c71",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.14820000000298,
+      "play_count": 1
+    },
+    {
+      "query_id": "q05",
+      "clip_id": "cd205be769f9b015a288",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.2846000000089408,
+      "play_count": 1
+    },
+    {
+      "query_id": "q05",
+      "clip_id": "56e1c4d80fda71ec3158",
+      "relevance": "irrelevant",
+      "audition_seconds": 5.926600000008941,
+      "play_count": 1
+    },
+    {
+      "query_id": "q05",
+      "clip_id": "94b99c83487cccc123c7",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.9279000000059603,
+      "play_count": 1
+    },
+    {
+      "query_id": "q05",
+      "clip_id": "48ce229ca2c795728ca4",
+      "relevance": "relevant",
+      "audition_seconds": 0.8185999999940395,
+      "play_count": 1
+    },
+    {
+      "query_id": "q06",
+      "clip_id": "aeb3cb9213c60707e50e",
+      "relevance": "relevant",
+      "audition_seconds": 1.7155,
+      "play_count": 2
+    },
+    {
+      "query_id": "q06",
+      "clip_id": "0609d40b611e3404591e",
+      "relevance": "irrelevant",
+      "audition_seconds": 7.04310000000894,
+      "play_count": 2
+    },
+    {
+      "query_id": "q06",
+      "clip_id": "86374c3a26937985a1eb",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.2897000000029804,
+      "play_count": 1
+    },
+    {
+      "query_id": "q06",
+      "clip_id": "b0241f01425ac6a74e06",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6897999999970198,
+      "play_count": 1
+    },
+    {
+      "query_id": "q06",
+      "clip_id": "9c49a3eb5ba9df323865",
+      "relevance": "relevant",
+      "audition_seconds": 0.8237000000029803,
+      "play_count": 1
+    },
+    {
+      "query_id": "q06",
+      "clip_id": "ee8472575e44d94efa16",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.14159999999403955,
+      "play_count": 1
+    },
+    {
+      "query_id": "q06",
+      "clip_id": "6aeb62862b7f07586604",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.7086000000089407,
+      "play_count": 1
+    },
+    {
+      "query_id": "q06",
+      "clip_id": "1a642c43ebdced8e20be",
+      "relevance": "irrelevant",
+      "audition_seconds": 3.27170000000298,
+      "play_count": 1
+    },
+    {
+      "query_id": "q06",
+      "clip_id": "650774dea231c897699c",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6281000000089407,
+      "play_count": 1
+    },
+    {
+      "query_id": "q06",
+      "clip_id": "bb0618f877ae52e46fe0",
+      "relevance": "irrelevant",
+      "audition_seconds": 3.7497999999970197,
+      "play_count": 1
+    },
+    {
+      "query_id": "q06",
+      "clip_id": "6614485da08ad2337831",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.38979999999701975,
+      "play_count": 1
+    },
+    {
+      "query_id": "q06",
+      "clip_id": "ef00eb350de7a9028dea",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.1360999999940393,
+      "play_count": 1
+    },
+    {
+      "query_id": "q06",
+      "clip_id": "e8578d7bd44641e87635",
+      "relevance": "relevant",
+      "audition_seconds": 2.161,
+      "play_count": 1
+    },
+    {
+      "query_id": "q07",
+      "clip_id": "1563c72887de1b084e71",
+      "relevance": "relevant",
+      "audition_seconds": 1.369,
+      "play_count": 2
+    },
+    {
+      "query_id": "q07",
+      "clip_id": "2f3da00804d3d316d4b9",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.8320999999940395,
+      "play_count": 1
+    },
+    {
+      "query_id": "q07",
+      "clip_id": "93f86b8da4c6d464f1f6",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.285,
+      "play_count": 1
+    },
+    {
+      "query_id": "q07",
+      "clip_id": "ff07d737032be22a6c71",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.2451000000089407,
+      "play_count": 1
+    },
+    {
+      "query_id": "q07",
+      "clip_id": "73fd99f9249831cf1fd3",
+      "relevance": "irrelevant",
+      "audition_seconds": 10.67729999999702,
+      "play_count": 1
+    },
+    {
+      "query_id": "q07",
+      "clip_id": "e8ee0c8b488eb1c0e0b9",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.1489000000059604,
+      "play_count": 1
+    },
+    {
+      "query_id": "q07",
+      "clip_id": "9969d90538c832c9d510",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6974000000059605,
+      "play_count": 1
+    },
+    {
+      "query_id": "q07",
+      "clip_id": "80273097a812dbecdd50",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6269000000059605,
+      "play_count": 1
+    },
+    {
+      "query_id": "q07",
+      "clip_id": "6a449144593dbfd21fdd",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.13870000000298024,
+      "play_count": 1
+    },
+    {
+      "query_id": "q07",
+      "clip_id": "8c354c03abb0db9acc3a",
+      "relevance": "irrelevant",
+      "audition_seconds": 3.1442999999970196,
+      "play_count": 1
+    },
+    {
+      "query_id": "q07",
+      "clip_id": "49de0c44ff45b36b8c95",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.4005,
+      "play_count": 1
+    },
+    {
+      "query_id": "q07",
+      "clip_id": "12244166505dfb12cc98",
+      "relevance": "relevant",
+      "audition_seconds": 0.8657999999970197,
+      "play_count": 1
+    },
+    {
+      "query_id": "q07",
+      "clip_id": "48fca6b4cac190052c79",
+      "relevance": "irrelevant",
+      "audition_seconds": 3.97470000000298,
+      "play_count": 1
+    },
+    {
+      "query_id": "q08",
+      "clip_id": "a4ae79bd14a8203d22cc",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.6912000000029803,
+      "play_count": 2
+    },
+    {
+      "query_id": "q08",
+      "clip_id": "f71fde7a9df16ec077f1",
+      "relevance": "irrelevant",
+      "audition_seconds": 3.0164999999999997,
+      "play_count": 1
+    },
+    {
+      "query_id": "q08",
+      "clip_id": "d642215ec13443667dc0",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.1438999999910595,
+      "play_count": 1
+    },
+    {
+      "query_id": "q08",
+      "clip_id": "928fb312a001b0a41f95",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.2801000000089406,
+      "play_count": 1
+    },
+    {
+      "query_id": "q08",
+      "clip_id": "d36e57dcbf6cd753eae8",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.9615999999940397,
+      "play_count": 1
+    },
+    {
+      "query_id": "q08",
+      "clip_id": "425fbf7843f99894be6d",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.13429999999701978,
+      "play_count": 1
+    },
+    {
+      "query_id": "q08",
+      "clip_id": "0fd14aeb79b706530b3e",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.8202000000029802,
+      "play_count": 1
+    },
+    {
+      "query_id": "q08",
+      "clip_id": "d88ebcc57f8b958b2600",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6791000000089407,
+      "play_count": 1
+    },
+    {
+      "query_id": "q08",
+      "clip_id": "3f456599edf8c0495300",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.078100000008941,
+      "play_count": 1
+    },
+    {
+      "query_id": "q08",
+      "clip_id": "ea6e2b2c1cacdcbc7621",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6303000000119209,
+      "play_count": 1
+    },
+    {
+      "query_id": "q08",
+      "clip_id": "102c3e706257f27fab49",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.3888999999910593,
+      "play_count": 1
+    },
+    {
+      "query_id": "q08",
+      "clip_id": "722d290804bfb2934b8d",
+      "relevance": "relevant",
+      "audition_seconds": 4.9669999999851,
+      "play_count": 1
+    },
+    {
+      "query_id": "q08",
+      "clip_id": "449643587b49736c61ef",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.3847000000029803,
+      "play_count": 2
+    },
+    {
+      "query_id": "q09",
+      "clip_id": "65d9814c271e680209f6",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.3595,
+      "play_count": 1
+    },
+    {
+      "query_id": "q09",
+      "clip_id": "9c78a2965f3647cff5e2",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.1032999999970197,
+      "play_count": 1
+    },
+    {
+      "query_id": "q09",
+      "clip_id": "46c45e47c92bfe32d59b",
+      "relevance": "relevant",
+      "audition_seconds": 2.2329999999999997,
+      "play_count": 1
+    },
+    {
+      "query_id": "q09",
+      "clip_id": "f439b0b9a2da86cd9004",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.2970999999940396,
+      "play_count": 1
+    },
+    {
+      "query_id": "q09",
+      "clip_id": "4292792be840cce46bc8",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.8409000000059604,
+      "play_count": 1
+    },
+    {
+      "query_id": "q09",
+      "clip_id": "b61275411e56b2122c3f",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.13879999999701978,
+      "play_count": 1
+    },
+    {
+      "query_id": "q09",
+      "clip_id": "dcb35d1509c2b726bcc8",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6807000000029803,
+      "play_count": 1
+    },
+    {
+      "query_id": "q09",
+      "clip_id": "1e58b1204723d36115e0",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.7046000000089407,
+      "play_count": 1
+    },
+    {
+      "query_id": "q09",
+      "clip_id": "d251b9f833c33f26a187",
+      "relevance": "irrelevant",
+      "audition_seconds": 4.7685,
+      "play_count": 1
+    },
+    {
+      "query_id": "q09",
+      "clip_id": "19b02dd3b54346714f90",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6138999999910593,
+      "play_count": 1
+    },
+    {
+      "query_id": "q09",
+      "clip_id": "ff98a6620d01a01c808b",
+      "relevance": "irrelevant",
+      "audition_seconds": 3.2834000000059604,
+      "play_count": 1
+    },
+    {
+      "query_id": "q09",
+      "clip_id": "f999476c620fa3aa3263",
+      "relevance": "irrelevant",
+      "audition_seconds": 3.972300000011921,
+      "play_count": 1
+    },
+    {
+      "query_id": "q09",
+      "clip_id": "89aecd284e749316d851",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.6288999999910594,
+      "play_count": 2
+    },
+    {
+      "query_id": "q10",
+      "clip_id": "353768a9743ff73f3ad6",
+      "relevance": "relevant",
+      "audition_seconds": 0.15340000000596046,
+      "play_count": 1
+    },
+    {
+      "query_id": "q10",
+      "clip_id": "7f00623490c16e393c66",
+      "relevance": "relevant",
+      "audition_seconds": 0.8593999999910593,
+      "play_count": 1
+    },
+    {
+      "query_id": "q10",
+      "clip_id": "5382af225483b4ff9306",
+      "relevance": "relevant",
+      "audition_seconds": 1.2824000000059605,
+      "play_count": 1
+    },
+    {
+      "query_id": "q10",
+      "clip_id": "f5625b3f5ab572031f91",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.5002000000029803,
+      "play_count": 2
+    },
+    {
+      "query_id": "q10",
+      "clip_id": "320c85b2e68fe5970556",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.8259000000059604,
+      "play_count": 1
+    },
+    {
+      "query_id": "q10",
+      "clip_id": "0aa32bc19dc472685fb6",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.17379999999702,
+      "play_count": 1
+    },
+    {
+      "query_id": "q10",
+      "clip_id": "d5d2d14b433b2898e21b",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.3547999999970197,
+      "play_count": 1
+    },
+    {
+      "query_id": "q10",
+      "clip_id": "f0f564dc58bb88c4c754",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6554000000059604,
+      "play_count": 1
+    },
+    {
+      "query_id": "q10",
+      "clip_id": "3ca5de84bb9989e4e4f1",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.7002000000029804,
+      "play_count": 1
+    },
+    {
+      "query_id": "q10",
+      "clip_id": "65bcf86756af03b3e793",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.5220999999940394,
+      "play_count": 1
+    },
+    {
+      "query_id": "q10",
+      "clip_id": "7009f7396a1a0963d442",
+      "relevance": "relevant",
+      "audition_seconds": 0.7128999999910594,
+      "play_count": 1
+    },
+    {
+      "query_id": "q10",
+      "clip_id": "9b497f55b88e7c5ca37f",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6815,
+      "play_count": 1
+    },
+    {
+      "query_id": "q10",
+      "clip_id": "66f92a226e9dac2dc024",
+      "relevance": "relevant",
+      "audition_seconds": 0.3815,
+      "play_count": 1
+    },
+    {
+      "query_id": "q11",
+      "clip_id": "110f092cb35f0448c1a7",
+      "relevance": "irrelevant",
+      "audition_seconds": 3.8500999999940397,
+      "play_count": 1
+    },
+    {
+      "query_id": "q11",
+      "clip_id": "3f91e56236aca7cc1990",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.5942000000029802,
+      "play_count": 1
+    },
+    {
+      "query_id": "q11",
+      "clip_id": "28614cfc26aec44e5656",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.8608999999910593,
+      "play_count": 1
+    },
+    {
+      "query_id": "q11",
+      "clip_id": "6823f7082690c43a675c",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.249600000008941,
+      "play_count": 1
+    },
+    {
+      "query_id": "q11",
+      "clip_id": "d91ebc363765dfeb092e",
+      "relevance": "relevant",
+      "audition_seconds": 0.689,
+      "play_count": 1
+    },
+    {
+      "query_id": "q11",
+      "clip_id": "bd22ddf33f114f43fd56",
+      "relevance": "relevant",
+      "audition_seconds": 0.127,
+      "play_count": 1
+    },
+    {
+      "query_id": "q11",
+      "clip_id": "3a801dda999e514a0f0e",
+      "relevance": "relevant",
+      "audition_seconds": 1.2872000000029802,
+      "play_count": 1
+    },
+    {
+      "query_id": "q11",
+      "clip_id": "efbef90369d4b0621e7f",
+      "relevance": "irrelevant",
+      "audition_seconds": 2.5834000000059607,
+      "play_count": 1
+    },
+    {
+      "query_id": "q11",
+      "clip_id": "bec8f96b7258185ec32d",
+      "relevance": "irrelevant",
+      "audition_seconds": 3.989,
+      "play_count": 1
+    },
+    {
+      "query_id": "q11",
+      "clip_id": "47efbc1b84635e2b8cbb",
+      "relevance": "irrelevant",
+      "audition_seconds": 6.397199999988079,
+      "play_count": 3
+    },
+    {
+      "query_id": "q11",
+      "clip_id": "22ff80a46e01d76e3d1e",
+      "relevance": "relevant",
+      "audition_seconds": 2.4523999999910595,
+      "play_count": 3
+    },
+    {
+      "query_id": "q11",
+      "clip_id": "97b49fc0b429290cb653",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.38309999999403954,
+      "play_count": 1
+    },
+    {
+      "query_id": "q11",
+      "clip_id": "bceebafdd36b73c1f9c9",
+      "relevance": "irrelevant",
+      "audition_seconds": 3.319099999994039,
+      "play_count": 7
+    },
+    {
+      "query_id": "q12",
+      "clip_id": "bfe763a3cb08cb624c39",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.241,
+      "play_count": 2
+    },
+    {
+      "query_id": "q12",
+      "clip_id": "1b553e616f020313dfd4",
+      "relevance": "irrelevant",
+      "audition_seconds": 7.574799999997019,
+      "play_count": 2
+    },
+    {
+      "query_id": "q12",
+      "clip_id": "692342581a585ad2fbe0",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.8641000000089407,
+      "play_count": 1
+    },
+    {
+      "query_id": "q12",
+      "clip_id": "ce5cbf6017b96a2ba06e",
+      "relevance": "relevant",
+      "audition_seconds": 6.56679999999702,
+      "play_count": 1
+    },
+    {
+      "query_id": "q12",
+      "clip_id": "2e166c9cf1644cf48aa4",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6268000000119209,
+      "play_count": 1
+    },
+    {
+      "query_id": "q12",
+      "clip_id": "9532d999c95d24eac9c5",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.6984000000059605,
+      "play_count": 1
+    },
+    {
+      "query_id": "q12",
+      "clip_id": "a7774ae5043ea97c7814",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.8355999999940396,
+      "play_count": 1
+    },
+    {
+      "query_id": "q12",
+      "clip_id": "4994be94e1b756d1593c",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.9827000000029802,
+      "play_count": 1
+    },
+    {
+      "query_id": "q12",
+      "clip_id": "bada2f2675d497071447",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.3723999999910593,
+      "play_count": 1
+    },
+    {
+      "query_id": "q12",
+      "clip_id": "cda55d941e27035fef4a",
+      "relevance": "irrelevant",
+      "audition_seconds": 4.00559999999404,
+      "play_count": 1
+    },
+    {
+      "query_id": "q12",
+      "clip_id": "d746529066012b3be027",
+      "relevance": "irrelevant",
+      "audition_seconds": 0.7175,
+      "play_count": 1
+    },
+    {
+      "query_id": "q12",
+      "clip_id": "d644aba958cd5e0e922d",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.8275000000000001,
+      "play_count": 1
+    },
+    {
+      "query_id": "q12",
+      "clip_id": "5479c9279f110a272d5d",
+      "relevance": "irrelevant",
+      "audition_seconds": 1.2827999999970197,
+      "play_count": 1
+    }
+  ]
+}

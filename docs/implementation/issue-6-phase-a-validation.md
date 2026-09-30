@@ -1,5 +1,11 @@
 # Issue 6 Phase A validation — Windows, 2026-09-30
 
+This is the historical preparation record. After its human-audition stop, the user
+provided actual labels and explicitly requested the
+[human pilot report](../../benchmark/evaluation/human-pilot-v1.md). Statements below
+about absent labels and unresolved relevance describe the Phase A stop, not the
+subsequent report. Actual effort benefit and production suitability remain unresolved.
+
 Prepared start: `6e5bb8dd873a529e7240d8816ac09f7cb1bfca86`.
 Branch: `agent/issue-6-human-benchmark-prep-v1.0`; Draft PR #12.
 Completed #5 `bf526cb45c72908f537482ac6406d9f3af2f267e` integrated with the

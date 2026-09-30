@@ -1,5 +1,10 @@
 # Serial execution report — 2026-09-30
 
+Historical serial-preparation record. The user subsequently supplied 156 actual
+human judgments and requested a [human pilot report](../../benchmark/evaluation/human-pilot-v1.md).
+Relevance metrics are now recorded in that follow-up; no merge, Ready transition,
+Issue #6 closure or preference-weight tuning has been performed.
+
 Existing prepared branches/PRs were used, in order. No PR was merged, retargeted
 or marked Ready; no issue was closed. Integration commits preserve prepared branch
 history and the #10 -> #11 -> #12 bases. No replacement branches or PRs created.
