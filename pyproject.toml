@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "audio-selector"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = ["pydantic==2.13.4"]
+
+[project.scripts]
+audio-manifest = "audio_selector.manifest:main"
+
+[tool.setuptools.packages.find]
+include = ["audio_selector*"]
