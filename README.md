@@ -1,0 +1,95 @@
+# audio-selector
+
+Game-audio asset selection tooling for narrowing large, multi-source audio candidate sets into human-auditionable Top-N recommendations.
+
+## Status
+
+**Research / build-vs-reuse phase.**
+
+This repository must not begin by reimplementing an audio retrieval engine.
+
+The first gate is to evaluate existing research and OSS, then decide what should be:
+
+- reused as-is;
+- wrapped;
+- forked / extended;
+- implemented specifically for the game-audio workflow.
+
+## Problem
+
+Game projects may draw candidate BGM / SFX from multiple sources with different licenses and metadata.
+
+The intended workflow is:
+
+```text
+Multiple audio sources
+        ↓
+Candidate + provenance manifest
+        ↓
+License / usage gate
+        ↓
+Existing semantic audio retrieval
+        ↓
+Game-role ranking
+        ↓
+Diversity reranking
+        ↓
+Top-N audition queue
+        ↓
+Human listening / final selection
+```
+
+The tool should reduce human audition cost. It must not replace the final human listening decision.
+
+## Initial prior art
+
+The first research pass should evaluate at least:
+
+- semantic-audio-search
+- soundgrep
+- DCASE language-based audio retrieval baselines
+- LAION-CLAP
+- Microsoft CLAP
+- Freesound API / similarity search
+- PAM or comparable no-reference audio-quality metrics
+- AudioCards / structured sound-design metadata approaches
+
+The project should prefer existing implementations over recreating CLAP, vector search, DSP primitives, or standard retrieval metrics.
+
+## Likely custom layer
+
+The working hypothesis is that custom work may still be useful around:
+
+- multi-source candidate manifests;
+- exact-asset provenance and license gating;
+- game-specific audio-role profiles;
+- positive / negative semantic prompts;
+- diversity reranking for audition sets;
+- human audition workflow;
+- evaluation against human preferences.
+
+This is a hypothesis, not a committed architecture. The prior-art evaluation decides the boundary.
+
+## Non-goals for the research gate
+
+- custom audio foundation model training;
+- custom FFT / DFT implementation;
+- Unity runtime audio integration;
+- automatic legal judgment without source evidence;
+- scraping sites where automation is prohibited;
+- automatically declaring an audio asset production-ready without human audition.
+
+## Relationship to LAYERTRACE
+
+This repository is intentionally independent from LAYERTRACE.
+
+LAYERTRACE is the first intended consumer and already has audio-source research in:
+
+- `norinori1/LayerTrace#444`
+- `docs/research/audio-source-exploration-v1.md`
+
+Game-specific role profiles and selected assets may live in the consuming game repository. Generic retrieval / selection tooling should remain here.
+
+## Development gate
+
+**Do not implement a new semantic search engine until the build-vs-reuse issue is complete and an ADR records the decision.**
