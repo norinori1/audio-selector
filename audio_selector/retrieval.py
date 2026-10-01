@@ -38,23 +38,35 @@ def candidate_fingerprint(manifest, candidate, policy):
                 "fulfilled_attribution_ids": sorted(policy.fulfilled_attribution_ids)}))
 
 
-def segment_specs(path):
-    info = sf.info(path)
-    if info.frames <= 0:
-        raise ValueError("empty audio")
-    total = int(np.ceil(info.frames * 48000 / info.samplerate))
-    return [(start, min(start + 480000, total)) for start in range(0, total, 480000)]
-
-
-def audio_segments(path):
+def _decoded_audio(path):
+    """The decoded/resampled array, rather than header estimates, owns offsets."""
     audio, sr = sf.read(path, dtype="float32", always_2d=True)
     audio = audio.mean(axis=1)
     if audio.size == 0 or not np.isfinite(audio).all():
         raise ValueError(f"empty/nonfinite audio: {path}")
     if sr != 48000:
         audio = librosa.resample(audio, orig_sr=sr, target_sr=48000, res_type="soxr_hq")
-    return [np.pad(audio[start:end], (0, 480000 - (end - start)))
-            for start, end in segment_specs(path)]
+    return audio
+
+
+def _segment_specs(total):
+    return [(start, min(start + 480000, total)) for start in range(0, total, 480000)]
+
+
+def segment_specs(path):
+    """Unpadded offsets in actual 48 kHz decoded samples; no metadata estimate."""
+    return _segment_specs(len(_decoded_audio(path)))
+
+
+def _segments_with_specs(path):
+    audio = _decoded_audio(path)
+    for start, end in _segment_specs(len(audio)):
+        segment = audio[start:end]
+        yield (start, end), np.pad(segment, (0, 480000 - len(segment)))
+
+
+def audio_segments(path):
+    return [array for _, array in _segments_with_specs(path)]
 
 
 class ClapEmbedder:
@@ -141,8 +153,9 @@ class LocalIndex:
                 size=512, distance=models.Distance.COSINE))
         arrays, keys = [], []
         for c in eligible_candidates(manifest, root, policy):
-            for (start, _), array in zip(segment_specs(root / c.original.path),
-                                       audio_segments(root / c.original.path), strict=True):
+            # Specs and arrays share one decode so payload offsets describe the
+            # same unpadded samples that are actually sent to CLAP.
+            for (start, _), array in _segments_with_specs(root / c.original.path):
                 keys.append(str(uuid.uuid5(uuid.NAMESPACE_URL, f"{c.id}:{c.original.sha256}:{start}")))
                 arrays.append(array)
                 # Bound audio memory rather than collecting a library in RAM.
