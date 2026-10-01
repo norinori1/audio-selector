@@ -1,0 +1,78 @@
+name: Fast CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fast-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  regression:
+    name: Windows Python 3.11 regression
+    runs-on: windows-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      PYTHONUTF8: '1'
+      AUDIO_SELECTOR_REAL_MODEL: '0'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: |
+            requirements-retrieval.lock.txt
+            pyproject.toml
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install -r requirements-retrieval.lock.txt
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m pip install --no-deps --no-build-isolation -e .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m pip check
+      - name: Check submitted diff
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          if ($env:EVENT_NAME -eq 'pull_request') {
+            git diff --check "$($env:BASE_SHA)...$($env:HEAD_SHA)"
+          } elseif ($env:BASE_SHA -match '^0+$') {
+            git show --format= --check $env:HEAD_SHA
+          } else {
+            git diff --check $env:BASE_SHA $env:HEAD_SHA
+          }
+          exit $LASTEXITCODE
+      - name: Record numerical runtime
+        run: |
+          Get-CimInstance Win32_Processor | Select-Object Name
+          python -c "import numpy as np; np.show_runtime()"
+      - name: Regression suites and exact skip audit
+        run: python scripts/ci_checks.py fast
+      - name: Manifest and ranking config CLIs
+        run: |
+          python -m audio_selector.manifest benchmark/manifest.json --require-all-eligible
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m audio_selector.ranking validate --config benchmark/roles/ranking-v1.json
+          exit $LASTEXITCODE
+      - name: Ensure validation did not mutate tracked evidence
+        run: |
+          git diff --exit-code
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          git diff --cached --exit-code
+          exit $LASTEXITCODE
