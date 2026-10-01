@@ -10,6 +10,43 @@ The manifest eligibility and ranking config CLIs are also checked, and both
 committed JSON Schemas must equal their respective CLI schema output. Validation
 must leave tracked files unchanged; benchmark evidence is never regenerated.
 
+## Frozen role-metric numerical reproduction
+
+The `role-metrics-v1.json` reproduction gate permits absolute error **at most
+`1e-15`**, with **zero relative tolerance**, only at these JSON paths:
+
+- `results.<method>.<k>.per_query[<index>].intra_list_similarity`
+- `results.<method>.<k>.mean_intra_list_similarity`
+
+Here `<k>` is `1`, `3` or `5`. Both values must be finite JSON floats; `null`
+must reproduce as `null` (for example, a one-item list has no pair similarity).
+Keys, JSON types, list lengths/order and every other metric remain exact,
+including Recall/mAP, paired/bootstrap results, integer diagnostics, labels and
+signal hashes, package identity and ranking-config fingerprints. The complete
+ranking JSON remains exactly equal to the frozen reference, including IDs,
+candidate order, scores, eligibility and policy/contract metadata. The older
+Issue #6 metrics retain their exact comparison.
+
+These two fields average clipped float64 dot products of frozen 512-dimensional
+vectors. NumPy/package version pins do not pin the CPU/SIMD-selected OpenBLAS
+reduction kernel. In [Issue #21](https://github.com/norinori1/audio-selector/issues/21),
+switching only Cooperlake to Zen in fresh Python processes, with four BLAS
+threads, changed 76 diagnostic values by at most `1.1102230246251565e-16`;
+rankings and all other metrics were identical. `1e-15` is a narrow empirical
+rounding allowance (about nine times that observed maximum) for diagnostics on
+the normalized `[0, 1]` similarity scale. It is not a general accuracy guarantee
+for every numerical library, CPU or future dataset. A larger difference still
+fails and requires investigation; the tolerance is never adjusted automatically.
+
+The ordinary suite tests one-ULP variation at both allowed paths, the exact
+tolerance boundary, and rejection of larger differences, non-finite values,
+type/null/structure changes and changes to protected metrics, fingerprints,
+IDs, candidate order and ranking scores. These controls run on every runner.
+Actions continues to record the processor name and `np.show_runtime()` with
+its selected BLAS architecture/thread count. No CPU kernel override is set in
+CI; local kernel selection is a diagnostic control only on a host that supports
+the required instructions. Frozen evidence and ranking calculations are unchanged.
+
 ## Expected skips
 
 Fast CI permits exactly three skips, checked by full test ID **and reason**:
