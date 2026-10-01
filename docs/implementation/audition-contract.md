@@ -22,6 +22,23 @@ exports/selection-<utc>-<hash12>.json   (immutable)  -> verify-export / import
 
 `selection.py` has no HTTP; `audition_queue.py` has no ranking or eligibility logic of its own.
 
+## UI behaviour (compact list, autosave)
+
+One compact row per candidate: rank and name, the player, the four decision buttons and a note field. Everything
+else (hashes, license/evidence, DSP, score terms) is behind a per-row **Details** disclosure, built on demand, and the
+ranking identity is behind **Ranking details**. Eligibility/verification problems and blocked playback stay visible
+in the row. The API is unchanged.
+
+- Choosing a decision saves it immediately (`POST /api/decision`); there is no separate Save button. **Clear** removes it.
+- A note saves after a short pause or when the field loses focus, but only once a decision is chosen; a note typed
+  first is held and sent together with the decision.
+- Every row states what the server holds: `Not decided yet`, `Saving…`, `✓ Saved: <decision> · <time>`, `Unsaved changes…`,
+  `Cleared · <time>`, or `Not saved — <reason>` with **Retry**. The row's left border also encodes the decision (never
+  color alone). The header shows `Queue n/N decided`; the package list shows per-role progress; **Next undecided**
+  jumps to the first undecided row.
+- Saves are serialized per row, and a save whose content equals what is stored is skipped, so the append-only history
+  records the actions in the order taken without duplicate events from a double click.
+
 ## Launch (Windows PowerShell, repository root)
 
 ```powershell

@@ -3,18 +3,22 @@
 <title>Audition queue</title>
 <link rel="stylesheet" href="/queue.css">
 </head><body><main>
-<h1>Audition queue</h1>
-<p class="lede">Listen, then decide. The order is the ranking's listening order, not a quality verdict or a usage approval. Every decision here is yours; nothing is accepted automatically.</p>
-<div class="toolbar">
-  <label>Ranking package <select id="package"></select></label>
-  <button id="export" type="button">Export decisions</button>
+<header class="top">
+  <div class="toolbar">
+    <h1>Audition queue</h1>
+    <label class="picker"><span class="sr">Ranking package</span><select id="package"></select></label>
+    <span id="progress" class="progress"></span>
+    <button id="next" type="button">Next undecided ↓</button>
+    <button id="export" type="button">Export decisions</button>
+  </div>
   <div id="status" role="status" aria-live="polite"></div>
-</div>
-<section id="summary" aria-label="Ranking provenance"></section>
+</header>
+<p id="request" class="request"></p>
 <div id="warnings" role="alert"></div>
-<h2>Queue</h2>
-<ol id="queue" class="cards"></ol>
-<details id="beyond"><summary>Ranked but not in the queue</summary><ol class="cards"></ol></details>
+<ol id="queue" class="rows"></ol>
+<details id="beyond"><summary>Ranked but not in the queue (<span id="beyond-count">0</span>)</summary><ol class="rows"></ol></details>
 <details id="removed"><summary>Excluded or suppressed before ranking</summary><ul></ul></details>
+<details id="info"><summary>Ranking details (model, config, index)</summary><section id="summary" aria-label="Ranking provenance"></section></details>
+<p class="lede">Pick a decision and it saves automatically. The order is the ranking's listening order, not a quality verdict or a usage approval; nothing is accepted for you.</p>
 <script src="/queue.js"></script>
 </main></body></html>

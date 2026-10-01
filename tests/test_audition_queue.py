@@ -483,5 +483,27 @@ class ServerTests(Fixture):
             stop()
 
 
+class UiAssetSafetyTests(unittest.TestCase):
+    """The static UI must stay compatible with the strict CSP and render data only as text."""
+    UI = Path(__file__).resolve().parents[1] / "audio_selector" / "ui"
+
+    def test_html_has_no_inline_script_style_or_handlers(self):
+        import re
+        html = (self.UI / "queue.html").read_text(encoding="utf-8")
+        self.assertIsNone(re.search(r"<style|\sstyle=|\son[a-z]+=", html, re.I))
+        for tag in re.findall(r"<script[^>]*>(.*?)</script>", html, re.S):
+            self.assertEqual(tag.strip(), "")
+
+    def test_script_never_parses_data_as_html_or_code(self):
+        js = (self.UI / "queue.js").read_text(encoding="utf-8")
+        for forbidden in ("innerHTML", "outerHTML", "insertAdjacentHTML", "document.write", "eval(", "new Function"):
+            self.assertNotIn(forbidden, js)
+
+    def test_decisions_post_exact_identity_with_the_per_process_token(self):
+        js = (self.UI / "queue.js").read_text(encoding="utf-8")
+        for needle in ("'/api/decision'", "X-Audition-Token", "package_id", "candidate_id", "representation", "sha256"):
+            self.assertIn(needle, js)
+
+
 if __name__ == "__main__":
     unittest.main()
