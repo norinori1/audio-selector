@@ -35,12 +35,10 @@ jobs:
           cache-dependency-path: |
             requirements-retrieval.lock.txt
             pyproject.toml
-      - name: Use a dedicated public model cache directory
-        run: '"HF_HOME=$env:RUNNER_TEMP/audio-selector-public-hf" >> $env:GITHUB_ENV'
       - name: Cache public pinned model downloads only
         uses: actions/cache@v4
         with:
-          path: ${{ env.HF_HOME }}/hub
+          path: ${{ runner.temp }}/audio-selector-public-hf/hub
           key: public-clap-${{ runner.os }}-py311-${{ hashFiles('audio_selector/contract.py', 'requirements-retrieval.lock.txt', 'pyproject.toml') }}
       - name: Install pinned dependencies
         run: |
@@ -50,6 +48,8 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m pip check
       - name: Existing regressions with real CLAP and persistent Qdrant
+        env:
+          HF_HOME: ${{ runner.temp }}/audio-selector-public-hf
         run: python scripts/ci_checks.py heavy
       - name: Ensure validation did not mutate tracked evidence
         run: |
