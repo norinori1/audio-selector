@@ -62,14 +62,15 @@ values exactly. Rankings and the original Issue #6 metrics retain exact checks.
 No production arithmetic, config, frozen labels, signals, metrics or rankings
 were edited. The exact skip allowlist and model/index failure behavior are intact.
 
-Eight policy tests exercise positive one-ULP changes at both diagnostic paths,
+Ten policy tests exercise positive one-ULP changes at both diagnostic paths,
 the tolerance boundary, and negative controls for larger similarity differences,
 one-ULP Recall/mAP/paired/bootstrap changes, `null`, non-finite values, JSON
 numeric types, missing/extra keys, list order/length, package/query identity,
-label/signal hashes, config fingerprints, ranking ID/hash/order and score.
-An identically named field outside the allowed paths remains exact.
+label/signal hashes, config fingerprints, ranking ID/hash/order, score and JSON
+numeric types. An identically named field outside the allowed paths remains
+exact, including metric-like paths inside ranking JSON.
 
-The fixed Fast gate runs 77 ordinary tests with exactly the same three audited
+The fixed Fast gate runs 79 ordinary tests with exactly the same three audited
 model skips, five research tests with zero skips, and both schema comparisons.
 Both locally selected kernels pass. The underlying raw diagnostic differences
 remain visible in the recorded comparison; they were not rounded away or used
@@ -80,6 +81,17 @@ package version matches the unchanged snapshot. The manifest
 `--require-all-eligible` and ranking-config validation CLIs pass, as does
 `git diff --check`. The submitted change contains only test and documentation
 files; tracked benchmark evidence and workflow/environment settings are unchanged.
+
+## CodeRabbit follow-up
+
+The review of `2a6c255766ad04cc296fe7f187ddf02ca4a4e22b` identified that Python's
+plain ranking equality accepted `rank: 1` changed to `1.0` or `true`. This was
+reproduced locally. Rankings now use the existing recursive type-aware comparison
+under a `rankings` path prefix, which cannot match any tolerated metric path.
+New controls reject equal-valued int/float/bool substitutions and one-ULP
+ranking changes even when ranking keys resemble a permitted metric path.
+Docstrings now describe each test/helper's contract, addressing the review's
+docstring-coverage warning.
 
 ## Limits
 
