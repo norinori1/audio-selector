@@ -35,7 +35,12 @@ function counts(p) {
   return {done: p.queue.filter(isDecided).length, total: p.queue.length,
           otherDone: p.not_in_queue.filter(isDecided).length, others: p.not_in_queue.length};
 }
-const optionText = p => { const c = counts(p); return `${p.role_id} · ${c.done}/${c.total} decided`; };
+// A role can have several packages (e.g. a later round of new candidates); number them by load order.
+function roleLabel(p) {
+  const same = view.packages.filter(x => x.role_id === p.role_id).map(x => x.added_at).sort();
+  return same.length < 2 ? p.role_id : `${p.role_id} #${same.indexOf(p.added_at) + 1}`;
+}
+const optionText = p => { const c = counts(p); return `${roleLabel(p)} · ${c.done}/${c.total} decided`; };
 
 function refreshProgress() {
   const p = view.packages[current];
@@ -68,7 +73,7 @@ function render() {
     $('#queue').replaceChildren(); return;
   }
   const rc = p.ranking_config, contract = p.retrieval_contract, div = p.diversity_implementation;
-  $('#request').replaceChildren('Request: ', el('b', `“${p.query}”`), ` · role ${p.role_id}`);
+  $('#request').replaceChildren('Request: ', el('b', `“${p.query}”`), ` · role ${roleLabel(p)} · loaded ${clock(p.added_at)}`);
   $('#summary').replaceChildren(dl([
     ['Request', p.query], ['Role profile', p.role_id],
     ['Ranking config', `${rc.config_id} ${rc.version} · fingerprint ${rc.fingerprint.slice(0, 16)}…`],
