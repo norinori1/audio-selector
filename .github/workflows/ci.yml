@@ -58,6 +58,10 @@ jobs:
             git diff --check $env:BASE_SHA $env:HEAD_SHA
           }
           exit $LASTEXITCODE
+      - name: Record numerical runtime
+        run: |
+          Get-CimInstance Win32_Processor | Select-Object Name
+          python -c "import numpy as np; np.show_runtime()"
       - name: Regression suites and exact skip audit
         run: python scripts/ci_checks.py fast
       - name: Manifest and ranking config CLIs
