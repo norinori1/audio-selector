@@ -1,7 +1,9 @@
 """Issue #7 evaluation integrity: frozen #6 inputs, preregistered binding, reproduction."""
+import copy
 import hashlib
 import itertools
 import json
+import math
 from pathlib import Path
 import tempfile
 import unittest
@@ -18,6 +20,159 @@ SIGNALS = EVAL / "role-signals-v1.json"
 CONFIG = BENCH / "roles/ranking-v1.json"
 ROLES = BENCH / "roles/query-roles-v1.json"
 LABELS = EVAL / "human-labels-v1.json"
+
+
+class RoleReproductionAssertions(unittest.TestCase):
+    # Empirical float64 BLAS rounding allowance on the frozen 512D vectors.
+    # No relative tolerance; see docs/ci.md for the scope and measured bound.
+    SIMILARITY_ABS_TOL = 1e-15
+
+    def assertRoleMetricsReproduce(self, actual, expected, path=()):
+        location = "metrics" + "".join(f".{part}" for part in path)
+        self.assertIs(type(actual), type(expected), location)
+        if isinstance(expected, dict):
+            self.assertEqual(actual.keys(), expected.keys(), location)
+            for key in expected:
+                self.assertRoleMetricsReproduce(actual[key], expected[key], (*path, key))
+        elif isinstance(expected, list):
+            self.assertEqual(len(actual), len(expected), location)
+            for index, (a, b) in enumerate(zip(actual, expected)):
+                self.assertRoleMetricsReproduce(a, b, (*path, index))
+        else:
+            similarity = (
+                len(path) in (4, 6) and path[0] == "results" and path[2] in ("1", "3", "5")
+                and ((len(path) == 4 and path[3] == "mean_intra_list_similarity")
+                     or (len(path) == 6 and path[3] == "per_query"
+                         and type(path[4]) is int and path[5] == "intra_list_similarity")))
+            if similarity and isinstance(expected, float):
+                self.assertTrue(math.isfinite(actual) and math.isfinite(expected), location)
+                self.assertTrue(math.isclose(actual, expected, rel_tol=0,
+                                            abs_tol=self.SIMILARITY_ABS_TOL),
+                                f"{location}: {actual!r} != {expected!r} "
+                                f"(absolute tolerance {self.SIMILARITY_ABS_TOL})")
+            else:
+                self.assertEqual(actual, expected, location)
+
+    def assertRoleEvaluationReproduces(self, metrics, rankings, expected_metrics, expected_rankings):
+        self.assertRoleMetricsReproduce(metrics, expected_metrics)
+        self.assertEqual(rankings, expected_rankings)
+
+
+class RoleReproductionPolicyTests(RoleReproductionAssertions):
+    @classmethod
+    def setUpClass(cls):
+        cls.metrics = json.loads((EVAL / "role-metrics-v1.json").read_text())
+        cls.rankings = json.loads((EVAL / "role-rankings-v1.json").read_text())
+
+    def assertChangedMetricFails(self, path, value):
+        changed = copy.deepcopy(self.metrics)
+        parent = changed
+        for key in path[:-1]:
+            parent = parent[key]
+        parent[path[-1]] = value
+        with self.assertRaises(AssertionError):
+            self.assertRoleEvaluationReproduces(changed, self.rankings, self.metrics, self.rankings)
+
+    def test_one_ulp_variation_in_both_diagnostics_is_accepted(self):
+        changed = copy.deepcopy(self.metrics)
+        for method in changed["results"].values():
+            for result in method.values():
+                if result["mean_intra_list_similarity"] is not None:
+                    result["mean_intra_list_similarity"] = math.nextafter(
+                        result["mean_intra_list_similarity"], math.inf)
+                for row in result["per_query"]:
+                    if row["intra_list_similarity"] is not None:
+                        row["intra_list_similarity"] = math.nextafter(row["intra_list_similarity"], -math.inf)
+        self.assertNotEqual(changed, self.metrics)
+        self.assertRoleEvaluationReproduces(changed, self.rankings, self.metrics, self.rankings)
+
+    def test_absolute_tolerance_boundary(self):
+        expected = copy.deepcopy(self.metrics)
+        expected["results"]["semantic_only"]["3"]["mean_intra_list_similarity"] = 0.0
+        changed = copy.deepcopy(expected)
+        result = changed["results"]["semantic_only"]["3"]
+        result["mean_intra_list_similarity"] = self.SIMILARITY_ABS_TOL
+        self.assertRoleMetricsReproduce(changed, expected)
+        result["mean_intra_list_similarity"] = math.nextafter(self.SIMILARITY_ABS_TOL, math.inf)
+        with self.assertRaises(AssertionError):
+            self.assertRoleMetricsReproduce(changed, expected)
+
+    def test_meaningful_similarity_changes_fail(self):
+        for path in [("results", "semantic_only", "3", "mean_intra_list_similarity"),
+                     ("results", "semantic_only", "3", "per_query", 0, "intra_list_similarity")]:
+            for delta in (-1e-12, 1e-12):
+                with self.subTest(path=path, delta=delta):
+                    parent = self.metrics
+                    for key in path:
+                        parent = parent[key]
+                    self.assertChangedMetricFails(path, parent + delta)
+
+    def test_other_floating_metrics_remain_exact(self):
+        paths = [("results", "semantic_only", "3", key) for key in
+                 ("mean_recall", "mAP", "mean_max_pack_share", "projected_time_reduction")]
+        paths += [("results", "semantic_only", "3", "per_query", 0, key) for key in ("recall", "ap")]
+        paths += [("paired", "semantic_role_vs_semantic_only", "recall@3", "mean_delta"),
+                  ("paired", "semantic_role_vs_semantic_only", "recall@3", "bootstrap_95ci", 0)]
+        for path in paths:
+            with self.subTest(path=path):
+                value = self.metrics
+                for key in path:
+                    value = value[key]
+                self.assertChangedMetricFails(path, math.nextafter(value, math.inf))
+
+    def test_null_nonfinite_and_numeric_types_fail_closed(self):
+        row = ("results", "semantic_only", "3", "per_query", 0)
+        for value in (None, math.nan, math.inf, -math.inf, True, 0, "0.37"):
+            with self.subTest(value=value):
+                self.assertChangedMetricFails((*row, "intra_list_similarity"), value)
+        self.assertChangedMetricFails(("results", "semantic_only", "1", "mean_intra_list_similarity"), 0.0)
+        self.assertChangedMetricFails(("schema_version",), "role-eval-metrics/changed")
+        # Python equality considers bool/int/float equal; JSON types must still match.
+        self.assertChangedMetricFails((*row, "duplicate_hash_slots"), False)
+        self.assertChangedMetricFails(("human_judgments",), float(self.metrics["human_judgments"]))
+
+    def test_identity_config_structure_and_order_remain_exact(self):
+        for path in [("package_id",), ("labels_sha256",), ("signals_sha256",),
+                     ("ranking_config", "fingerprint"),
+                     ("results", "semantic_only", "3", "per_query", 0, "query_id")]:
+            with self.subTest(path=path):
+                self.assertChangedMetricFails(path, "changed")
+        rows = self.metrics["results"]["semantic_only"]["3"]["per_query"]
+        row_path = ("results", "semantic_only", "3", "per_query")
+        self.assertChangedMetricFails(row_path, rows[::-1])
+        self.assertChangedMetricFails(row_path, rows[:-1])
+        self.assertChangedMetricFails((*row_path, 0, "shortlist"), rows[0]["shortlist"][::-1])
+        for added in (False, True):
+            with self.subTest(added=added):
+                changed = copy.deepcopy(self.metrics)
+                if added:
+                    changed["results"]["semantic_only"]["3"]["unexpected"] = 0
+                else:
+                    del changed["results"]["semantic_only"]["3"]["mean_intra_list_similarity"]
+                with self.assertRaises(AssertionError):
+                    self.assertRoleEvaluationReproduces(changed, self.rankings, self.metrics, self.rankings)
+
+    def test_similarly_named_fields_outside_allowlist_remain_exact(self):
+        expected = copy.deepcopy(self.metrics)
+        expected["intra_list_similarity"] = 0.5
+        changed = copy.deepcopy(expected)
+        changed["intra_list_similarity"] = math.nextafter(0.5, math.inf)
+        with self.assertRaises(AssertionError):
+            self.assertRoleMetricsReproduce(changed, expected)
+
+    def test_rankings_identity_order_and_scores_remain_exact(self):
+        for change in ("candidate_id", "sha256", "order", "score"):
+            with self.subTest(change=change):
+                changed = copy.deepcopy(self.rankings)
+                top = changed["q01"]["top_n"]
+                if change == "order":
+                    top.reverse()
+                elif change == "score":
+                    top[0]["pre_diversity_score"] = math.nextafter(top[0]["pre_diversity_score"], math.inf)
+                else:
+                    top[0][change] = "changed"
+                with self.assertRaises(AssertionError):
+                    self.assertRoleEvaluationReproduces(self.metrics, changed, self.metrics, self.rankings)
 
 
 class FrozenIssue6Tests(unittest.TestCase):
@@ -47,7 +202,7 @@ class PairedArithmeticTests(unittest.TestCase):
 
 
 @unittest.skipUnless(SIGNALS.exists(), "role signals not yet collected")
-class RoleEvaluationReproductionTests(unittest.TestCase):
+class RoleEvaluationReproductionTests(RoleReproductionAssertions):
     def test_signals_bound_to_preregistered_config_and_roles(self):
         with tempfile.TemporaryDirectory() as tmp:
             changed = json.loads(CONFIG.read_text())
@@ -64,8 +219,10 @@ class RoleEvaluationReproductionTests(unittest.TestCase):
 
     def test_committed_metrics_and_rankings_reproduce_without_model(self):
         metrics, rankings = evaluate_all(BENCH, SIGNALS, CONFIG, ROLES, LABELS)
-        self.assertEqual(json.loads(json.dumps(metrics)), json.loads((EVAL / "role-metrics-v1.json").read_text()))
-        self.assertEqual(json.loads(json.dumps(rankings)), json.loads((EVAL / "role-rankings-v1.json").read_text()))
+        self.assertRoleEvaluationReproduces(
+            json.loads(json.dumps(metrics)), json.loads(json.dumps(rankings)),
+            json.loads((EVAL / "role-metrics-v1.json").read_text()),
+            json.loads((EVAL / "role-rankings-v1.json").read_text()))
         frozen = json.loads((EVAL / "metrics-v1.json").read_text())["results"]["raw_semantic"]
         for k in ["1", "3", "5"]:
             ours = metrics["results"]["semantic_only"][k]
