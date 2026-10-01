@@ -2,6 +2,9 @@
 
 Game-audio asset selection tooling for narrowing large, multi-source audio candidate sets into human-auditionable Top-N recommendations.
 
+See [CI validation](docs/ci.md) for the Windows/Python 3.11 PR regression gate,
+expected real-model skips, and the separate manual CLAP/Qdrant smoke workflow.
+
 ## Status
 
 **Evidence-backed retrieval prototype; real-audio human pilot prepared in a Draft stack.**
