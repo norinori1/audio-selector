@@ -12,6 +12,24 @@ loudness normalization or first-ten-seconds-only ingestion. The pinned processor
 extracts CLAP features. Text uses its pinned tokenizer, padding and truncation to
 77 tokens. Audio and text vectors are finite, nonzero and L2-normalized.
 
+Segment counts and unpadded start/end offsets come from the actual array after
+decode, channel mean and resampling, never `sf.info()` frame estimates. Both
+`segment_specs()` and `audio_segments()` use this path; index embedding pairs
+specs and arrays from a single decode. The slice is padded by
+`480000 - len(segment)`, so every model input is exactly 480000 samples even
+when compressed-audio metadata overestimates or underestimates its decoded length.
+Exact multiples produce no additional empty segment. Padding is excluded from
+`segment_end`; point UUIDs retain the candidate ID, original SHA-256 and start
+sample identity. CLAP's fixed-length validation remains mandatory.
+
+This fixes the existing whole-file/zero-padding contract; its identifier remains
+v1. A failed prior build has no completion marker. An old completed index with
+estimated offsets or omitted segments fails the existing expected-payload/missing
+vector check and requires a rebuild. Already correct segments keep their IDs and
+contract. Validation on reload/query now decodes/resamples eligible originals to
+recompute actual offsets; this costs more than the previous header-only scan,
+without introducing a stale length cache.
+
 Qdrant local persistent directory defaults to `qdrant_storage/default`. Native
 512-dimensional cosine search: higher means more similar, never a probability.
 Each derived point has manifest ID, original content hash, segment offsets,

@@ -14,6 +14,9 @@ REAL_MODEL_SKIPS = {
     "tests.test_retrieval.RetrievalIntegrationTests."
     "test_real_batch_index_restart_query_reindex_gate_and_staleness":
         "set AUDIO_SELECTOR_REAL_MODEL=1 for real CLAP/Qdrant Windows smoke",
+    "tests.test_retrieval.RetrievalIntegrationTests."
+    "test_metadata_mismatch_persistent_build_reload_and_failed_rebuild":
+        "set AUDIO_SELECTOR_REAL_MODEL=1 for real CLAP/Qdrant Windows smoke",
     "tests.test_ranking.RankingIntegrationTests."
     "test_real_signals_rank_eligible_pool_and_cli":
         "set AUDIO_SELECTOR_REAL_MODEL=1 for real CLAP/Qdrant ranking smoke",
